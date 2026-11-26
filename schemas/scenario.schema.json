@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/scenario.schema.json",
+  "title": "Civilisations — scénario de départ",
+  "description": "Monde initial complet : carte, nations, diplomatie, guerres et révolutions en cours. Un scénario est un point de départ reproductible ; la sauvegarde enregistre ensuite l'état dynamique.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "start_date",
+    "seed",
+    "world",
+    "nations",
+    "diplomacy"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "world": { "$ref": "world.schema.json" },
+    "nations": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "nation.schema.json" }
+    },
+    "diplomacy": { "$ref": "diplomacy.schema.json" },
+    "wars": {
+      "type": "array",
+      "items": { "$ref": "war.schema.json" }
+    },
+    "revolutions": {
+      "type": "array",
+      "items": { "$ref": "revolution.schema.json" }
+    },
+    "armies": {
+      "type": "array",
+      "items": { "$ref": "war.schema.json#/$defs/army" }
+    },
+    "missiles_in_flight": {
+      "type": "array",
+      "items": { "$ref": "missile.schema.json#/$defs/missile_instance" }
+    },
+    "player_nation": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ]
+    },
+    "difficulty": {
+      "enum": ["peaceful", "normal", "aggressive", "nightmare"],
+      "default": "normal"
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  }
+}

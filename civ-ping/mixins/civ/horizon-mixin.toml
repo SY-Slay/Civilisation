@@ -1,0 +1,42 @@
+[mod]
+id = "civ"
+version = "0.0.1"
+priority = 100
+
+# Commit Horizon exact sur lequel ce bundle est compilé.
+# C'est le couple vérifié par Orbital Laser 0.5.14 : Horizon 89f236e +
+# horizon-mixins a2af5c0 (voir `horizon-native.json`).
+[compatibility]
+horizon_revision = "89f236e3ef8e8b554bef507216b86ca90b552213"
+
+# Le code du mod, injecté dans le crate horizon-client.
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/game.rs"
+name = "civ"
+source = "runtime.rs"
+
+# `/civ ping` dans l'arbre de commandes du serveur.
+[[injection]]
+id = "register_commands"
+hook = "register_commands"
+hook_version = 1
+kind = "HEAD"
+helper = "register_commands.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "commands", ty = "&mut Vec<crate::mod_api::NativeCommand>", value = "&mut *commands" },
+]
+
+# La commande d'un joueur arrive ici ; le mod répond et marque `ran`.
+[[injection]]
+id = "perform_command"
+hook = "perform_command"
+hook_version = 1
+kind = "HEAD"
+helper = "perform_command.rs"
+bindings = [
+  { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" },
+  { name = "command", ty = "&str", value = "command" },
+  { name = "ran", ty = "&mut bool", value = "&mut *ran" },
+]

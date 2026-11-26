@@ -1,0 +1,42 @@
+{
+  "id": "missile_cruise",
+  "name": "Missile de croisière rase-mottes",
+  "description": "Engin guidé volant à très basse altitude pour déjouer les radars de détection.",
+  "kind": "cruise",
+  "range_km": 1200.0,
+  "speed_kmh": 950.0,
+  "flight_profile": "low",
+  "accuracy_m": 15.0,
+  "warhead": {
+    "kind": "conventional",
+    "yield_kt": 0,
+    "blast_radius_blocks": 32,
+    "effects": [],
+    "fallout": false,
+    "escalation_delta": 0
+  },
+  "cost": 1200.0,
+  "build_time_days": 45,
+  "max_stock": 20,
+  "defense_penetration": 0.6,
+  "interception": {
+    "base_chance": 0.35,
+    "counter_types": [],
+    "terminal_maneuver": true
+  },
+  "launch_platforms": [
+    "mobile_launcher",
+    "silo"
+  ],
+  "explosion_effects": {
+    "particle": "civ:missile_impact",
+    "sound": "civ:missile_impact",
+    "flash_color": "#FF8822",
+    "shake_radius": 80,
+    "smoke_ticks": 240,
+    "orbital_laser_hook": false
+  },
+  "tags": [
+    "precision"
+  ]
+}

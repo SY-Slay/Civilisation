@@ -1,0 +1,118 @@
+{
+  "id": "prov_varenne_marais",
+  "name": "Basses Lagunes",
+  "polygon": [
+    [
+      0.0,
+      510.0
+    ],
+    [
+      0.0,
+      640.0
+    ],
+    [
+      0.0,
+      770.0
+    ],
+    [
+      64.9,
+      792.3
+    ],
+    [
+      125.3,
+      773.7
+    ],
+    [
+      184.4,
+      803.3
+    ],
+    [
+      238.0,
+      800.0
+    ],
+    [
+      259.3,
+      733.0
+    ],
+    [
+      251.1,
+      648.3
+    ],
+    [
+      289.2,
+      577.7
+    ],
+    [
+      290.0,
+      488.0
+    ],
+    [
+      225.4,
+      482.9
+    ],
+    [
+      151.7,
+      510.5
+    ],
+    [
+      80.1,
+      489.9
+    ]
+  ],
+  "center": [
+    154.24,
+    644.26
+  ],
+  "area_blocks": 78176,
+  "neighbors": [
+    "prov_ardenne_val",
+    "prov_varenne_plaine",
+    "prov_varenne_port"
+  ],
+  "border_ids": [
+    "border_h_1_2_c0",
+    "border_h_2_3_c0",
+    "border_v_r2_c0_1"
+  ],
+  "terrain": "swamp",
+  "climate": {
+    "temperature_c": 16.5,
+    "rainfall_mm": 1100.0,
+    "seasonality": 0.35
+  },
+  "population": {
+    "total": 190000,
+    "urban": 80000,
+    "rural": 110000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "varennois",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "pragmatism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "grain",
+      "abundance": 65.0,
+      "reserve": 180000.0
+    }
+  ],
+  "owner": "varenne",
+  "controller": "varenne",
+  "fortification": 1,
+  "unrest": 7.0,
+  "supply": 85.0,
+  "infrastructure": 75.0,
+  "strategic_value": 65.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

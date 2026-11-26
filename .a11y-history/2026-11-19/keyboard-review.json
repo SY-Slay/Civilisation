@@ -1,0 +1,30 @@
+{
+  "skill": "keyboard-navigator",
+  "scope": [
+    "native/civ/mixins/civ/civ-horizon/src/ui/map.rs",
+    "native/civ/mixins/civ/civ-horizon/src/ui/mod.rs",
+    "native/civ/mixins/civ/glue.rs"
+  ],
+  "findings": [
+    {
+      "rule": "KBD-SHORTCUT-001",
+      "wcag": "2.1.4 A",
+      "severity": "moderate",
+      "confidence": "medium",
+      "location": "native/civ/mixins/civ/glue.rs:screen_key",
+      "summary": "Map pan and zoom shortcuts cannot currently be disabled or remapped while the Carte tab is active.",
+      "fix": "Consider an explicit map-control focus or preference that enables, disables, or remaps the arrow and zoom shortcuts.",
+      "evidence": "The shortcuts are now limited to the Carte tab and are listed in the map's on-screen keyboard hint, but no disable or remap option exists."
+    }
+  ],
+  "passed": [
+    "Tab cycles province focus; Enter and Space activate the focused province.",
+    "The focus outline is rendered independently of hover and selection.",
+    "Auto-fit, resize, pan, and zoom keep a focused province visible.",
+    "Pan and zoom shortcuts are scoped to the Carte tab and documented in the view.",
+    "Tests cover map fitting, clipping, focus, selection, and polygon rendering."
+  ],
+  "notes": [
+    "Keyboard behavior was reviewed in source and tests; no native Horizon build or in-game interaction was performed."
+  ]
+}

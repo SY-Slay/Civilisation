@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "id": "war_ardennes_kesh",
+  "name": "Guerre des Marches",
+  "start_date": {
+    "year": 2026,
+    "month": 1,
+    "day": 1
+  },
+  "end_date": null,
+  "status": "active",
+  "casus_belli": {
+    "kind": "claimed_province",
+    "target": "kesh",
+    "description": "Revendication historique.",
+    "province": "prov_0_3"
+  },
+  "belligerents": [
+    {
+      "nation": "ardenne",
+      "side": "attacker",
+      "joined_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 1
+      },
+      "war_support": 60.0,
+      "casualties": 0,
+      "occupied_provinces": [],
+      "contribution": 1.0
+    },
+    {
+      "nation": "kesh",
+      "side": "defender",
+      "joined_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 1
+      },
+      "war_support": 70.0,
+      "casualties": 0,
+      "occupied_provinces": [],
+      "contribution": 1.0
+    }
+  ],
+  "war_goals": [
+    {
+      "id": "goal_marche",
+      "kind": "conquer_province",
+      "target": "kesh",
+      "provinces": [
+        "prov_0_3"
+      ],
+      "priority": 0.8,
+      "satisfied": false
+    }
+  ],
+  "fronts": [
+    {
+      "id": "front_marche",
+      "name": "Front des Marches",
+      "provinces": [
+        "prov_0_3"
+      ],
+      "attacker": "ardenne",
+      "defender": "kesh",
+      "status": "active",
+      "momentum": 10.0,
+      "supply": 70.0,
+      "battles_won": 0,
+      "battles_lost": 0
+    }
+  ],
+  "battles": [
+    {
+      "id": "battle_marche",
+      "front": "front_marche",
+      "province": "prov_0_3",
+      "start_date": {
+        "year": 2026,
+        "month": 1,
+        "day": 1
+      },
+      "end_date": null,
+      "attacker": "ardenne",
+      "defender": "kesh",
+      "result": "ongoing",
+      "attacker_losses": 100,
+      "defender_losses": 120,
+      "terrain_modifier": 1.0
+    }
+  ],
+  "armies": [],
+  "score": {
+    "attacker": 10.0,
+    "defender": 5.0
+  },
+  "peace_offers": [],
+  "interventions": [],
+  "treaty_id": null,
+  "tags": [
+    "fixture"
+  ]
+}

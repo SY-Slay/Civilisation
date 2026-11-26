@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "id": "unit_missile_corps",
+  "name": "Régiment de lanceurs mobiles",
+  "description": "Véhicules lance-roquettes et missiles balistiques tactiques pour frappes en profondeur.",
+  "category": "missile",
+  "era": 4,
+  "cost": 600.0,
+  "upkeep": 20.0,
+  "manpower": 250,
+  "attack": 90.0,
+  "defense": 20.0,
+  "mobility": 40.0,
+  "morale": 70.0,
+  "training_time_days": 120,
+  "prerequisites": [
+    "tech_ballistic_propulsion"
+  ],
+  "counters": [],
+  "weak_against": [
+    "unit_mechanized_guard"
+  ],
+  "tags": [
+    "strategic_asset"
+  ]
+}

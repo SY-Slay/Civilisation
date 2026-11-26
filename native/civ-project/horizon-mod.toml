@@ -1,0 +1,179 @@
+id = "civ"
+name = "Civilisations"
+version = "0.1.0"
+description = "Simulation geopolitique fictive pour Horizon 26.3."
+authors = []
+api = "0.2"
+side = "both"
+capabilities = ["registries"]
+
+[native]
+game = "26.3"
+horizon = "9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0"
+mixins = "5a64af938ec86b00d53d16a408aabc0038fb3e57"
+
+[[native.module]]
+id = "glue"
+file = "crates/horizon-client/src/game.rs"
+name = "civ_glue"
+source = "src/glue.rs"
+
+[[native.mixin]]
+id = "frame"
+kind = "HEAD"
+helper = "src/mixins/frame.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "elapsed", ty = "std::time::Duration", value = "elapsed" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_frame"
+priority = 100
+
+[[native.mixin]]
+id = "mods"
+kind = "HEAD"
+helper = "src/mixins/mods.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "mods", ty = "&mut Vec<crate::game::native_hooks::NativeMod>", value = "&mut *mods" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+priority = 100
+
+[[native.mixin]]
+id = "key"
+kind = "HEAD"
+helper = "src/mixins/key.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "key", ty = "&str", value = "key" }, { name = "pressed", ty = "bool", value = "pressed" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_key"
+priority = 100
+
+[[native.mixin]]
+id = "register_commands"
+kind = "HEAD"
+helper = "src/mixins/register_commands.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "commands", ty = "&mut Vec<crate::mod_api::NativeCommand>", value = "&mut *commands" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_register_commands"
+priority = 100
+
+[[native.mixin]]
+id = "perform_command"
+kind = "HEAD"
+helper = "src/mixins/perform_command.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "player", ty = "&crate::mod_api::NativeServerPlayer", value = "player" }, { name = "command", ty = "&str", value = "command" }, { name = "ran", ty = "&mut bool", value = "&mut *ran" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_perform_command"
+priority = 100
+
+[[native.mixin]]
+id = "console_command"
+kind = "HEAD"
+helper = "src/mixins/console_command.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "command", ty = "&str", value = "command" }, { name = "ran", ty = "&mut bool", value = "&mut *ran" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_perform_console_command"
+priority = 100
+
+[[native.mixin]]
+id = "server_tick"
+kind = "HEAD"
+helper = "src/mixins/server_tick.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "context", ty = "&crate::mod_api::NativeLifecycleContext", value = "context" }, { name = "phase", ty = "crate::mod_api::ServerTickPhase", value = "phase" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_server_tick"
+priority = 100
+
+[[native.mixin]]
+id = "world_lifecycle"
+kind = "HEAD"
+helper = "src/mixins/world_lifecycle.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "context", ty = "&crate::mod_api::NativeLifecycleContext", value = "context" }, { name = "phase", ty = "crate::mod_api::WorldPhase", value = "phase" }, { name = "error_text", ty = "&str", value = "error_text" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_world_lifecycle"
+priority = 100
+
+[[native.mixin]]
+id = "hud"
+kind = "HEAD"
+helper = "src/mixins/hud.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "batch", ty = "&mut horizon_client::hud::HudBatch", value = "&mut *batch" }, { name = "corners", ty = "&mut horizon_client::extras_hud::Corners", value = "&mut *corners" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_hud"
+priority = 100
+
+[[native.mixin]]
+id = "screen_render_post"
+kind = "HEAD"
+helper = "src/mixins/screen_render_post.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "batch", ty = "&mut horizon_client::hud::HudBatch", value = "&mut *batch" }, { name = "screen", ty = "&crate::game::native_hooks::NativeScreenView<'_>", value = "screen" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_screen_render_post"
+priority = 100
+
+[[native.mixin]]
+id = "screen_click"
+kind = "HEAD"
+helper = "src/mixins/screen_click.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "screen", ty = "&crate::game::native_hooks::NativeScreenView<'_>", value = "screen" }, { name = "button", ty = "i32", value = "button" }, { name = "canceled", ty = "&mut bool", value = "&mut *canceled" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_screen_mouse_button_pressed_pre"
+priority = 100
+
+[[native.mixin]]
+id = "screen_key"
+kind = "HEAD"
+helper = "src/mixins/screen_key.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "screen", ty = "&crate::game::native_hooks::NativeScreenView<'_>", value = "screen" }, { name = "key", ty = "&str", value = "key" }, { name = "canceled", ty = "&mut bool", value = "&mut *canceled" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_screen_key_pressed_pre"
+priority = 100
+
+[[native.mixin]]
+id = "screen_char"
+kind = "HEAD"
+helper = "src/mixins/screen_char.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "screen", ty = "&crate::game::native_hooks::NativeScreenView<'_>", value = "screen" }, { name = "c", ty = "char", value = "c" }, { name = "canceled", ty = "&mut bool", value = "&mut *canceled" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_screen_char_typed_pre"
+priority = 100
+
+[[native.mixin]]
+id = "camera_pose"
+kind = "HEAD"
+helper = "src/mixins/camera_pose.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "partial", ty = "f32", value = "partial" }, { name = "position", ty = "&mut [f64; 3]", value = "position" }, { name = "yaw", ty = "&mut f32", value = "yaw" }, { name = "pitch", ty = "&mut f32", value = "pitch" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_camera_pose"
+priority = 100
+
+[[native.mixin]]
+id = "camera_shake"
+kind = "HEAD"
+helper = "src/mixins/camera_shake.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "partial", ty = "f32", value = "partial" }, { name = "shake", ty = "&mut crate::game::native_hooks::NativeShake", value = "&mut *shake" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_camera_shake"
+priority = 100
+
+[[native.mixin]]
+id = "render_hand"
+kind = "HEAD"
+helper = "src/mixins/render_hand.rs"
+bindings = [{ name = "game", ty = "&crate::game::Game<'_>", value = "self" }, { name = "hand", ty = "horizon_client::first_person::Hand", value = "hand" }, { name = "stack", ty = "Option<&horizon_client::items::ItemStack>", value = "stack" }, { name = "partial", ty = "f32", value = "partial" }, { name = "swing", ty = "f32", value = "swing" }, { name = "equip", ty = "f32", value = "equip" }, { name = "canceled", ty = "&mut bool", value = "&mut *canceled" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_render_hand"
+priority = 100
+
+[[native.mixin]]
+id = "net_from_client"
+kind = "HEAD"
+helper = "src/mixins/net_from_client.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "player", ty = "u128", value = "player" }, { name = "channel", ty = "&str", value = "channel" }, { name = "data", ty = "&[u8]", value = "data" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_net_from_client"
+priority = 100
+
+[[native.mixin]]
+id = "net_from_server"
+kind = "HEAD"
+helper = "src/mixins/net_from_server.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "channel", ty = "&str", value = "channel" }, { name = "data", ty = "&[u8]", value = "data" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_net_from_server"
+priority = 100
+
+[[native.mixin]]
+id = "player_logged_in"
+kind = "HEAD"
+helper = "src/mixins/player_logged_in.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "player", ty = "u128", value = "player" }, { name = "name", ty = "&str", value = "name" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_player_logged_in"
+priority = 100
+
+[[native.mixin]]
+id = "player_logged_out"
+kind = "HEAD"
+helper = "src/mixins/player_logged_out.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }, { name = "player", ty = "u128", value = "player" }, { name = "name", ty = "&str", value = "name" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_player_logged_out"
+priority = 100

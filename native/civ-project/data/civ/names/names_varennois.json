@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "id": "names_varennois",
+  "culture": "varennois",
+  "language": "fr_FR",
+  "nation_names": [
+    "Varenne",
+    "Ligue d'Argent",
+    "Riviera",
+    "Comptoirs Unis"
+  ],
+  "nation_adjectives": [
+    "varennois",
+    "argenté",
+    "rivierain",
+    "ligueur"
+  ],
+  "city_names": [
+    "Varenne-Maritime",
+    "Port-Franc",
+    "Quai-des-Flots",
+    "Lagune-Verte",
+    "Comptoir-Doré"
+  ],
+  "region_names": [
+    "Grand Delta",
+    "Côte d'Émeraude",
+    "Mares Salines"
+  ],
+  "leader_names": {
+    "given": [
+      "Alvise",
+      "Matteo",
+      "Diane",
+      "Helena",
+      "Soren",
+      "Lucia"
+    ],
+    "family": [
+      "Contarini",
+      "Marin",
+      "Dolfin",
+      "Badoer",
+      "Morosini",
+      "Pisani"
+    ],
+    "titles": [
+      "Doge",
+      "Grand Prieur",
+      "Syndic",
+      "Gouverneur"
+    ],
+    "epithets": [
+      "l'Avisé",
+      "le Pacifique",
+      "le Négociateur",
+      "l'Audacieux"
+    ]
+  },
+  "army_names": [
+    "Garde Municipale des Guildes",
+    "Légion des Corsaires",
+    "Régiment de Marine"
+  ],
+  "operation_names": [
+    "Grand Vent",
+    "Balance d'Or",
+    "Haute Marée"
+  ]
+}

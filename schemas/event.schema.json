@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/event.schema.json",
+  "title": "Civilisations — événement narratif",
+  "description": "Événement data-driven avec déclencheurs, choix et effets. La sélection utilise la graine de partie et un ordre stable ; l'IA évalue les choix avec ses poids, sans génération de texte.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "description",
+    "kind",
+    "weight",
+    "trigger",
+    "choices"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "kind": {
+      "enum": [
+        "political",
+        "economic",
+        "military",
+        "diplomatic",
+        "revolution",
+        "missile",
+        "natural",
+        "technological",
+        "humanitarian"
+      ]
+    },
+    "weight": {
+      "type": "number",
+      "minimum": 0,
+      "default": 1
+    },
+    "cooldown_days": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 30
+    },
+    "max_fires": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1
+    },
+    "trigger": {
+      "$ref": "#/$defs/trigger"
+    },
+    "choices": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/choice" }
+    },
+    "ai_choice": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ],
+      "description": "Choix forcé pour l'IA. null laisse l'IA évaluer les poids."
+    },
+    "severity": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  },
+  "$defs": {
+    "trigger": {
+      "type": "object",
+      "required": ["conditions"],
+      "additionalProperties": false,
+      "properties": {
+        "conditions": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/condition" }
+        },
+        "min_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "max_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "nations": { "$ref": "common.schema.json#/$defs/id_list" },
+        "provinces": { "$ref": "common.schema.json#/$defs/id_list" },
+        "requires_war": { "type": "boolean", "default": false },
+        "requires_revolution": { "type": "boolean", "default": false },
+        "chance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 1
+        }
+      }
+    },
+    "choice": {
+      "type": "object",
+      "required": ["id", "text", "effects"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "text": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "tooltip": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "requirements": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/condition" }
+        },
+        "effects": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/effect" }
+        },
+        "ai_weight": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1
+        },
+        "hidden": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  }
+}

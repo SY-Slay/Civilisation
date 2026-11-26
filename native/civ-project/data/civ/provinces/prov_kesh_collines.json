@@ -1,0 +1,118 @@
+{
+  "id": "prov_kesh_collines",
+  "name": "Massif de Karkov",
+  "polygon": [
+    [
+      746.0,
+      286.0
+    ],
+    [
+      745.8,
+      347.4
+    ],
+    [
+      782.7,
+      391.5
+    ],
+    [
+      773.7,
+      450.5
+    ],
+    [
+      794.0,
+      494.0
+    ],
+    [
+      856.8,
+      515.2
+    ],
+    [
+      914.9,
+      495.6
+    ],
+    [
+      972.3,
+      524.2
+    ],
+    [
+      1024.0,
+      520.0
+    ],
+    [
+      1024.0,
+      385.0
+    ],
+    [
+      1024.0,
+      250.0
+    ],
+    [
+      961.6,
+      248.0
+    ],
+    [
+      892.1,
+      279.2
+    ],
+    [
+      822.0,
+      262.0
+    ]
+  ],
+  "center": [
+    880.99,
+    389.19
+  ],
+  "area_blocks": 63030,
+  "neighbors": [
+    "prov_kesh_citadelle",
+    "prov_kesh_steppe",
+    "prov_orlune_pics"
+  ],
+  "border_ids": [
+    "border_h_0_1_c3",
+    "border_h_1_2_c3",
+    "border_v_r1_c2_3"
+  ],
+  "terrain": "mountains",
+  "climate": {
+    "temperature_c": 9.5,
+    "rainfall_mm": 600.0,
+    "seasonality": 0.7
+  },
+  "population": {
+    "total": 170000,
+    "urban": 60000,
+    "rural": 110000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "keshi",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "martial_order",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "rare_earths",
+      "abundance": 80.0,
+      "reserve": 120000.0
+    }
+  ],
+  "owner": "kesh",
+  "controller": "kesh",
+  "fortification": 3,
+  "unrest": 9.0,
+  "supply": 75.0,
+  "infrastructure": 65.0,
+  "strategic_value": 85.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

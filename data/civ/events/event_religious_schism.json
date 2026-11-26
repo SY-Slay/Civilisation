@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "event_religious_schism",
+  "name": "Dispute doctrinale au sanctuaire",
+  "description": "Des prédicateurs itinérants remettent en cause l'autorité sacerdotale établie.",
+  "kind": "political",
+  "weight": 0.8,
+  "cooldown_days": 180,
+  "max_fires": 2,
+  "trigger": {
+    "conditions": [],
+    "min_date": {
+      "year": 2026,
+      "month": 6,
+      "day": 1
+    },
+    "chance": 0.4
+  },
+  "choices": [
+    {
+      "id": "conciliate",
+      "text": "Organiser un synode théologique de conciliation",
+      "effects": [],
+      "ai_weight": 0.5
+    },
+    {
+      "id": "ban_heresy",
+      "text": "Interdire les prédications dissidentes",
+      "effects": [],
+      "ai_weight": 0.5
+    }
+  ],
+  "severity": 30.0,
+  "tags": [
+    "religion",
+    "unrest"
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "id": "prov_ardenne_est",
+  "name": "Marche d'Ardenne",
+  "polygon": [
+    [
+      260.0,
+      0.0
+    ],
+    [
+      266.1,
+      79.8
+    ],
+    [
+      233.5,
+      144.4
+    ],
+    [
+      248.1,
+      219.4
+    ],
+    [
+      232.0,
+      280.0
+    ],
+    [
+      313.7,
+      252.2
+    ],
+    [
+      390.0,
+      265.8
+    ],
+    [
+      464.4,
+      231.1
+    ],
+    [
+      532.0,
+      230.0
+    ],
+    [
+      517.2,
+      180.4
+    ],
+    [
+      533.4,
+      118.5
+    ],
+    [
+      502.2,
+      65.7
+    ],
+    [
+      510.0,
+      0.0
+    ],
+    [
+      385.0,
+      0.0
+    ]
+  ],
+  "center": [
+    384.83,
+    147.66
+  ],
+  "area_blocks": 67563,
+  "neighbors": [
+    "prov_ardenne_nord",
+    "prov_ardenne_sud",
+    "prov_kesh_marche"
+  ],
+  "border_ids": [
+    "border_h_0_1_c1",
+    "border_v_r0_c0_1",
+    "border_v_r0_c1_2"
+  ],
+  "terrain": "hills",
+  "climate": {
+    "temperature_c": 12.0,
+    "rainfall_mm": 900.0,
+    "seasonality": 0.5
+  },
+  "population": {
+    "total": 140000,
+    "urban": 40000,
+    "rural": 100000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "ardennic",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "rationalism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "coal",
+      "abundance": 60.0,
+      "reserve": 150000.0
+    }
+  ],
+  "owner": "ardenne",
+  "controller": "ardenne",
+  "fortification": 3,
+  "unrest": 8.0,
+  "supply": 75.0,
+  "infrastructure": 65.0,
+  "strategic_value": 75.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

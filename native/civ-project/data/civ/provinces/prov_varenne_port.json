@@ -1,0 +1,108 @@
+{
+  "id": "prov_varenne_port",
+  "name": "Port-Varenne",
+  "polygon": [
+    [
+      0.0,
+      770.0
+    ],
+    [
+      0.0,
+      897.0
+    ],
+    [
+      0.0,
+      1024.0
+    ],
+    [
+      125.0,
+      1024.0
+    ],
+    [
+      250.0,
+      1024.0
+    ],
+    [
+      237.4,
+      975.3
+    ],
+    [
+      256.2,
+      915.8
+    ],
+    [
+      227.4,
+      863.5
+    ],
+    [
+      238.0,
+      800.0
+    ],
+    [
+      184.4,
+      803.3
+    ],
+    [
+      125.3,
+      773.7
+    ],
+    [
+      64.9,
+      792.3
+    ]
+  ],
+  "center": [
+    142.38,
+    888.57
+  ],
+  "area_blocks": 56817,
+  "neighbors": [
+    "prov_varenne_marais",
+    "prov_varenne_rive"
+  ],
+  "border_ids": [
+    "border_h_2_3_c0",
+    "border_v_r3_c0_1"
+  ],
+  "terrain": "coast",
+  "climate": {
+    "temperature_c": 17.5,
+    "rainfall_mm": 1050.0,
+    "seasonality": 0.32
+  },
+  "population": {
+    "total": 420000,
+    "urban": 280000,
+    "rural": 140000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "varennois",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "pragmatism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "oil",
+      "abundance": 75.0,
+      "reserve": 320000.0
+    }
+  ],
+  "owner": "varenne",
+  "controller": "varenne",
+  "fortification": 2,
+  "unrest": 5.0,
+  "supply": 95.0,
+  "infrastructure": 90.0,
+  "strategic_value": 95.0,
+  "victory_points": 10.0,
+  "claims": [],
+  "capital_of": "varenne",
+  "tags": [
+    "scenario_province"
+  ]
+}

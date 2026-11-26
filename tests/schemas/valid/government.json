@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "republic",
+  "name": "R?publique parlementaire",
+  "description": "Forme de gouvernement fictive.",
+  "category": "republic",
+  "legitimacy_source": "elections",
+  "succession": "election",
+  "term_length_days": 1460,
+  "modifiers": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "id": "civic_republicanism",
+  "name": "R?publicanisme civique",
+  "description": "Id?ologie fictive de la r?publique des communes.",
+  "family": "liberal",
+  "values": [
+    "?tat de droit",
+    "d?lib?ration",
+    "service public"
+  ],
+  "government_preferences": [
+    "republic",
+    "democracy",
+    "federation"
+  ],
+  "modifiers": [],
+  "tags": [
+    "fixture"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/technology.schema.json",
+  "title": "Civilisations — technologie",
+  "description": "Nœud d'arbre technologique fictif. Les technologies débloquent des unités, des missiles, des bâtiments ou des modificateurs ; elles ne contiennent aucun code exécutable.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "era",
+    "category",
+    "cost",
+    "research_time_days",
+    "prerequisites",
+    "effects"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "era": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "category": {
+      "enum": [
+        "economy",
+        "industry",
+        "military",
+        "naval",
+        "aerospace",
+        "missile",
+        "computing",
+        "energy",
+        "medicine",
+        "society",
+        "intelligence"
+      ]
+    },
+    "cost": {
+      "type": "number",
+      "minimum": 0
+    },
+    "research_time_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "prerequisites": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "effects": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/effect" }
+    },
+    "unlocks": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "units": { "$ref": "common.schema.json#/$defs/id_list" },
+        "missiles": { "$ref": "common.schema.json#/$defs/id_list" },
+        "buildings": { "$ref": "common.schema.json#/$defs/id_list" },
+        "events": { "$ref": "common.schema.json#/$defs/id_list" },
+        "modifiers": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/modifier" }
+        }
+      }
+    },
+    "repeatable": {
+      "type": "boolean",
+      "default": false
+    },
+    "max_level": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 1
+    },
+    "ai_weight": {
+      "type": "number",
+      "minimum": 0,
+      "default": 1
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  }
+}

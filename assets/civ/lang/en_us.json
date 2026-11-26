@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "language": "en_US",
+  "fallback_language": "fr_FR",
+  "entries": {
+    "civ.game.name": "Civilizations",
+    "civ.scenario.arc_des_frontieres": "Borderlands Arc",
+    "civ.scenario.desc": "Four rival powers compete for hegemony in a fractured geopolitical landscape.",
+    "civ.nation.ardenne": "Republic of Ardenne",
+    "civ.nation.kesh": "Autocracy of Kesh",
+    "civ.nation.varenne": "Merchant League of Varenne",
+    "civ.nation.orlune": "Sanctuary of Orlune",
+    "civ.command.status": "Simulation status: tick {tick}, date {date}",
+    "civ.command.ping": "Deterministic pong!"
+  }
+}

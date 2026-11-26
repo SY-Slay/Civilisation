@@ -1,0 +1,786 @@
+{
+  "schema_version": 1,
+  "seed": 12345,
+  "size": {
+    "width": 512,
+    "height": 512
+  },
+  "sea_level": 62,
+  "generation": {
+    "algorithm": "hand_authored_v1",
+    "version": 1,
+    "border_noise": 0.35,
+    "coast_complexity": 0.55
+  },
+  "provinces": [
+    {
+      "id": "prov_0_0",
+      "name": "Province 0-0",
+      "polygon": [
+        [
+          0,
+          0
+        ],
+        [
+          132,
+          0
+        ],
+        [
+          116,
+          246
+        ],
+        [
+          0,
+          243
+        ]
+      ],
+      "center": [
+        62.0,
+        122.25
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_0_1",
+        "prov_1_0"
+      ],
+      "border_ids": [
+        "border_h_0_0_1",
+        "border_v_0_0_1"
+      ],
+      "terrain": "plains",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_0_1",
+      "name": "Province 0-1",
+      "polygon": [
+        [
+          132,
+          0
+        ],
+        [
+          249,
+          0
+        ],
+        [
+          263,
+          243
+        ],
+        [
+          116,
+          246
+        ]
+      ],
+      "center": [
+        190.0,
+        122.25
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_0_0",
+        "prov_0_2",
+        "prov_1_1"
+      ],
+      "border_ids": [
+        "border_h_0_0_1",
+        "border_h_0_1_2",
+        "border_v_1_0_1"
+      ],
+      "terrain": "hills",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": "ardenne",
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_0_2",
+      "name": "Province 0-2",
+      "polygon": [
+        [
+          249,
+          0
+        ],
+        [
+          393,
+          0
+        ],
+        [
+          400,
+          253
+        ],
+        [
+          263,
+          243
+        ]
+      ],
+      "center": [
+        326.25,
+        124.0
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_0_1",
+        "prov_0_3",
+        "prov_1_2"
+      ],
+      "border_ids": [
+        "border_h_0_1_2",
+        "border_h_0_2_3",
+        "border_v_2_0_1"
+      ],
+      "terrain": "plains",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_0_3",
+      "name": "Province 0-3",
+      "polygon": [
+        [
+          393,
+          0
+        ],
+        [
+          512,
+          0
+        ],
+        [
+          512,
+          242
+        ],
+        [
+          400,
+          253
+        ]
+      ],
+      "center": [
+        454.25,
+        123.75
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_0_2",
+        "prov_1_3"
+      ],
+      "border_ids": [
+        "border_h_0_2_3",
+        "border_v_3_0_1"
+      ],
+      "terrain": "hills",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_1_0",
+      "name": "Province 1-0",
+      "polygon": [
+        [
+          0,
+          243
+        ],
+        [
+          116,
+          246
+        ],
+        [
+          117,
+          512
+        ],
+        [
+          0,
+          512
+        ]
+      ],
+      "center": [
+        58.25,
+        378.25
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_1_1",
+        "prov_0_0"
+      ],
+      "border_ids": [
+        "border_h_1_0_1",
+        "border_v_0_0_1"
+      ],
+      "terrain": "hills",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_1_1",
+      "name": "Province 1-1",
+      "polygon": [
+        [
+          116,
+          246
+        ],
+        [
+          263,
+          243
+        ],
+        [
+          267,
+          512
+        ],
+        [
+          117,
+          512
+        ]
+      ],
+      "center": [
+        190.75,
+        378.25
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_1_0",
+        "prov_1_2",
+        "prov_0_1"
+      ],
+      "border_ids": [
+        "border_h_1_0_1",
+        "border_h_1_1_2",
+        "border_v_1_0_1"
+      ],
+      "terrain": "plains",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_1_2",
+      "name": "Province 1-2",
+      "polygon": [
+        [
+          263,
+          243
+        ],
+        [
+          400,
+          253
+        ],
+        [
+          394,
+          512
+        ],
+        [
+          267,
+          512
+        ]
+      ],
+      "center": [
+        331.0,
+        380.0
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_1_1",
+        "prov_1_3",
+        "prov_0_2"
+      ],
+      "border_ids": [
+        "border_h_1_1_2",
+        "border_h_1_2_3",
+        "border_v_2_0_1"
+      ],
+      "terrain": "hills",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    },
+    {
+      "id": "prov_1_3",
+      "name": "Province 1-3",
+      "polygon": [
+        [
+          400,
+          253
+        ],
+        [
+          512,
+          242
+        ],
+        [
+          512,
+          512
+        ],
+        [
+          394,
+          512
+        ]
+      ],
+      "center": [
+        454.5,
+        379.75
+      ],
+      "area_blocks": 32768,
+      "neighbors": [
+        "prov_1_2",
+        "prov_0_3"
+      ],
+      "border_ids": [
+        "border_h_1_2_3",
+        "border_v_3_0_1"
+      ],
+      "terrain": "plains",
+      "climate": {
+        "temperature_c": 12.0,
+        "rainfall_mm": 700.0
+      },
+      "population": {
+        "total": 100000,
+        "urban": 40000,
+        "rural": 60000,
+        "growth_rate": 0.005,
+        "density_per_km2": 30.0
+      },
+      "culture": {
+        "primary": "ardennic"
+      },
+      "religion": {
+        "primary": "rationalism"
+      },
+      "resources": [],
+      "owner": "ardenne",
+      "controller": "ardenne",
+      "claims": [],
+      "capital_of": null,
+      "fortification": 0,
+      "unrest": 5.0,
+      "supply": 80.0,
+      "infrastructure": 40.0,
+      "strategic_value": 20.0,
+      "victory_points": 0.0,
+      "tags": []
+    }
+  ],
+  "borders": [
+    {
+      "id": "border_h_0_0_1",
+      "a": "prov_0_0",
+      "b": "prov_0_1",
+      "kind": "land",
+      "points": [
+        [
+          132,
+          0
+        ],
+        [
+          124.0,
+          123.0
+        ],
+        [
+          116,
+          246
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_h_0_1_2",
+      "a": "prov_0_1",
+      "b": "prov_0_2",
+      "kind": "land",
+      "points": [
+        [
+          249,
+          0
+        ],
+        [
+          256.0,
+          121.5
+        ],
+        [
+          263,
+          243
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_h_0_2_3",
+      "a": "prov_0_2",
+      "b": "prov_0_3",
+      "kind": "land",
+      "points": [
+        [
+          393,
+          0
+        ],
+        [
+          396.5,
+          126.5
+        ],
+        [
+          400,
+          253
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_h_1_0_1",
+      "a": "prov_1_0",
+      "b": "prov_1_1",
+      "kind": "land",
+      "points": [
+        [
+          116,
+          246
+        ],
+        [
+          116.5,
+          379.0
+        ],
+        [
+          117,
+          512
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_h_1_1_2",
+      "a": "prov_1_1",
+      "b": "prov_1_2",
+      "kind": "land",
+      "points": [
+        [
+          263,
+          243
+        ],
+        [
+          265.0,
+          377.5
+        ],
+        [
+          267,
+          512
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_h_1_2_3",
+      "a": "prov_1_2",
+      "b": "prov_1_3",
+      "kind": "land",
+      "points": [
+        [
+          400,
+          253
+        ],
+        [
+          397.0,
+          382.5
+        ],
+        [
+          394,
+          512
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_v_0_0_1",
+      "a": "prov_0_0",
+      "b": "prov_1_0",
+      "kind": "land",
+      "points": [
+        [
+          0,
+          243
+        ],
+        [
+          58.0,
+          244.5
+        ],
+        [
+          116,
+          246
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_v_1_0_1",
+      "a": "prov_0_1",
+      "b": "prov_1_1",
+      "kind": "land",
+      "points": [
+        [
+          116,
+          246
+        ],
+        [
+          189.5,
+          244.5
+        ],
+        [
+          263,
+          243
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_v_2_0_1",
+      "a": "prov_0_2",
+      "b": "prov_1_2",
+      "kind": "land",
+      "points": [
+        [
+          263,
+          243
+        ],
+        [
+          331.5,
+          248.0
+        ],
+        [
+          400,
+          253
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    },
+    {
+      "id": "border_v_3_0_1",
+      "a": "prov_0_3",
+      "b": "prov_1_3",
+      "kind": "land",
+      "points": [
+        [
+          400,
+          253
+        ],
+        [
+          456.0,
+          247.5
+        ],
+        [
+          512,
+          242
+        ]
+      ],
+      "natural_barrier": false,
+      "crossing_cost": 1
+    }
+  ],
+  "regions": [
+    {
+      "id": "ardennia",
+      "name": "Ardennie",
+      "kind": "continent",
+      "provinces": [
+        "prov_0_0",
+        "prov_0_1",
+        "prov_0_2",
+        "prov_0_3",
+        "prov_1_0",
+        "prov_1_1",
+        "prov_1_2",
+        "prov_1_3"
+      ],
+      "climate": "temperate"
+    }
+  ],
+  "straits": []
+}

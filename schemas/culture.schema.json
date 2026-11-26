@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/culture.schema.json",
+  "title": "Civilisations — culture",
+  "description": "Culture fictive utilisée par les provinces et les nations. Les stéréotypes réels sont interdits ; les valeurs et traditions sont inventées pour le monde du mod.",
+  "type": "object",
+  "required": ["id", "name", "language"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/schema_version" },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "adjective": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(_[A-Z]{2})?$"
+    },
+    "family": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{2,63}$"
+    },
+    "values": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    },
+    "traditions": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    },
+    "name_pool": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ]
+    },
+    "color": { "$ref": "common.schema.json#/$defs/color" },
+    "modifiers": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/modifier" }
+    },
+    "tags": { "$ref": "common.schema.json#/$defs/string_list" }
+  }
+}

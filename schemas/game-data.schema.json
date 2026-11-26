@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/game-data.schema.json",
+  "title": "Civilisations — données de jeu",
+  "description": "Agrégat éditable des technologies, types de missiles et événements chargés par civ-core. Les définitions sont interprétées par un moteur déterministe ; aucun script n'est exécuté.",
+  "type": "object",
+  "required": ["schema_version", "technologies", "missiles", "events"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "technologies": {
+      "type": "array",
+      "items": { "$ref": "technology.schema.json" }
+    },
+    "missiles": {
+      "type": "array",
+      "items": { "$ref": "missile.schema.json#/$defs/missile_type" }
+    },
+    "events": {
+      "type": "array",
+      "items": { "$ref": "event.schema.json" }
+    }
+  }
+}

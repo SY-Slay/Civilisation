@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "id": "ardenne",
+  "name": "République d'Ardenne",
+  "adjective": "ardennois",
+  "short_name": "Ardenne",
+  "color": "#3A7BD5",
+  "flag": {
+    "palette": [
+      "#3A7BD5",
+      "#F2F4F8"
+    ],
+    "pattern": "horizontal_bands",
+    "motto": "Liberté, Raison, Solidarité"
+  },
+  "capital": "prov_ardenne_val",
+  "provinces": [
+    "prov_ardenne_est",
+    "prov_ardenne_nord",
+    "prov_ardenne_sud",
+    "prov_ardenne_val"
+  ],
+  "government": "republic",
+  "ideology": "civic_republicanism",
+  "culture": "ardennic",
+  "religion": "rationalism",
+  "language": "fr_FR",
+  "leader": {
+    "name": "Mira Valen",
+    "title": "Présidente",
+    "age": 47,
+    "traits": [
+      "prudente",
+      "démocrate",
+      "réformatrice"
+    ]
+  },
+  "population": {
+    "total": 850000,
+    "workforce": 450000,
+    "conscription_pool": 95000,
+    "growth_rate": 0.005,
+    "urbanization": 0.47
+  },
+  "economy": {
+    "gdp": 1350000000.0,
+    "treasury": 280000000.0,
+    "tax_rate": 0.24,
+    "inflation": 0.02,
+    "unemployment": 0.05,
+    "trade_balance": 15000000.0,
+    "debt": 80000000.0,
+    "sectors": {
+      "agriculture": 0.15,
+      "industry": 0.35,
+      "services": 0.4,
+      "technology": 0.1
+    },
+    "resources": {}
+  },
+  "military": {
+    "manpower": 28000,
+    "army_size": 20000,
+    "readiness": 65.0,
+    "morale": 70.0,
+    "doctrine": "defensive",
+    "missile_stockpile": {}
+  },
+  "stability": 75.0,
+  "legitimacy": 78.0,
+  "prestige": 45.0,
+  "war_exhaustion": 0.0,
+  "unrest": 5.0,
+  "technology": {
+    "era": 2,
+    "researched": [
+      "tech_steel_metallurgy",
+      "tech_rail_logistics"
+    ],
+    "research_points": 120.0
+  },
+  "ai_profile": {
+    "archetype": "caretaker",
+    "aggression": 0.2,
+    "caution": 0.8,
+    "honor": 0.8,
+    "greed": 0.3,
+    "revanchism": 0.1,
+    "isolationism": 0.3,
+    "opportunism": 0.2,
+    "loyalty": 0.8,
+    "risk_tolerance": 0.3,
+    "patience": 0.8,
+    "war_threshold": 0.75,
+    "peace_threshold": 0.3,
+    "priorities": {
+      "economy": 0.8,
+      "military": 0.4,
+      "diplomacy": 0.8,
+      "expansion": 0.1,
+      "stability": 0.9,
+      "technology": 0.7
+    },
+    "red_lines": [
+      "capital_occupied",
+      "core_occupied"
+    ]
+  },
+  "claims": [],
+  "subjects": [],
+  "overlord": null,
+  "allies": [],
+  "wars": [],
+  "revolutions": [],
+  "armies": [],
+  "missiles": [],
+  "is_playable": true,
+  "tags": [
+    "democratic"
+  ]
+}

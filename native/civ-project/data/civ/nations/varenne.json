@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "id": "varenne",
+  "name": "Ligue marchande de Varenne",
+  "adjective": "varennois",
+  "short_name": "Varenne",
+  "color": "#12B886",
+  "flag": {
+    "palette": [
+      "#12B886",
+      "#FFD43B"
+    ],
+    "pattern": "vertical_bands",
+    "motto": "Flots Prospères, Pacte Éternel"
+  },
+  "capital": "prov_varenne_port",
+  "provinces": [
+    "prov_varenne_marais",
+    "prov_varenne_plaine",
+    "prov_varenne_port",
+    "prov_varenne_rive"
+  ],
+  "government": "oligarchy",
+  "ideology": "commercial_oligarchy",
+  "culture": "varennois",
+  "religion": "pragmatism",
+  "language": "fr_FR",
+  "leader": {
+    "name": "Alvise Contarini",
+    "title": "Doge",
+    "age": 59,
+    "traits": [
+      "négociateur",
+      "richissime",
+      "diplomate"
+    ]
+  },
+  "population": {
+    "total": 1050000,
+    "workforce": 560000,
+    "conscription_pool": 80000,
+    "growth_rate": 0.007,
+    "urbanization": 0.52
+  },
+  "economy": {
+    "gdp": 1650000000.0,
+    "treasury": 450000000.0,
+    "tax_rate": 0.18,
+    "inflation": 0.02,
+    "unemployment": 0.04,
+    "trade_balance": 45000000.0,
+    "debt": 50000000.0,
+    "sectors": {
+      "agriculture": 0.18,
+      "industry": 0.22,
+      "services": 0.5,
+      "technology": 0.1
+    },
+    "resources": {}
+  },
+  "military": {
+    "manpower": 22000,
+    "army_size": 16000,
+    "readiness": 55.0,
+    "morale": 65.0,
+    "doctrine": "naval",
+    "missile_stockpile": {}
+  },
+  "stability": 80.0,
+  "legitimacy": 74.0,
+  "prestige": 60.0,
+  "war_exhaustion": 0.0,
+  "unrest": 5.0,
+  "technology": {
+    "era": 2,
+    "researched": [
+      "tech_rail_logistics"
+    ],
+    "research_points": 150.0
+  },
+  "ai_profile": {
+    "archetype": "merchant",
+    "aggression": 0.15,
+    "caution": 0.7,
+    "honor": 0.6,
+    "greed": 0.85,
+    "revanchism": 0.1,
+    "isolationism": 0.2,
+    "opportunism": 0.6,
+    "loyalty": 0.6,
+    "risk_tolerance": 0.4,
+    "patience": 0.7,
+    "war_threshold": 0.8,
+    "peace_threshold": 0.25,
+    "priorities": {
+      "economy": 0.9,
+      "military": 0.3,
+      "diplomacy": 0.8,
+      "expansion": 0.2,
+      "stability": 0.8,
+      "technology": 0.7
+    },
+    "red_lines": [
+      "capital_occupied",
+      "trade_embargo"
+    ]
+  },
+  "claims": [],
+  "subjects": [],
+  "overlord": null,
+  "allies": [],
+  "wars": [],
+  "revolutions": [],
+  "armies": [],
+  "missiles": [],
+  "is_playable": true,
+  "tags": [
+    "mercantile"
+  ]
+}

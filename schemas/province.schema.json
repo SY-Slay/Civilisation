@@ -1,0 +1,238 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/province.schema.json",
+  "title": "Civilisations — province",
+  "description": "Unité territoriale atomique. Une province est un polygone irrégulier ; son propriétaire et son contrôleur sont des identifiants de nation. Les frontières partagées sont décrites une seule fois dans world.borders.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "polygon",
+    "neighbors",
+    "border_ids",
+    "terrain",
+    "climate",
+    "population",
+    "culture",
+    "religion",
+    "resources",
+    "owner",
+    "controller",
+    "fortification",
+    "unrest",
+    "supply",
+    "infrastructure",
+    "strategic_value"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "name": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    },
+    "polygon": {
+      "$ref": "common.schema.json#/$defs/polygon"
+    },
+    "center": {
+      "$ref": "common.schema.json#/$defs/vec2"
+    },
+    "area_blocks": {
+      "type": "integer",
+      "minimum": 64
+    },
+    "neighbors": {
+      "$ref": "common.schema.json#/$defs/id_list",
+      "description": "Provinces adjacentes par voie terrestre ou côtière. La réciprocité est vérifiée au chargement."
+    },
+    "border_ids": {
+      "$ref": "common.schema.json#/$defs/id_list",
+      "description": "Références vers world.borders. Chaque frontière est partagée par exactement deux provinces."
+    },
+    "terrain": {
+      "enum": [
+        "plains",
+        "hills",
+        "mountains",
+        "forest",
+        "rainforest",
+        "desert",
+        "steppe",
+        "tundra",
+        "swamp",
+        "coast",
+        "island",
+        "urban",
+        "ruins"
+      ]
+    },
+    "biome": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{2,63}$"
+    },
+    "climate": {
+      "type": "object",
+      "required": ["temperature_c", "rainfall_mm"],
+      "additionalProperties": false,
+      "properties": {
+        "temperature_c": {
+          "type": "number",
+          "minimum": -80,
+          "maximum": 60
+        },
+        "rainfall_mm": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20000
+        },
+        "seasonality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0
+        }
+      }
+    },
+    "population": {
+      "type": "object",
+      "required": ["total", "urban", "rural"],
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "urban": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "rural": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "growth_rate": {
+          "type": "number",
+          "minimum": -0.2,
+          "maximum": 0.2,
+          "default": 0.005
+        },
+        "density_per_km2": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "culture": {
+      "type": "object",
+      "required": ["primary"],
+      "additionalProperties": false,
+      "properties": {
+        "primary": { "$ref": "common.schema.json#/$defs/id" },
+        "minorities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["culture", "share"],
+            "additionalProperties": false,
+            "properties": {
+              "culture": { "$ref": "common.schema.json#/$defs/id" },
+              "share": { "$ref": "common.schema.json#/$defs/unit_interval" }
+            }
+          }
+        }
+      }
+    },
+    "religion": {
+      "type": "object",
+      "required": ["primary"],
+      "additionalProperties": false,
+      "properties": {
+        "primary": { "$ref": "common.schema.json#/$defs/id" },
+        "minorities": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["religion", "share"],
+            "additionalProperties": false,
+            "properties": {
+              "religion": { "$ref": "common.schema.json#/$defs/id" },
+              "share": { "$ref": "common.schema.json#/$defs/unit_interval" }
+            }
+          }
+        }
+      }
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["resource", "abundance"],
+        "additionalProperties": false,
+        "properties": {
+          "resource": { "$ref": "common.schema.json#/$defs/id" },
+          "abundance": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "reserve": {
+            "type": "number",
+            "minimum": 0
+          },
+          "extraction_rate": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "owner": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ],
+      "description": "Nation propriétaire de jure. null pour une province non revendiquée."
+    },
+    "controller": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ],
+      "description": "Nation qui administre la province de facto. Peut différer de owner pendant une occupation."
+    },
+    "claims": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "capital_of": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ]
+    },
+    "fortification": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "default": 0
+    },
+    "unrest": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "supply": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "infrastructure": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "strategic_value": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "victory_points": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  }
+}

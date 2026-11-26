@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "martial_order",
+  "name": "Ordre du Serment d'Acier",
+  "description": "Culte martial et traditionnel honorant les ancêtres guerriers et le devoir sans faille.",
+  "family": "warrior_creed",
+  "tenets": [
+    "fidélité au chef",
+    "gloire des armes",
+    "sacrifice pour le clan"
+  ],
+  "tolerance": 40.0,
+  "holy_sites": [
+    "prov_kesh_citadelle"
+  ],
+  "clergy_title": "Commandeur des Rites",
+  "modifiers": [],
+  "tags": [
+    "militarist",
+    "ancestral"
+  ]
+}

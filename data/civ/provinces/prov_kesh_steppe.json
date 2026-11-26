@@ -1,0 +1,108 @@
+{
+  "id": "prov_kesh_steppe",
+  "name": "Grande Steppe",
+  "polygon": [
+    [
+      770.0,
+      0.0
+    ],
+    [
+      777.2,
+      81.3
+    ],
+    [
+      745.6,
+      147.7
+    ],
+    [
+      761.2,
+      223.9
+    ],
+    [
+      746.0,
+      286.0
+    ],
+    [
+      822.0,
+      262.0
+    ],
+    [
+      892.1,
+      279.2
+    ],
+    [
+      961.6,
+      248.0
+    ],
+    [
+      1024.0,
+      250.0
+    ],
+    [
+      1024.0,
+      125.0
+    ],
+    [
+      1024.0,
+      0.0
+    ],
+    [
+      897.0,
+      0.0
+    ]
+  ],
+  "center": [
+    870.39,
+    158.59
+  ],
+  "area_blocks": 69349,
+  "neighbors": [
+    "prov_kesh_collines",
+    "prov_kesh_marche"
+  ],
+  "border_ids": [
+    "border_h_0_1_c3",
+    "border_v_r0_c2_3"
+  ],
+  "terrain": "steppe",
+  "climate": {
+    "temperature_c": 13.0,
+    "rainfall_mm": 450.0,
+    "seasonality": 0.65
+  },
+  "population": {
+    "total": 130000,
+    "urban": 30000,
+    "rural": 100000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "keshi",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "martial_order",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "coal",
+      "abundance": 75.0,
+      "reserve": 250000.0
+    }
+  ],
+  "owner": "kesh",
+  "controller": "kesh",
+  "fortification": 1,
+  "unrest": 10.0,
+  "supply": 65.0,
+  "infrastructure": 55.0,
+  "strategic_value": 65.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

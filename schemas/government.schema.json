@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/government.schema.json",
+  "title": "Civilisations — forme de gouvernement",
+  "description": "Forme de gouvernement fictive et data-driven. Le noyau connaît les catégories, les sources de légitimité et les modes de succession ; les noms et modificateurs restent éditables.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "legitimacy_source",
+    "succession",
+    "term_length_days"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/schema_version" },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "category": {
+      "enum": [
+        "republic",
+        "monarchy",
+        "autocracy",
+        "oligarchy",
+        "democracy",
+        "technocracy",
+        "theocracy",
+        "federation",
+        "confederation",
+        "junta",
+        "council",
+        "empire",
+        "tribal"
+      ]
+    },
+    "legitimacy_source": {
+      "enum": [
+        "elections",
+        "heredity",
+        "ideology",
+        "religion",
+        "military",
+        "popular_support",
+        "tradition",
+        "competence"
+      ]
+    },
+    "succession": {
+      "enum": [
+        "election",
+        "heredity",
+        "appointment",
+        "coup",
+        "revolution",
+        "council_vote",
+        "contest"
+      ]
+    },
+    "term_length_days": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 36500,
+      "description": "0 pour un pouvoir sans terme fixe."
+    },
+    "modifiers": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/modifier" }
+    },
+    "tags": { "$ref": "common.schema.json#/$defs/string_list" }
+  }
+}

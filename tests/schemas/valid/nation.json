@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "id": "ardenne",
+  "name": "R?publique d'Ardenne",
+  "adjective": "ardennois",
+  "short_name": "Ardenne",
+  "color": "#3A7BD5",
+  "flag": {
+    "palette": [
+      "#3A7BD5",
+      "#F2F4F8"
+    ],
+    "pattern": "horizontal_bands",
+    "motto": "Tenir ensemble"
+  },
+  "capital": "prov_0_1",
+  "provinces": [
+    "prov_0_0",
+    "prov_0_1",
+    "prov_0_2",
+    "prov_0_3",
+    "prov_1_0",
+    "prov_1_1",
+    "prov_1_2",
+    "prov_1_3"
+  ],
+  "government": "republic",
+  "ideology": "civic_republicanism",
+  "culture": "ardennic",
+  "religion": "rationalism",
+  "language": "fr_FR",
+  "leader": {
+    "name": "Mira Valen",
+    "title": "Pr?sidente",
+    "age": 47,
+    "traits": [
+      "prudente",
+      "r?formiste"
+    ]
+  },
+  "population": {
+    "total": 800000,
+    "workforce": 420000,
+    "conscription_pool": 90000,
+    "growth_rate": 0.005,
+    "urbanization": 0.4
+  },
+  "economy": {
+    "gdp": 1200000000,
+    "treasury": 240000000,
+    "tax_rate": 0.25,
+    "inflation": 0.03,
+    "unemployment": 0.07,
+    "trade_balance": 0,
+    "debt": 100000000,
+    "sectors": {
+      "agriculture": 0.12,
+      "industry": 0.33,
+      "services": 0.45,
+      "technology": 0.1
+    },
+    "resources": {}
+  },
+  "military": {
+    "manpower": 25000,
+    "army_size": 18000,
+    "readiness": 55.0,
+    "morale": 60.0,
+    "doctrine": "defensive"
+  },
+  "stability": 68.0,
+  "legitimacy": 62.0,
+  "prestige": 35.0,
+  "war_exhaustion": 0.0,
+  "unrest": 8.0,
+  "technology": {
+    "era": 3,
+    "researched": [],
+    "research_points": 0
+  },
+  "ai_profile": {
+    "archetype": "caretaker",
+    "aggression": 0.2,
+    "caution": 0.8,
+    "honor": 0.7,
+    "greed": 0.3,
+    "revanchism": 0.1,
+    "isolationism": 0.2,
+    "opportunism": 0.3,
+    "loyalty": 0.7,
+    "risk_tolerance": 0.3,
+    "patience": 0.8,
+    "war_threshold": 0.7,
+    "peace_threshold": 0.3,
+    "priorities": {
+      "economy": 0.8,
+      "military": 0.4,
+      "diplomacy": 0.7,
+      "expansion": 0.2,
+      "stability": 0.9,
+      "technology": 0.6
+    },
+    "red_lines": [
+      "capital_occupied",
+      "core_occupied"
+    ]
+  },
+  "claims": [],
+  "subjects": [],
+  "overlord": null,
+  "allies": [],
+  "wars": [],
+  "revolutions": [],
+  "armies": [],
+  "missiles": [],
+  "is_playable": true,
+  "tags": [
+    "demo"
+  ]
+}

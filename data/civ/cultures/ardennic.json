@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "ardennic",
+  "name": "Ardennique",
+  "adjective": "ardennois",
+  "description": "Culture démocratique des vallées du nord, attachée à l'État de droit et aux assemblées communales.",
+  "language": "fr_FR",
+  "family": "western_valley",
+  "values": [
+    "stabilité",
+    "délibération",
+    "solidarité"
+  ],
+  "traditions": [
+    "conseil des communes",
+    "foire aux moissons"
+  ],
+  "name_pool": "names_ardennic",
+  "color": "#3A7BD5",
+  "modifiers": [],
+  "tags": [
+    "democratic",
+    "valley"
+  ]
+}

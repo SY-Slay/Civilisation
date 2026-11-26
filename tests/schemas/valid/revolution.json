@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "id": "rev_communes",
+  "nation": "ardenne",
+  "start_date": {
+    "year": 2026,
+    "month": 1,
+    "day": 1
+  },
+  "end_date": null,
+  "status": "uprising",
+  "causes": [
+    "economic_crisis",
+    "inequality"
+  ],
+  "factions": [
+    {
+      "id": "fac_communes",
+      "name": "Comit? des Communes",
+      "ideology": "civic_republicanism",
+      "support": 30.0,
+      "demands": [
+        "free_elections",
+        "land_reform"
+      ],
+      "leader": "Nael Drev",
+      "militia_size": 5000,
+      "legitimacy": 20.0,
+      "foreign_support": []
+    }
+  ],
+  "support_by_province": [
+    {
+      "province": "prov_0_0",
+      "support": 30.0,
+      "control": "contested"
+    }
+  ],
+  "controlled_provinces": [],
+  "government_response": {
+    "strategy": "negotiate",
+    "intensity": 0.5,
+    "started_date": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "offered_terms": []
+  },
+  "casualties": 0,
+  "foreign_interventions": [],
+  "outcome": null,
+  "tags": [
+    "fixture"
+  ]
+}

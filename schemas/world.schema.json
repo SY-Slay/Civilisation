@@ -1,0 +1,193 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/world.schema.json",
+  "title": "Civilisations — monde",
+  "description": "Carte statique et topologie du monde. Les frontières sont des polylignes irrégulières partagées entre provinces, jamais des rectangles ni des lignes droites générées sans bruit.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "seed",
+    "size",
+    "sea_level",
+    "provinces",
+    "borders",
+    "regions",
+    "straits"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "size": {
+      "type": "object",
+      "required": ["width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "integer",
+          "minimum": 512,
+          "maximum": 32768
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 512,
+          "maximum": 32768
+        }
+      }
+    },
+    "sea_level": {
+      "type": "integer",
+      "minimum": -64,
+      "maximum": 320
+    },
+    "generation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "enum": ["natural_regions_v1", "hand_authored_v1"],
+          "default": "natural_regions_v1"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 1
+        },
+        "border_noise": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.35
+        },
+        "coast_complexity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.55
+        }
+      }
+    },
+    "provinces": {
+      "type": "array",
+      "minItems": 8,
+      "items": { "$ref": "province.schema.json" }
+    },
+    "borders": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/border" }
+    },
+    "regions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/region" }
+    },
+    "straits": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/strait" }
+    },
+    "climate_zones": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/climate_zone" }
+    }
+  },
+  "$defs": {
+    "border": {
+      "type": "object",
+      "required": ["id", "a", "b", "kind", "points"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "a": { "$ref": "common.schema.json#/$defs/id" },
+        "b": { "$ref": "common.schema.json#/$defs/id" },
+        "kind": {
+          "enum": ["land", "river", "mountain", "coast", "strait", "artificial"],
+          "default": "land"
+        },
+        "points": {
+          "$ref": "common.schema.json#/$defs/polyline",
+          "description": "Polyligne ouverte partagée par les deux provinces ; le dernier point touche le contour voisin."
+        },
+        "length_blocks": {
+          "type": "number",
+          "minimum": 0
+        },
+        "natural_barrier": {
+          "type": "boolean",
+          "default": false
+        },
+        "crossing_cost": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1
+        }
+      }
+    },
+    "region": {
+      "type": "object",
+      "required": ["id", "name", "kind", "provinces"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "kind": {
+          "enum": ["continent", "subcontinent", "island", "archipelago", "peninsula", "basin", "highland"]
+        },
+        "provinces": { "$ref": "common.schema.json#/$defs/id_list" },
+        "climate": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,63}$"
+        },
+        "strategic_note": {
+          "$ref": "common.schema.json#/$defs/localized_text"
+        }
+      }
+    },
+    "strait": {
+      "type": "object",
+      "required": ["id", "name", "provinces", "width_blocks", "navigable"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "provinces": { "$ref": "common.schema.json#/$defs/id_list" },
+        "width_blocks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 32768
+        },
+        "navigable": { "type": "boolean" },
+        "chokepoint": { "type": "boolean", "default": false },
+        "blocked_by": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "climate_zone": {
+      "type": "object",
+      "required": ["id", "name", "temperature_range", "rainfall_range"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "temperature_range": { "$ref": "common.schema.json#/$defs/range" },
+        "rainfall_range": { "$ref": "common.schema.json#/$defs/range" },
+        "biomes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{2,63}$"
+          },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

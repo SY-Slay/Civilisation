@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "event_military_parade",
+  "name": "Grande parade de la Citadelle",
+  "description": "L'armée étale sa puissance mécanique et ses pièces balistiques sous les acclamations populaires.",
+  "kind": "military",
+  "weight": 1.0,
+  "cooldown_days": 120,
+  "max_fires": 4,
+  "trigger": {
+    "conditions": [],
+    "min_date": {
+      "year": 2026,
+      "month": 4,
+      "day": 1
+    },
+    "chance": 0.6
+  },
+  "choices": [
+    {
+      "id": "national_pride",
+      "text": "Saluer la détermination héroïque de la nation",
+      "effects": [],
+      "ai_weight": 0.9
+    },
+    {
+      "id": "austere_focus",
+      "text": "Rediriger les fonds du défilé vers l'entraînement",
+      "effects": [],
+      "ai_weight": 0.1
+    }
+  ],
+  "severity": 10.0,
+  "tags": [
+    "military",
+    "prestige"
+  ]
+}

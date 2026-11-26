@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "tech_rail_logistics",
+  "name": "Logistique ferroviaire",
+  "description": "Réseau ferré moderne permettant le déplacement rapide des armées et le ravitaillement.",
+  "era": 2,
+  "category": "economy",
+  "cost": 400.0,
+  "research_time_days": 90,
+  "prerequisites": [],
+  "effects": [],
+  "unlocks": {
+    "units": [],
+    "missiles": [],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 1.2,
+  "tags": [
+    "logistics"
+  ]
+}

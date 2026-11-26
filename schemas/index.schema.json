@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/index.schema.json",
+  "title": "Civilisations — index de contenu",
+  "description": "Fichier d'index d'un registre de données. L'ordre des entrées est l'ordre de chargement ; chaque chemin est relatif à la racine du pack et validé avant lecture.",
+  "type": "object",
+  "required": ["schema_version", "kind", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/schema_version" },
+    "kind": {
+      "enum": [
+        "nations",
+        "provinces",
+        "cultures",
+        "religions",
+        "ideologies",
+        "governments",
+        "resources",
+        "technologies",
+        "units",
+        "missiles",
+        "events",
+        "names",
+        "localization",
+        "scenarios"
+      ]
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_/.-]*\\.(json|toml)$",
+        "minLength": 1,
+        "maxLength": 240
+      },
+      "uniqueItems": true
+    },
+    "description": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    }
+  }
+}

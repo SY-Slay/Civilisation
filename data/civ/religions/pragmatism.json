@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "pragmatism",
+  "name": "Communion des Flots",
+  "description": "Croyance côtière pragmatique célébrant les vents favorables et l'harmonie des contrats.",
+  "family": "maritime_creed",
+  "tenets": [
+    "fluidité des échanges",
+    "respect absolu des pactes",
+    "prosperité partagée"
+  ],
+  "tolerance": 85.0,
+  "holy_sites": [
+    "prov_varenne_port"
+  ],
+  "clergy_title": "Maître de la Marée",
+  "modifiers": [],
+  "tags": [
+    "mercantile",
+    "coastal"
+  ]
+}

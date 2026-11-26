@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "rare_earths",
+  "name": "Minéraux rares",
+  "description": "Éléments indispensables à l'électronique de pointe, aux radars et au guidage balistique.",
+  "category": "rare",
+  "unit": "unit",
+  "base_value": 250.0,
+  "strategic": true,
+  "modifiers": [],
+  "tags": [
+    "hightech",
+    "strategic"
+  ]
+}

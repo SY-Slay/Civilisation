@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "tech_rail_logistics",
+  "name": "Logistique ferroviaire",
+  "description": "Am?liore le ravitaillement des arm?es.",
+  "era": 3,
+  "category": "economy",
+  "cost": 500.0,
+  "research_time_days": 120,
+  "prerequisites": [],
+  "effects": [],
+  "unlocks": {
+    "units": [],
+    "missiles": [],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 1.0,
+  "tags": [
+    "fixture"
+  ]
+}

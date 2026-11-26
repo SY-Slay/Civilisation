@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "id": "civ",
+  "version": "0.1.0",
+  "game": "26.3",
+  "horizon": "9f42064c11efe7ef3e5ed2baad7ddc2a3b36eea0",
+  "name": "Civilisations — Arc des Frontières",
+  "description": "Pack de données officiel pour Civilisations avec le scénario 'Arc des Frontières'.",
+  "authors": [
+    "L'Équipe Civilisations"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "content": {
+    "config": "config.toml",
+    "scenarios": [
+      "scenarios/arc_des_frontieres.json"
+    ],
+    "nations": [
+      "nations/ardenne.json",
+      "nations/kesh.json",
+      "nations/varenne.json",
+      "nations/orlune.json"
+    ],
+    "provinces": [
+      "provinces/prov_ardenne_est.json",
+      "provinces/prov_ardenne_nord.json",
+      "provinces/prov_ardenne_sud.json",
+      "provinces/prov_ardenne_val.json",
+      "provinces/prov_kesh_citadelle.json",
+      "provinces/prov_kesh_collines.json",
+      "provinces/prov_kesh_marche.json",
+      "provinces/prov_kesh_steppe.json",
+      "provinces/prov_orlune_pics.json",
+      "provinces/prov_orlune_sud.json",
+      "provinces/prov_orlune_temple.json",
+      "provinces/prov_orlune_vallee.json",
+      "provinces/prov_varenne_marais.json",
+      "provinces/prov_varenne_plaine.json",
+      "provinces/prov_varenne_port.json",
+      "provinces/prov_varenne_rive.json"
+    ],
+    "cultures": [
+      "cultures/ardennic.json",
+      "cultures/keshi.json",
+      "cultures/varennois.json",
+      "cultures/orlunian.json"
+    ],
+    "religions": [
+      "religions/rationalism.json",
+      "religions/martial_order.json",
+      "religions/pragmatism.json",
+      "religions/mysticism.json"
+    ],
+    "ideologies": [
+      "ideologies/civic_republicanism.json",
+      "ideologies/militarist_autocracy.json",
+      "ideologies/commercial_oligarchy.json",
+      "ideologies/devotional_theocracy.json"
+    ],
+    "governments": [
+      "governments/republic.json",
+      "governments/autocracy.json",
+      "governments/oligarchy.json",
+      "governments/theocracy.json"
+    ],
+    "resources": [
+      "resources/iron_ore.json",
+      "resources/coal.json",
+      "resources/grain.json",
+      "resources/oil.json",
+      "resources/rare_earths.json"
+    ],
+    "technologies": [
+      "technologies/tech_rail_logistics.json",
+      "technologies/tech_steel_metallurgy.json",
+      "technologies/tech_radio_communications.json",
+      "technologies/tech_combined_arms.json",
+      "technologies/tech_radar_early_warning.json",
+      "technologies/tech_ballistic_propulsion.json"
+    ],
+    "units": [
+      "units/unit_line_infantry.json",
+      "units/unit_mechanized_guard.json",
+      "units/unit_heavy_armor.json",
+      "units/unit_artillery_battery.json",
+      "units/unit_missile_corps.json"
+    ],
+    "missiles": [
+      "missiles/missile_short_range.json",
+      "missiles/missile_cruise.json",
+      "missiles/missile_strategic_ballistic.json"
+    ],
+    "events": [
+      "events/event_border_skirmish.json",
+      "events/event_resource_boom.json",
+      "events/event_trade_delegation.json",
+      "events/event_religious_schism.json",
+      "events/event_military_parade.json"
+    ],
+    "names": [
+      "names/names_ardennic.json",
+      "names/names_keshi.json",
+      "names/names_varennois.json",
+      "names/names_orlunian.json"
+    ],
+    "localization": [
+      "localization/fr_fr.json",
+      "localization/en_us.json"
+    ]
+  },
+  "dependencies": [],
+  "load_after": []
+}

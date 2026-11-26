@@ -1,0 +1,118 @@
+{
+  "id": "prov_varenne_rive",
+  "name": "Rive Marchande",
+  "polygon": [
+    [
+      238.0,
+      800.0
+    ],
+    [
+      227.4,
+      863.5
+    ],
+    [
+      256.2,
+      915.8
+    ],
+    [
+      237.4,
+      975.3
+    ],
+    [
+      250.0,
+      1024.0
+    ],
+    [
+      385.0,
+      1024.0
+    ],
+    [
+      520.0,
+      1024.0
+    ],
+    [
+      534.8,
+      962.7
+    ],
+    [
+      518.6,
+      887.7
+    ],
+    [
+      549.8,
+      822.0
+    ],
+    [
+      542.0,
+      742.0
+    ],
+    [
+      473.2,
+      744.9
+    ],
+    [
+      398.3,
+      781.6
+    ],
+    [
+      320.5,
+      770.0
+    ]
+  ],
+  "center": [
+    389.37,
+    881.25
+  ],
+  "area_blocks": 74953,
+  "neighbors": [
+    "prov_orlune_vallee",
+    "prov_varenne_plaine",
+    "prov_varenne_port"
+  ],
+  "border_ids": [
+    "border_h_2_3_c1",
+    "border_v_r3_c0_1",
+    "border_v_r3_c1_2"
+  ],
+  "terrain": "plains",
+  "climate": {
+    "temperature_c": 16.0,
+    "rainfall_mm": 980.0,
+    "seasonality": 0.4
+  },
+  "population": {
+    "total": 200000,
+    "urban": 90000,
+    "rural": 110000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "varennois",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "pragmatism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "coal",
+      "abundance": 70.0,
+      "reserve": 200000.0
+    }
+  ],
+  "owner": "varenne",
+  "controller": "varenne",
+  "fortification": 2,
+  "unrest": 6.0,
+  "supply": 85.0,
+  "infrastructure": 80.0,
+  "strategic_value": 75.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

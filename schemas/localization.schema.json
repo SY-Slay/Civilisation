@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/localization.schema.json",
+  "title": "Civilisations — localisation",
+  "description": "Table de traduction française, anglaise ou autre. Les clés sont stables et référencées par les objets localized_text. Le français est la langue de référence du projet ; l'anglais sert de repli.",
+  "type": "object",
+  "required": ["schema_version", "language", "fallback_language", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(_[A-Z]{2})?$"
+    },
+    "fallback_language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(_[A-Z]{2})?$",
+      "default": "en_US"
+    },
+    "entries": {
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z0-9_.-]+$": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

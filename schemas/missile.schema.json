@@ -1,0 +1,256 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/missile.schema.json",
+  "title": "Civilisations — missiles",
+  "description": "Définition d'un type de missile ou instance en vol. Les effets visuels passent par le trait ExplosionEffects de civ-horizon ; le cœur ne connaît ni particules ni sons.",
+  "oneOf": [
+    { "$ref": "#/$defs/missile_type" },
+    { "$ref": "#/$defs/missile_instance" }
+  ],
+  "$defs": {
+    "missile_type": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "range_km",
+        "speed_kmh",
+        "accuracy_m",
+        "warhead",
+        "cost",
+        "build_time_days",
+        "defense_penetration"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "danger_tier": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5,
+          "default": 1,
+          "description": "Classification publique open-source du niveau de danger, de 1 a 5."
+        },
+        "kind": {
+          "enum": ["ballistic", "cruise", "hypersonic", "orbital", "drone", "rocket_artillery"]
+        },
+        "range_km": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 30000
+        },
+        "speed_kmh": {
+          "type": "number",
+          "minimum": 100,
+          "maximum": 40000
+        },
+        "flight_profile": {
+          "enum": ["low", "high", "ballistic", "orbital", "loitering"],
+          "default": "ballistic"
+        },
+        "accuracy_m": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100000
+        },
+        "warhead": {
+          "$ref": "#/$defs/warhead"
+        },
+        "cost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "build_time_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "max_stock": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 99
+        },
+        "defense_penetration": {
+          "$ref": "common.schema.json#/$defs/unit_interval"
+        },
+        "interception": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "base_chance": { "$ref": "common.schema.json#/$defs/unit_interval" },
+            "counter_types": {
+              "type": "array",
+              "items": { "$ref": "common.schema.json#/$defs/id" },
+              "uniqueItems": true
+            },
+            "terminal_maneuver": { "type": "boolean", "default": false }
+          }
+        },
+        "launch_platforms": {
+          "type": "array",
+          "items": {
+            "enum": ["silo", "mobile_launcher", "submarine", "ship", "aircraft", "space", "ground_battery"]
+          },
+          "uniqueItems": true
+        },
+        "explosion_effects": {
+          "$ref": "#/$defs/explosion_effects"
+        },
+        "tags": {
+          "$ref": "common.schema.json#/$defs/string_list"
+        }
+      }
+    },
+    "missile_instance": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "owner",
+        "launcher_province",
+        "target",
+        "launch_tick",
+        "arrival_tick",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "type": { "$ref": "common.schema.json#/$defs/id" },
+        "owner": { "$ref": "common.schema.json#/$defs/id" },
+        "launcher_province": { "$ref": "common.schema.json#/$defs/id" },
+        "target": {
+          "type": "object",
+          "required": ["kind", "province"],
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "enum": ["province", "city", "army", "infrastructure", "missile_site", "decoy"]
+            },
+            "province": { "$ref": "common.schema.json#/$defs/id" },
+            "position": { "$ref": "common.schema.json#/$defs/vec3" },
+            "entity_id": {
+              "oneOf": [
+                { "$ref": "common.schema.json#/$defs/id" },
+                { "type": "null" }
+              ]
+            }
+          }
+        },
+        "launch_tick": { "$ref": "common.schema.json#/$defs/tick" },
+        "arrival_tick": { "$ref": "common.schema.json#/$defs/tick" },
+        "status": {
+          "enum": [
+            "preparing",
+            "fueled",
+            "launched",
+            "in_flight",
+            "terminal",
+            "intercepted",
+            "impact",
+            "failed",
+            "cancelled"
+          ]
+        },
+        "trajectory": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "points": {
+              "type": "array",
+              "items": { "$ref": "common.schema.json#/$defs/vec3" }
+            },
+            "apogee_km": { "type": "number", "minimum": 0 },
+            "terminal_speed_kmh": { "type": "number", "minimum": 0 }
+          }
+        },
+        "interceptors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["by", "tick", "chance", "result"],
+            "additionalProperties": false,
+            "properties": {
+              "by": { "$ref": "common.schema.json#/$defs/id" },
+              "tick": { "$ref": "common.schema.json#/$defs/tick" },
+              "chance": { "$ref": "common.schema.json#/$defs/unit_interval" },
+              "result": { "enum": ["hit", "miss", "partial", "unknown"] }
+            }
+          }
+        },
+        "damage_report": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "casualties": { "type": "integer", "minimum": 0 },
+            "infrastructure_damage": { "$ref": "common.schema.json#/$defs/percentage" },
+            "provinces_affected": { "$ref": "common.schema.json#/$defs/id_list" },
+            "escalation": { "$ref": "common.schema.json#/$defs/percentage" },
+            "notes": { "$ref": "common.schema.json#/$defs/localized_text" }
+          }
+        },
+        "detected_by": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        }
+      }
+    },
+    "warhead": {
+      "type": "object",
+      "required": ["kind", "blast_radius_blocks"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": ["conventional", "nuclear", "chemical", "emp", "incendiary", "decoy"]
+        },
+        "yield_kt": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0,
+          "description": "Kilotonnes équivalent TNT. 0 pour une charge conventionnelle."
+        },
+        "blast_radius_blocks": {
+          "type": "number",
+          "minimum": 0
+        },
+        "effects": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/effect" }
+        },
+        "fallout": {
+          "type": "boolean",
+          "default": false
+        },
+        "escalation_delta": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 0
+        }
+      }
+    },
+    "explosion_effects": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "particle": {
+          "type": "string",
+          "pattern": "^[a-z0-9_./:-]+$"
+        },
+        "sound": {
+          "type": "string",
+          "pattern": "^[a-z0-9_./:-]+$"
+        },
+        "flash_color": { "$ref": "common.schema.json#/$defs/color" },
+        "shake_radius": { "type": "number", "minimum": 0 },
+        "smoke_ticks": { "type": "integer", "minimum": 0 },
+        "orbital_laser_hook": {
+          "type": "boolean",
+          "default": false,
+          "description": "Si vrai et si Orbital Laser est présent, civ-horizon peut déclencher son effet de laser. Sinon, le rendu de repli est utilisé."
+        }
+      }
+    }
+  }
+}

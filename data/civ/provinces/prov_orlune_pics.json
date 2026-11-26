@@ -1,0 +1,118 @@
+{
+  "id": "prov_orlune_pics",
+  "name": "Pics Célestes",
+  "polygon": [
+    [
+      794.0,
+      494.0
+    ],
+    [
+      793.8,
+      578.1
+    ],
+    [
+      756.2,
+      643.8
+    ],
+    [
+      764.9,
+      723.4
+    ],
+    [
+      744.0,
+      786.0
+    ],
+    [
+      821.1,
+      764.8
+    ],
+    [
+      890.7,
+      784.4
+    ],
+    [
+      961.5,
+      755.8
+    ],
+    [
+      1024.0,
+      760.0
+    ],
+    [
+      1024.0,
+      640.0
+    ],
+    [
+      1024.0,
+      520.0
+    ],
+    [
+      972.3,
+      524.2
+    ],
+    [
+      914.9,
+      495.6
+    ],
+    [
+      856.8,
+      515.2
+    ]
+  ],
+  "center": [
+    881.59,
+    641.81
+  ],
+  "area_blocks": 65369,
+  "neighbors": [
+    "prov_kesh_collines",
+    "prov_orlune_sud",
+    "prov_orlune_temple"
+  ],
+  "border_ids": [
+    "border_h_1_2_c3",
+    "border_h_2_3_c3",
+    "border_v_r2_c2_3"
+  ],
+  "terrain": "mountains",
+  "climate": {
+    "temperature_c": 7.0,
+    "rainfall_mm": 850.0,
+    "seasonality": 0.62
+  },
+  "population": {
+    "total": 120000,
+    "urban": 30000,
+    "rural": 90000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "orlunian",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "mysticism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "rare_earths",
+      "abundance": 90.0,
+      "reserve": 220000.0
+    }
+  ],
+  "owner": "orlune",
+  "controller": "orlune",
+  "fortification": 4,
+  "unrest": 5.0,
+  "supply": 65.0,
+  "infrastructure": 60.0,
+  "strategic_value": 85.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "id": "names_ardennic",
+  "culture": "ardennic",
+  "language": "fr_FR",
+  "nation_names": [
+    "Ardenne",
+    "Valdorie",
+    "Kesh"
+  ],
+  "nation_adjectives": [
+    "ardennois",
+    "valdorien",
+    "keshi"
+  ],
+  "city_names": [
+    "Mireval",
+    "Hautpont",
+    "Cendrelune"
+  ],
+  "region_names": [
+    "Ardennie",
+    "Valdorie"
+  ],
+  "leader_names": {
+    "given": [
+      "Mira",
+      "Tomas",
+      "Nael"
+    ],
+    "family": [
+      "Valen",
+      "Ors",
+      "Drev"
+    ],
+    "titles": [
+      "Pr?sidente",
+      "Consul"
+    ],
+    "epithets": [
+      "le Prudent",
+      "la Ferme"
+    ]
+  },
+  "army_names": [
+    "1re Arm?e",
+    "Garde du Nord"
+  ],
+  "operation_names": [
+    "Aube Claire",
+    "Rempart"
+  ],
+  "missile_names": [
+    "Lance-1",
+    "Vigie"
+  ],
+  "ship_names": [
+    "?toile",
+    "Brume"
+  ],
+  "patterns": {
+    "nation": "{root}{suffix}",
+    "city": "{root}{suffix}",
+    "leader": "{given} {family}",
+    "army": "{ordinal} {root}"
+  }
+}

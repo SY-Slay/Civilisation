@@ -1,0 +1,118 @@
+{
+  "id": "prov_orlune_vallee",
+  "name": "Vallée des Moines",
+  "polygon": [
+    [
+      542.0,
+      742.0
+    ],
+    [
+      549.8,
+      822.0
+    ],
+    [
+      518.6,
+      887.7
+    ],
+    [
+      534.8,
+      962.7
+    ],
+    [
+      520.0,
+      1024.0
+    ],
+    [
+      640.0,
+      1024.0
+    ],
+    [
+      760.0,
+      1024.0
+    ],
+    [
+      746.5,
+      972.3
+    ],
+    [
+      764.3,
+      909.0
+    ],
+    [
+      734.5,
+      853.6
+    ],
+    [
+      744.0,
+      786.0
+    ],
+    [
+      697.4,
+      786.1
+    ],
+    [
+      649.6,
+      753.2
+    ],
+    [
+      595.6,
+      768.0
+    ]
+  ],
+  "center": [
+    642.65,
+    879.61
+  ],
+  "area_blocks": 55309,
+  "neighbors": [
+    "prov_orlune_sud",
+    "prov_orlune_temple",
+    "prov_varenne_rive"
+  ],
+  "border_ids": [
+    "border_h_2_3_c2",
+    "border_v_r3_c1_2",
+    "border_v_r3_c2_3"
+  ],
+  "terrain": "hills",
+  "climate": {
+    "temperature_c": 14.0,
+    "rainfall_mm": 720.0,
+    "seasonality": 0.5
+  },
+  "population": {
+    "total": 180000,
+    "urban": 60000,
+    "rural": 120000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "orlunian",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "mysticism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "grain",
+      "abundance": 80.0,
+      "reserve": 220000.0
+    }
+  ],
+  "owner": "orlune",
+  "controller": "orlune",
+  "fortification": 2,
+  "unrest": 5.0,
+  "supply": 80.0,
+  "infrastructure": 70.0,
+  "strategic_value": 70.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

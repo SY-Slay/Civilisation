@@ -1,0 +1,118 @@
+{
+  "id": "prov_ardenne_val",
+  "name": "Val d'Ardenne",
+  "polygon": [
+    [
+      0.0,
+      260.0
+    ],
+    [
+      0.0,
+      385.0
+    ],
+    [
+      0.0,
+      510.0
+    ],
+    [
+      80.1,
+      489.9
+    ],
+    [
+      151.7,
+      510.5
+    ],
+    [
+      225.4,
+      482.9
+    ],
+    [
+      290.0,
+      488.0
+    ],
+    [
+      267.6,
+      444.9
+    ],
+    [
+      273.7,
+      384.9
+    ],
+    [
+      234.8,
+      342.0
+    ],
+    [
+      232.0,
+      280.0
+    ],
+    [
+      180.1,
+      285.6
+    ],
+    [
+      121.7,
+      258.4
+    ],
+    [
+      63.8,
+      279.5
+    ]
+  ],
+  "center": [
+    151.49,
+    385.83
+  ],
+  "area_blocks": 57556,
+  "neighbors": [
+    "prov_ardenne_nord",
+    "prov_ardenne_sud",
+    "prov_varenne_marais"
+  ],
+  "border_ids": [
+    "border_h_0_1_c0",
+    "border_h_1_2_c0",
+    "border_v_r1_c0_1"
+  ],
+  "terrain": "plains",
+  "climate": {
+    "temperature_c": 15.0,
+    "rainfall_mm": 800.0,
+    "seasonality": 0.4
+  },
+  "population": {
+    "total": 320000,
+    "urban": 180000,
+    "rural": 140000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "ardennic",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "rationalism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "grain",
+      "abundance": 90.0,
+      "reserve": 350000.0
+    }
+  ],
+  "owner": "ardenne",
+  "controller": "ardenne",
+  "fortification": 2,
+  "unrest": 4.0,
+  "supply": 95.0,
+  "infrastructure": 85.0,
+  "strategic_value": 90.0,
+  "victory_points": 10.0,
+  "claims": [],
+  "capital_of": "ardenne",
+  "tags": [
+    "scenario_province"
+  ]
+}

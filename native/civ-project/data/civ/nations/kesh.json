@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "id": "kesh",
+  "name": "Autocratie de Kesh",
+  "adjective": "keshi",
+  "short_name": "Kesh",
+  "color": "#E8590C",
+  "flag": {
+    "palette": [
+      "#E8590C",
+      "#212529"
+    ],
+    "pattern": "cross",
+    "motto": "Par le Fer et le Serment"
+  },
+  "capital": "prov_kesh_citadelle",
+  "provinces": [
+    "prov_kesh_citadelle",
+    "prov_kesh_collines",
+    "prov_kesh_marche",
+    "prov_kesh_steppe"
+  ],
+  "government": "autocracy",
+  "ideology": "militarist_autocracy",
+  "culture": "keshi",
+  "religion": "martial_order",
+  "language": "fr_FR",
+  "leader": {
+    "name": "Goran Thorne",
+    "title": "Généralissime",
+    "age": 52,
+    "traits": [
+      "intransigeant",
+      "stratège",
+      "audacieux"
+    ]
+  },
+  "population": {
+    "total": 800000,
+    "workforce": 410000,
+    "conscription_pool": 120000,
+    "growth_rate": 0.004,
+    "urbanization": 0.43
+  },
+  "economy": {
+    "gdp": 1150000000.0,
+    "treasury": 180000000.0,
+    "tax_rate": 0.28,
+    "inflation": 0.04,
+    "unemployment": 0.06,
+    "trade_balance": -10000000.0,
+    "debt": 120000000.0,
+    "sectors": {
+      "agriculture": 0.12,
+      "industry": 0.5,
+      "services": 0.28,
+      "technology": 0.1
+    },
+    "resources": {}
+  },
+  "military": {
+    "manpower": 45000,
+    "army_size": 35000,
+    "readiness": 85.0,
+    "morale": 80.0,
+    "doctrine": "attrition",
+    "missile_stockpile": {
+      "missile_short_range": 6
+    }
+  },
+  "stability": 68.0,
+  "legitimacy": 70.0,
+  "prestige": 55.0,
+  "war_exhaustion": 0.0,
+  "unrest": 9.0,
+  "technology": {
+    "era": 2,
+    "researched": [
+      "tech_steel_metallurgy"
+    ],
+    "research_points": 80.0
+  },
+  "ai_profile": {
+    "archetype": "warlord",
+    "aggression": 0.85,
+    "caution": 0.3,
+    "honor": 0.4,
+    "greed": 0.7,
+    "revanchism": 0.75,
+    "isolationism": 0.1,
+    "opportunism": 0.8,
+    "loyalty": 0.4,
+    "risk_tolerance": 0.8,
+    "patience": 0.4,
+    "war_threshold": 0.45,
+    "peace_threshold": 0.55,
+    "priorities": {
+      "economy": 0.5,
+      "military": 0.9,
+      "diplomacy": 0.3,
+      "expansion": 0.8,
+      "stability": 0.6,
+      "technology": 0.6
+    },
+    "red_lines": [
+      "capital_occupied"
+    ]
+  },
+  "claims": [],
+  "subjects": [],
+  "overlord": null,
+  "allies": [],
+  "wars": [],
+  "revolutions": [],
+  "armies": [],
+  "missiles": [],
+  "is_playable": true,
+  "tags": [
+    "militarist"
+  ]
+}

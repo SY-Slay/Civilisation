@@ -1,0 +1,41 @@
+{
+  "id": "missile_strategic_ballistic",
+  "name": "Missile balistique stratégique lourd",
+  "description": "Vecteur à haute vélocité atteignant l'espace suborbital pour frapper les centres névralgiques.",
+  "kind": "ballistic",
+  "range_km": 3500.0,
+  "speed_kmh": 12000.0,
+  "flight_profile": "ballistic",
+  "accuracy_m": 50.0,
+  "warhead": {
+    "kind": "conventional",
+    "yield_kt": 0,
+    "blast_radius_blocks": 56,
+    "effects": [],
+    "fallout": false,
+    "escalation_delta": 5
+  },
+  "cost": 3500.0,
+  "build_time_days": 120,
+  "max_stock": 10,
+  "defense_penetration": 0.8,
+  "interception": {
+    "base_chance": 0.25,
+    "counter_types": [],
+    "terminal_maneuver": true
+  },
+  "launch_platforms": [
+    "silo"
+  ],
+  "explosion_effects": {
+    "particle": "civ:missile_impact",
+    "sound": "civ:missile_impact",
+    "flash_color": "#FF4411",
+    "shake_radius": 120,
+    "smoke_ticks": 360,
+    "orbital_laser_hook": false
+  },
+  "tags": [
+    "deterrence"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "orlunian",
+  "name": "Orlunien",
+  "adjective": "orlunien",
+  "description": "Culture contemplative et érudite des hautes vallées du sud-est, guidée par les rites astraux et la piété.",
+  "language": "fr_FR",
+  "family": "highland_monastic",
+  "values": [
+    "foi",
+    "connaissance",
+    "harmonie"
+  ],
+  "traditions": [
+    "veille des astres",
+    "jeûne du solstice"
+  ],
+  "name_pool": "names_orlunian",
+  "color": "#9C36B5",
+  "modifiers": [],
+  "tags": [
+    "theocratic",
+    "mountain"
+  ]
+}

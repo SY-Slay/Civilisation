@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "tech_ballistic_propulsion",
+  "name": "Propulsion balistique",
+  "description": "Moteurs-fusées à ergols stables ouvrant la voie aux frappes guidées de longue portée.",
+  "era": 4,
+  "category": "missile",
+  "cost": 1000.0,
+  "research_time_days": 240,
+  "prerequisites": [
+    "tech_radar_early_warning"
+  ],
+  "effects": [],
+  "unlocks": {
+    "units": [
+      "unit_missile_corps"
+    ],
+    "missiles": [
+      "missile_short_range",
+      "missile_cruise"
+    ],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 1.5,
+  "tags": [
+    "strategic"
+  ]
+}

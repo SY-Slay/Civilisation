@@ -1,0 +1,496 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/nation.schema.json",
+  "title": "Civilisations — nation",
+  "description": "État fictif jouable ou contrôlé par l'IA. Toutes les valeurs sont déterministes et sérialisables ; aucune nation ne référence un pays réel.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "adjective",
+    "color",
+    "flag",
+    "capital",
+    "provinces",
+    "government",
+    "ideology",
+    "culture",
+    "religion",
+    "leader",
+    "population",
+    "economy",
+    "military",
+    "stability",
+    "legitimacy",
+    "prestige",
+    "war_exhaustion",
+    "unrest",
+    "technology",
+    "ai_profile"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "name": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    },
+    "adjective": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    },
+    "short_name": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    },
+    "color": {
+      "$ref": "common.schema.json#/$defs/color"
+    },
+    "flag": {
+      "$ref": "#/$defs/flag"
+    },
+    "capital": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "provinces": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "government": {
+      "$ref": "common.schema.json#/$defs/id",
+      "description": "ID d'une définition de government.schema.json."
+    },
+    "ideology": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "culture": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "religion": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(_[A-Z]{2})?$"
+    },
+    "leader": {
+      "$ref": "#/$defs/leader"
+    },
+    "founded": {
+      "$ref": "common.schema.json#/$defs/game_date"
+    },
+    "population": {
+      "$ref": "#/$defs/population"
+    },
+    "economy": {
+      "$ref": "#/$defs/economy"
+    },
+    "military": {
+      "$ref": "#/$defs/military"
+    },
+    "stability": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "legitimacy": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "prestige": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "war_exhaustion": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "unrest": {
+      "$ref": "common.schema.json#/$defs/percentage"
+    },
+    "technology": {
+      "$ref": "#/$defs/technology_state"
+    },
+    "ai_profile": {
+      "$ref": "#/$defs/ai_profile"
+    },
+    "claims": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/claim" }
+    },
+    "subjects": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/subject" }
+    },
+    "overlord": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ]
+    },
+    "allies": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "wars": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "revolutions": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "armies": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "missiles": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "is_playable": {
+      "type": "boolean",
+      "default": true
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  },
+  "$defs": {
+    "flag": {
+      "type": "object",
+      "required": ["palette", "pattern"],
+      "additionalProperties": false,
+      "properties": {
+        "palette": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 5,
+          "items": { "$ref": "common.schema.json#/$defs/color" }
+        },
+        "pattern": {
+          "enum": [
+            "solid",
+            "horizontal_bands",
+            "vertical_bands",
+            "diagonal",
+            "cross",
+            "canton",
+            "chevron",
+            "circle",
+            "crescent",
+            "starfield",
+            "tribal",
+            "industrial"
+          ]
+        },
+        "emblem": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,63}$"
+        },
+        "motto": {
+          "$ref": "common.schema.json#/$defs/localized_text"
+        }
+      }
+    },
+    "leader": {
+      "type": "object",
+      "required": ["name", "title"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "title": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "age": {
+          "type": "integer",
+          "minimum": 18,
+          "maximum": 120
+        },
+        "since": { "$ref": "common.schema.json#/$defs/game_date" },
+        "traits": {
+          "$ref": "common.schema.json#/$defs/string_list"
+        },
+        "portrait": {
+          "type": "string",
+          "pattern": "^[a-z0-9_./-]+\\.png$"
+        }
+      }
+    },
+    "population": {
+      "type": "object",
+      "required": ["total", "workforce", "conscription_pool"],
+      "additionalProperties": false,
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "workforce": { "type": "integer", "minimum": 0 },
+        "conscription_pool": { "type": "integer", "minimum": 0 },
+        "growth_rate": {
+          "type": "number",
+          "minimum": -0.2,
+          "maximum": 0.2,
+          "default": 0.005
+        },
+        "urbanization": { "$ref": "common.schema.json#/$defs/unit_interval" }
+      }
+    },
+    "economy": {
+      "type": "object",
+      "required": ["gdp", "treasury", "tax_rate", "sectors"],
+      "additionalProperties": false,
+      "properties": {
+        "gdp": {
+          "type": "number",
+          "minimum": 0,
+          "description": "PIB fictif en unités monétaires du mod."
+        },
+        "treasury": {
+          "type": "number",
+          "minimum": 0
+        },
+        "purse": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        },
+        "tax_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.9,
+          "default": 0.25
+        },
+        "inflation": {
+          "type": "number",
+          "minimum": -0.5,
+          "maximum": 5,
+          "default": 0.03
+        },
+        "unemployment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.07
+        },
+        "trade_balance": {
+          "type": "number",
+          "default": 0
+        },
+        "debt": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        },
+        "sectors": {
+          "type": "object",
+          "required": ["agriculture", "industry", "services", "technology"],
+          "additionalProperties": false,
+          "properties": {
+            "agriculture": { "type": "number", "minimum": 0 },
+            "industry": { "type": "number", "minimum": 0 },
+            "services": { "type": "number", "minimum": 0 },
+            "technology": { "type": "number", "minimum": 0 }
+          }
+        },
+        "resources": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          },
+          "description": "Stockpiles par identifiant de ressource."
+        },
+        "sanctions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["by", "severity"],
+            "additionalProperties": false,
+            "properties": {
+              "by": { "$ref": "common.schema.json#/$defs/id" },
+              "severity": { "$ref": "common.schema.json#/$defs/unit_interval" },
+              "since": { "$ref": "common.schema.json#/$defs/game_date" }
+            }
+          }
+        }
+      }
+    },
+    "military": {
+      "type": "object",
+      "required": ["manpower", "army_size", "readiness", "morale", "doctrine"],
+      "additionalProperties": false,
+      "properties": {
+        "manpower": { "type": "integer", "minimum": 0 },
+        "army_size": { "type": "integer", "minimum": 0 },
+        "navy_size": { "type": "integer", "minimum": 0, "default": 0 },
+        "airforce_size": { "type": "integer", "minimum": 0, "default": 0 },
+        "readiness": { "$ref": "common.schema.json#/$defs/percentage" },
+        "morale": { "$ref": "common.schema.json#/$defs/percentage" },
+        "doctrine": {
+          "enum": [
+            "defensive",
+            "mobile",
+            "attrition",
+            "blitz",
+            "naval",
+            "aerospace",
+            "asymmetric",
+            "conscription"
+          ]
+        },
+        "nuclear_capable": { "type": "boolean", "default": false },
+        "missile_stockpile": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "description": "Nombre de missiles par identifiant de type."
+        }
+      }
+    },
+    "technology_state": {
+      "type": "object",
+      "required": ["era", "researched"],
+      "additionalProperties": false,
+      "properties": {
+        "era": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12,
+          "default": 1
+        },
+        "researched": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/id" },
+          "uniqueItems": true
+        },
+        "researching": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "research_points": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        },
+        "research_speed": {
+          "type": "number",
+          "minimum": 0,
+          "default": 1
+        },
+        "domains": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/research_domain_progress" }
+        }
+      }
+    },
+    "ai_profile": {
+      "type": "object",
+      "required": [
+        "archetype",
+        "aggression",
+        "caution",
+        "honor",
+        "greed",
+        "revanchism",
+        "isolationism",
+        "opportunism",
+        "loyalty",
+        "risk_tolerance",
+        "patience"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "archetype": {
+          "enum": [
+            "merchant",
+            "fortress",
+            "warlord",
+            "ideologue",
+            "opportunist",
+            "isolate",
+            "hegemon",
+            "revolutionary",
+            "caretaker"
+          ]
+        },
+        "aggression": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "caution": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "honor": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "greed": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "revanchism": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "isolationism": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "opportunism": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "loyalty": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "risk_tolerance": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "patience": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "war_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.6
+        },
+        "peace_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.3
+        },
+        "priorities": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "description": "Poids relatifs : economy, military, diplomacy, expansion, stability, technology."
+        },
+        "red_lines": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "capital_occupied",
+              "core_occupied",
+              "ally_attacked",
+              "nuclear_first_use",
+              "border_incursion",
+              "trade_embargo",
+              "regime_change_attempt",
+              "vassal_attacked"
+            ]
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "claim": {
+      "type": "object",
+      "required": ["province", "kind", "priority"],
+      "additionalProperties": false,
+      "properties": {
+        "province": { "$ref": "common.schema.json#/$defs/id" },
+        "kind": {
+          "enum": ["historical", "ethnic", "strategic", "economic", "religious", "revanchist"]
+        },
+        "priority": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "since": { "$ref": "common.schema.json#/$defs/game_date" }
+      }
+    },
+    "research_domain_progress": {
+      "type": "object",
+      "required": ["domain", "level", "points"],
+      "additionalProperties": false,
+      "properties": {
+        "domain": {
+          "enum": ["military", "economy", "diplomacy", "infrastructure", "technology"]
+        },
+        "level": { "type": "integer", "minimum": 0 },
+        "points": { "type": "number", "minimum": 0 }
+      }
+    },
+    "subject": {
+      "type": "object",
+      "required": ["nation", "kind", "autonomy"],
+      "additionalProperties": false,
+      "properties": {
+        "nation": { "$ref": "common.schema.json#/$defs/id" },
+        "kind": {
+          "enum": ["vassal", "protectorate", "puppet", "dominion", "client", "occupied"]
+        },
+        "autonomy": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "since": { "$ref": "common.schema.json#/$defs/game_date" }
+      }
+    }
+  }
+}

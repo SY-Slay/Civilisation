@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/revolution.schema.json",
+  "title": "Civilisations — révolution",
+  "description": "Crise politique interne pouvant aller de l'agitation à la guerre civile. Les factions, leur soutien et les interventions étrangères sont explicites afin que l'IA puisse raisonner sans recourir à un modèle de langage.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "nation",
+    "start_date",
+    "status",
+    "causes",
+    "factions",
+    "support_by_province",
+    "controlled_provinces",
+    "government_response",
+    "casualties"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "nation": { "$ref": "common.schema.json#/$defs/id" },
+    "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+    "end_date": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/game_date" },
+        { "type": "null" }
+      ]
+    },
+    "status": {
+      "enum": [
+        "simmering",
+        "agitation",
+        "uprising",
+        "civil_war",
+        "negotiated",
+        "reform",
+        "crushed",
+        "victory",
+        "frozen"
+      ]
+    },
+    "causes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "economic_crisis",
+          "inequality",
+          "corruption",
+          "war_exhaustion",
+          "food_shortage",
+          "religious_tension",
+          "ethnic_tension",
+          "ideological_purge",
+          "failed_reform",
+          "foreign_subversion",
+          "succession_crisis",
+          "military_defeat"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "factions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/faction" }
+    },
+    "support_by_province": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/province_support" }
+    },
+    "controlled_provinces": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "government_response": {
+      "$ref": "#/$defs/government_response"
+    },
+    "casualties": {
+      "type": "integer",
+      "minimum": 0,
+      "default": 0
+    },
+    "foreign_interventions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["nation", "side", "kind", "amount"],
+        "additionalProperties": false,
+        "properties": {
+          "nation": { "$ref": "common.schema.json#/$defs/id" },
+          "side": { "enum": ["government", "revolution", "mediator"] },
+          "kind": {
+            "enum": ["funding", "weapons", "advisors", "volunteers", "sanctions", "recognition", "airstrikes"]
+          },
+          "amount": { "type": "number", "minimum": 0 },
+          "covert": { "type": "boolean", "default": false }
+        }
+      }
+    },
+    "outcome": {
+      "oneOf": [
+        { "$ref": "#/$defs/outcome" },
+        { "type": "null" }
+      ]
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  },
+  "$defs": {
+    "faction": {
+      "type": "object",
+      "required": ["id", "name", "ideology", "support", "demands", "militia_size", "legitimacy"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "ideology": { "$ref": "common.schema.json#/$defs/id" },
+        "support": { "$ref": "common.schema.json#/$defs/percentage" },
+        "demands": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "enum": [
+              "free_elections",
+              "land_reform",
+              "independence",
+              "autonomy",
+              "regime_change",
+              "religious_law",
+              "secularization",
+              "workers_council",
+              "military_reform",
+              "peace",
+              "reparations"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "leader": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "militia_size": { "type": "integer", "minimum": 0 },
+        "legitimacy": { "$ref": "common.schema.json#/$defs/percentage" },
+        "foreign_support": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nation", "kind", "amount"],
+            "additionalProperties": false,
+            "properties": {
+              "nation": { "$ref": "common.schema.json#/$defs/id" },
+              "kind": { "enum": ["funding", "weapons", "training", "safe_haven", "diplomatic"] },
+              "amount": { "type": "number", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "province_support": {
+      "type": "object",
+      "required": ["province", "support", "control"],
+      "additionalProperties": false,
+      "properties": {
+        "province": { "$ref": "common.schema.json#/$defs/id" },
+        "support": { "$ref": "common.schema.json#/$defs/percentage" },
+        "control": {
+          "enum": ["government", "contested", "revolution", "local_militia", "anarchy"]
+        }
+      }
+    },
+    "government_response": {
+      "type": "object",
+      "required": ["strategy", "intensity"],
+      "additionalProperties": false,
+      "properties": {
+        "strategy": {
+          "enum": ["negotiate", "reform", "suppress", "martial_law", "concede", "divide_and_rule"]
+        },
+        "intensity": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "started_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "offered_terms": {
+          "type": "array",
+          "items": { "$ref": "diplomacy.schema.json#/$defs/term" }
+        }
+      }
+    },
+    "outcome": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": ["status_quo", "reform", "new_government", "independence", "autonomy", "partition", "crushed"]
+        },
+        "new_government": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "new_ideology": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "terms": {
+          "type": "array",
+          "items": { "$ref": "diplomacy.schema.json#/$defs/term" }
+        },
+        "recognized_by": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        }
+      }
+    }
+  }
+}

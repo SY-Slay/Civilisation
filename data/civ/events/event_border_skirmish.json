@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "event_border_skirmish",
+  "name": "Incident de démarcation frontalière",
+  "description": "Une escouade armée a franchi les bornes de délimitation dans un secteur boisé contesté.",
+  "kind": "diplomatic",
+  "weight": 1.2,
+  "cooldown_days": 60,
+  "max_fires": 5,
+  "trigger": {
+    "conditions": [],
+    "min_date": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "chance": 0.8
+  },
+  "choices": [
+    {
+      "id": "protest_diplomatically",
+      "text": "Envoyer une note de protestation solennelle",
+      "effects": [],
+      "ai_weight": 0.7
+    },
+    {
+      "id": "reinforce_border",
+      "text": "Dépêcher des renforts et fortifier la ligne",
+      "effects": [],
+      "ai_weight": 0.3
+    }
+  ],
+  "severity": 25.0,
+  "tags": [
+    "border",
+    "crisis"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "varennois",
+  "name": "Varennois",
+  "adjective": "varennois",
+  "description": "Culture maritime et commerçante des estuaires du sud-ouest, axée sur les comptoirs et la diplomatie contractuelle.",
+  "language": "fr_FR",
+  "family": "coastal_league",
+  "values": [
+    "commerce",
+    "pragmatisme",
+    "prospérité"
+  ],
+  "traditions": [
+    "foire maritime",
+    "charte des guildes"
+  ],
+  "name_pool": "names_varennois",
+  "color": "#12B886",
+  "modifiers": [],
+  "tags": [
+    "mercantile",
+    "coastal"
+  ]
+}

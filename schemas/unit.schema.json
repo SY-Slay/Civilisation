@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/unit.schema.json",
+  "title": "Civilisations — type d'unité",
+  "description": "Modèle de donnée pour une unité militaire. Les valeurs sont abstraites et équilibrées pour une simulation géopolitique, pas pour reproduire un jeu de guerre tactique.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "category",
+    "era",
+    "cost",
+    "upkeep",
+    "manpower",
+    "attack",
+    "defense",
+    "mobility",
+    "morale",
+    "training_time_days"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "category": {
+      "enum": [
+        "infantry",
+        "mechanized",
+        "armor",
+        "artillery",
+        "air_defense",
+        "aircraft",
+        "naval",
+        "submarine",
+        "missile",
+        "special_forces",
+        "militia"
+      ]
+    },
+    "era": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12
+    },
+    "cost": { "type": "number", "minimum": 0 },
+    "upkeep": { "type": "number", "minimum": 0 },
+    "manpower": { "type": "integer", "minimum": 0 },
+    "attack": { "$ref": "common.schema.json#/$defs/percentage" },
+    "defense": { "$ref": "common.schema.json#/$defs/percentage" },
+    "mobility": { "$ref": "common.schema.json#/$defs/percentage" },
+    "range": {
+      "type": "number",
+      "minimum": 0,
+      "default": 0
+    },
+    "morale": { "$ref": "common.schema.json#/$defs/percentage" },
+    "training_time_days": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "prerequisites": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "counters": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "weak_against": {
+      "$ref": "common.schema.json#/$defs/id_list"
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    }
+  }
+}

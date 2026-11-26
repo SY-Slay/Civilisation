@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "id": "names_ardennic",
+  "culture": "ardennic",
+  "language": "fr_FR",
+  "nation_names": [
+    "Ardenne",
+    "Valdorie",
+    "Montclaire",
+    "Rive-Haute"
+  ],
+  "nation_adjectives": [
+    "ardennois",
+    "valdorien",
+    "montclairien",
+    "rivois"
+  ],
+  "city_names": [
+    "Mireval",
+    "Hautpont",
+    "Belvédère",
+    "Brumeval",
+    "Clairefont",
+    "Montagne-Bleue"
+  ],
+  "region_names": [
+    "Bassin de la Brume",
+    "Haute-Ardenne",
+    "Plateau des Vergers"
+  ],
+  "leader_names": {
+    "given": [
+      "Mira",
+      "Tomas",
+      "Nael",
+      "Élise",
+      "Julien",
+      "Clara"
+    ],
+    "family": [
+      "Valen",
+      "Ors",
+      "Drev",
+      "Sorel",
+      "Castel",
+      "Mercier"
+    ],
+    "titles": [
+      "Présidente",
+      "Président",
+      "Consul",
+      "Chancelier"
+    ],
+    "epithets": [
+      "le Prudent",
+      "la Juste",
+      "le Bâtisseur",
+      "la Ferme"
+    ]
+  },
+  "army_names": [
+    "1re Armée du Val",
+    "Garde Nationale",
+    "Brigade de l'Aube"
+  ],
+  "operation_names": [
+    "Aube Claire",
+    "Bastion Serein",
+    "Vigilance"
+  ]
+}

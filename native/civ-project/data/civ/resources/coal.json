@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "coal",
+  "name": "Charbon minier",
+  "description": "Combustible fossile essentiel à la sidérurgie et à l'alimentation des centrales thermiques.",
+  "category": "energy",
+  "unit": "ton",
+  "base_value": 80.0,
+  "strategic": true,
+  "modifiers": [],
+  "tags": [
+    "energy",
+    "bulk"
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "technologies": [
+    {
+      "id": "tech_administration",
+      "name": "Administration moderne",
+      "description": "Rationalise la collecte fiscale et les services publics.",
+      "era": 1,
+      "category": "society",
+      "cost": 90.0,
+      "research_time_days": 180,
+      "prerequisites": [],
+      "effects": [
+        { "kind": "stability", "args": { "delta": 1.0 }, "delay_ticks": 0 }
+      ],
+      "repeatable": false,
+      "max_level": 1,
+      "ai_weight": 1.4,
+      "tags": ["institution"]
+    },
+    {
+      "id": "tech_logistics",
+      "name": "Logistique avancée",
+      "description": "Améliore le ravitaillement des armées.",
+      "era": 1,
+      "category": "military",
+      "cost": 120.0,
+      "research_time_days": 240,
+      "prerequisites": ["tech_administration"],
+      "effects": [
+        { "kind": "army_size", "args": { "delta": 500 }, "delay_ticks": 0 }
+      ],
+      "repeatable": false,
+      "max_level": 1,
+      "ai_weight": 1.2,
+      "tags": ["military"]
+    },
+    {
+      "id": "tech_industry",
+      "name": "Industrie mécanisée",
+      "description": "Augmente la production et les recettes fiscales.",
+      "era": 1,
+      "category": "industry",
+      "cost": 150.0,
+      "research_time_days": 300,
+      "prerequisites": [],
+      "effects": [
+        { "kind": "gdp", "args": { "delta": 5000000.0 }, "delay_ticks": 0 }
+      ],
+      "repeatable": false,
+      "max_level": 1,
+      "ai_weight": 1.3,
+      "tags": ["economy"]
+    }
+  ],
+  "missiles": [
+    {
+      "id": "missile_short",
+      "name": "Éclair court",
+      "description": "Fusée d'artillerie guidée à courte portée.",
+      "kind": "rocket_artillery",
+      "range_km": 400.0,
+      "speed_kmh": 2400.0,
+      "flight_profile": "low",
+      "accuracy_m": 80.0,
+      "warhead": {
+        "kind": "conventional",
+        "yield_kt": 0.0,
+        "blast_radius_blocks": 18.0,
+        "effects": [],
+        "fallout": false,
+        "escalation_delta": 1.0
+      },
+      "cost": 120000.0,
+      "build_time_days": 30,
+      "max_stock": 12,
+      "defense_penetration": 0.15,
+      "interception": {
+        "base_chance": 0.35,
+        "counter_types": [],
+        "terminal_maneuver": false
+      },
+      "launch_platforms": [],
+      "tags": ["conventional"]
+    },
+    {
+      "id": "missile_cruise",
+      "name": "Vent long",
+      "description": "Missile de croisière furtif à portée stratégique.",
+      "kind": "cruise",
+      "range_km": 1800.0,
+      "speed_kmh": 900.0,
+      "flight_profile": "low",
+      "accuracy_m": 20.0,
+      "warhead": {
+        "kind": "conventional",
+        "yield_kt": 0.0,
+        "blast_radius_blocks": 35.0,
+        "effects": [],
+        "fallout": false,
+        "escalation_delta": 3.0
+      },
+      "cost": 500000.0,
+      "build_time_days": 90,
+      "max_stock": 6,
+      "defense_penetration": 0.45,
+      "interception": {
+        "base_chance": 0.25,
+        "counter_types": [],
+        "terminal_maneuver": true
+      },
+      "launch_platforms": [],
+      "tags": ["strategic"]
+    }
+  ],
+  "events": [
+    {
+      "id": "event_border_incident",
+      "name": "Incident frontalier",
+      "description": "Une patrouille franchit la frontière ; les états-majors s'alarment.",
+      "kind": "diplomatic",
+      "weight": 2.0,
+      "cooldown_days": 180,
+      "max_fires": 3,
+      "trigger": {
+        "conditions": [
+          { "kind": "border_tension_above", "args": { "value": 50.0 } }
+        ],
+        "chance": 0.15,
+        "requires_war": false,
+        "requires_revolution": false,
+        "nations": [],
+        "provinces": []
+      },
+      "choices": [
+        {
+          "id": "deescalate",
+          "text": "Ouvrir un canal de crise",
+          "requirements": [],
+          "effects": [
+            { "kind": "border_tension", "args": { "delta": -8.0 }, "delay_ticks": 0 }
+          ],
+          "ai_weight": 1.0,
+          "hidden": false
+        },
+        {
+          "id": "escalate",
+          "text": "Massacrer la patrouille adverse",
+          "requirements": [],
+          "effects": [
+            { "kind": "border_tension", "args": { "delta": 12.0 }, "delay_ticks": 0 },
+            { "kind": "unrest", "args": { "delta": 2.0 }, "delay_ticks": 0 }
+          ],
+          "ai_weight": 2.0,
+          "hidden": false
+        }
+      ],
+      "tags": ["frontier"]
+    },
+    {
+      "id": "event_harvest_failure",
+      "name": "Mauvaise récolte",
+      "description": "La production agricole s'effondre dans plusieurs provinces.",
+      "kind": "economic",
+      "weight": 1.0,
+      "cooldown_days": 240,
+      "max_fires": 2,
+      "trigger": {
+        "conditions": [
+          { "kind": "stability_below", "args": { "value": 55.0 } }
+        ],
+        "chance": 0.08,
+        "requires_war": false,
+        "requires_revolution": false,
+        "nations": [],
+        "provinces": []
+      },
+      "choices": [
+        {
+          "id": "import",
+          "text": "Importer des céréales",
+          "requirements": [],
+          "effects": [
+            { "kind": "treasury", "args": { "delta": -500000.0 }, "delay_ticks": 0 },
+            { "kind": "unrest", "args": { "delta": -2.0 }, "delay_ticks": 0 }
+          ],
+          "ai_weight": 1.0,
+          "hidden": false
+        },
+        {
+          "id": "ration",
+          "text": "Rationner",
+          "requirements": [],
+          "effects": [
+            { "kind": "unrest", "args": { "delta": 5.0 }, "delay_ticks": 0 },
+            { "kind": "stability", "args": { "delta": -2.0 }, "delay_ticks": 0 }
+          ],
+          "ai_weight": 1.2,
+          "hidden": false
+        }
+      ],
+      "tags": ["food"]
+    },
+    {
+      "id": "event_war_weariness",
+      "name": "Lassitude de guerre",
+      "description": "Les familles réclament la fin des combats.",
+      "kind": "political",
+      "weight": 1.5,
+      "cooldown_days": 120,
+      "max_fires": 4,
+      "trigger": {
+        "conditions": [
+          { "kind": "war_exhaustion_above", "args": { "value": 35.0 } }
+        ],
+        "chance": 0.2,
+        "requires_war": true,
+        "requires_revolution": false,
+        "nations": [],
+        "provinces": []
+      },
+      "choices": [
+        {
+          "id": "negotiate",
+          "text": "Négocier une trêve",
+          "requirements": [],
+          "effects": [
+            { "kind": "war_exhaustion", "args": { "delta": -5.0 }, "delay_ticks": 0 },
+            { "kind": "stability", "args": { "delta": 2.0 }, "delay_ticks": 0 }
+          ],
+          "ai_weight": 1.5,
+          "hidden": false
+        },
+        {
+          "id": "rally",
+          "text": "Rallier la population",
+          "requirements": [],
+          "effects": [
+            { "kind": "stability", "args": { "delta": 4.0 }, "delay_ticks": 0 },
+            { "kind": "unrest", "args": { "delta": 3.0 }, "delay_ticks": 30 }
+          ],
+          "ai_weight": 0.8,
+          "hidden": false
+        }
+      ],
+      "tags": ["war"]
+    },
+    {
+      "id": "event_command_probe",
+      "name": "Sonde de commande",
+      "description": "Événement de test toujours disponible pour vérifier la résolution des choix.",
+      "kind": "political",
+      "weight": 0.1,
+      "cooldown_days": 30,
+      "max_fires": 1,
+      "trigger": {
+        "conditions": [],
+        "chance": 1.0,
+        "requires_war": false,
+        "requires_revolution": false,
+        "nations": [],
+        "provinces": []
+      },
+      "choices": [
+        {
+          "id": "accept",
+          "text": "Accepter",
+          "requirements": [],
+          "effects": [
+            { "kind": "stability", "args": { "delta": 1.0 }, "delay_ticks": 0 }
+          ],
+          "ai_weight": 1.0,
+          "hidden": false
+        },
+        {
+          "id": "refuse",
+          "text": "Refuser",
+          "requirements": [],
+          "effects": [
+            { "kind": "stability", "args": { "delta": -1.0 }, "delay_ticks": 2 }
+          ],
+          "ai_weight": 0.5,
+          "hidden": false
+        }
+      ],
+      "tags": ["test"]
+    }
+  ]
+}

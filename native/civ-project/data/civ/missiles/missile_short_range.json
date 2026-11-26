@@ -1,0 +1,41 @@
+{
+  "id": "missile_short_range",
+  "name": "Missile tactique d'artillerie",
+  "description": "Vecteur balistique sol-sol pour l'appui tactique au-delà de la ligne de front.",
+  "kind": "ballistic",
+  "range_km": 300.0,
+  "speed_kmh": 2800.0,
+  "flight_profile": "ballistic",
+  "accuracy_m": 100.0,
+  "warhead": {
+    "kind": "conventional",
+    "yield_kt": 0,
+    "blast_radius_blocks": 24,
+    "effects": [],
+    "fallout": false,
+    "escalation_delta": 0
+  },
+  "cost": 600.0,
+  "build_time_days": 20,
+  "max_stock": 30,
+  "defense_penetration": 0.25,
+  "interception": {
+    "base_chance": 0.45,
+    "counter_types": [],
+    "terminal_maneuver": false
+  },
+  "launch_platforms": [
+    "mobile_launcher"
+  ],
+  "explosion_effects": {
+    "particle": "civ:missile_impact",
+    "sound": "civ:missile_impact",
+    "flash_color": "#FFAA33",
+    "shake_radius": 64,
+    "smoke_ticks": 200,
+    "orbital_laser_hook": false
+  },
+  "tags": [
+    "tactical"
+  ]
+}

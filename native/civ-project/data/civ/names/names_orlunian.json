@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "id": "names_orlunian",
+  "culture": "orlunian",
+  "language": "fr_FR",
+  "nation_names": [
+    "Orlune",
+    "Sanctuaire Céleste",
+    "Thuléa",
+    "Astraea"
+  ],
+  "nation_adjectives": [
+    "orlunien",
+    "céleste",
+    "thuléen",
+    "astral"
+  ],
+  "city_names": [
+    "Orlune-Sanctuaire",
+    "Haut-Dôme",
+    "Pic-des-Astres",
+    "Temple-Solitaire",
+    "Étoile-du-Nord"
+  ],
+  "region_names": [
+    "Vallée Lumineuse",
+    "Massif Sacré",
+    "Gorges du Destin"
+  ],
+  "leader_names": {
+    "given": [
+      "Elysia",
+      "Theron",
+      "Selen",
+      "Cassian",
+      "Lyra",
+      "Vael"
+    ],
+    "family": [
+      "Solas",
+      "Astris",
+      "Aethel",
+      "Vane",
+      "Kaelen",
+      "Morr"
+    ],
+    "titles": [
+      "Archonte",
+      "Hiérophante",
+      "Grand Prélat",
+      "Gardienne"
+    ],
+    "epithets": [
+      "l'Éclairé",
+      "l'Immaculée",
+      "la Prophétesse",
+      "le Sage"
+    ]
+  },
+  "army_names": [
+    "Croisés du Voile",
+    "Garde Temple",
+    "Sentinelles d'Orlune"
+  ],
+  "operation_names": [
+    "Rayonnement",
+    "Aube Stellaire",
+    "Purification"
+  ]
+}

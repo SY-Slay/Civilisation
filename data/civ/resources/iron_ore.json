@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "iron_ore",
+  "name": "Minerai de fer",
+  "description": "Matière première indispensable pour l'industrie lourde, les rails et l'armement.",
+  "category": "metal",
+  "unit": "ton",
+  "base_value": 120.0,
+  "strategic": true,
+  "modifiers": [],
+  "tags": [
+    "industrial",
+    "strategic"
+  ]
+}

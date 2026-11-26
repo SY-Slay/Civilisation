@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "keshi",
+  "name": "Keshi",
+  "adjective": "keshi",
+  "description": "Culture martiale des steppes et forteresses de l'est, valorisant la discipline militaire et l'honneur du serment.",
+  "language": "fr_FR",
+  "family": "eastern_steppe",
+  "values": [
+    "discipline",
+    "force",
+    "devoir"
+  ],
+  "traditions": [
+    "serment d'armes",
+    "tournoi d'acier"
+  ],
+  "name_pool": "names_keshi",
+  "color": "#E8590C",
+  "modifiers": [],
+  "tags": [
+    "militarist",
+    "steppe"
+  ]
+}

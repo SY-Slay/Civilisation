@@ -1,0 +1,128 @@
+{
+  "id": "prov_kesh_citadelle",
+  "name": "Citadelle de Kesh",
+  "polygon": [
+    [
+      532.0,
+      230.0
+    ],
+    [
+      535.8,
+      318.4
+    ],
+    [
+      501.4,
+      389.8
+    ],
+    [
+      513.9,
+      473.0
+    ],
+    [
+      496.0,
+      540.0
+    ],
+    [
+      577.3,
+      513.3
+    ],
+    [
+      652.8,
+      527.9
+    ],
+    [
+      726.9,
+      494.2
+    ],
+    [
+      794.0,
+      494.0
+    ],
+    [
+      773.7,
+      450.5
+    ],
+    [
+      782.7,
+      391.5
+    ],
+    [
+      745.8,
+      347.4
+    ],
+    [
+      746.0,
+      286.0
+    ],
+    [
+      696.4,
+      283.4
+    ],
+    [
+      646.3,
+      247.5
+    ],
+    [
+      588.4,
+      259.2
+    ]
+  ],
+  "center": [
+    644.34,
+    390.38
+  ],
+  "area_blocks": 63080,
+  "neighbors": [
+    "prov_ardenne_sud",
+    "prov_kesh_collines",
+    "prov_kesh_marche",
+    "prov_orlune_temple"
+  ],
+  "border_ids": [
+    "border_h_0_1_c2",
+    "border_h_1_2_c2",
+    "border_v_r1_c1_2",
+    "border_v_r1_c2_3"
+  ],
+  "terrain": "hills",
+  "climate": {
+    "temperature_c": 12.0,
+    "rainfall_mm": 550.0,
+    "seasonality": 0.6
+  },
+  "population": {
+    "total": 350000,
+    "urban": 210000,
+    "rural": 140000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "keshi",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "martial_order",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "iron_ore",
+      "abundance": 90.0,
+      "reserve": 450000.0
+    }
+  ],
+  "owner": "kesh",
+  "controller": "kesh",
+  "fortification": 5,
+  "unrest": 8.0,
+  "supply": 90.0,
+  "infrastructure": 80.0,
+  "strategic_value": 95.0,
+  "victory_points": 10.0,
+  "claims": [],
+  "capital_of": "kesh",
+  "tags": [
+    "scenario_province"
+  ]
+}

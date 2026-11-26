@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "simulation": {
+    "ticks_per_day": 2400,
+    "ai_interval_ticks": 100,
+    "max_events_per_tick": 32,
+    "seed": 12345,
+    "start_date": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "autosave_days": 30,
+    "max_command_history": 4096
+  },
+  "world": {
+    "map_width": 4096,
+    "map_height": 4096,
+    "province_count": 64,
+    "sea_level": 62,
+    "border_style": "warped",
+    "border_noise": 0.35,
+    "coast_complexity": 0.55,
+    "min_province_area": 1024,
+    "max_province_neighbors": 12
+  },
+  "ai": {
+    "difficulty": "normal",
+    "max_war_fronts": 8,
+    "max_diplomacy_actions_per_tick": 8,
+    "max_armies_per_nation": 24,
+    "allow_ai_nukes": false,
+    "ai_reaction_delay_ticks": 200
+  },
+  "war": {
+    "max_active_wars": 64,
+    "battle_interval_ticks": 200,
+    "occupation_speed": 1.0,
+    "attrition_rate": 0.02,
+    "peace_offer_cooldown_days": 14,
+    "allow_forced_regime_change": true
+  },
+  "missiles": {
+    "max_in_flight": 128,
+    "flight_ticks_per_chunk": 20,
+    "interception_enabled": true,
+    "interception_chance_scale": 1.0,
+    "show_trajectory": true,
+    "cinematic_impact": true
+  },
+  "ui": {
+    "language": "fr_FR",
+    "map_mode": "political",
+    "cinematic_letterbox": true,
+    "show_hud": true,
+    "show_borders": true,
+    "border_thickness": 2,
+    "map_labels": "major",
+    "camera_smoothing": 0.2
+  },
+  "multiplayer": {
+    "mode": "solo",
+    "sync_interval_ticks": 20,
+    "allow_client_commands": true,
+    "max_players": 8,
+    "require_ready_check": true
+  },
+  "logging": {
+    "level": "info",
+    "log_ai_decisions": false,
+    "log_diplomacy": true,
+    "log_economy": false,
+    "log_missiles": true
+  }
+}

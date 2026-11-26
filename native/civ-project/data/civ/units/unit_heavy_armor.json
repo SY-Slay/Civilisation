@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "unit_heavy_armor",
+  "name": "Bataillon blindé lourd",
+  "description": "Chars de combat protégés capables de percer les lignes ennemies fortifiées.",
+  "category": "armor",
+  "era": 3,
+  "cost": 400.0,
+  "upkeep": 14.0,
+  "manpower": 400,
+  "attack": 75.0,
+  "defense": 65.0,
+  "mobility": 50.0,
+  "morale": 75.0,
+  "training_time_days": 90,
+  "prerequisites": [
+    "tech_combined_arms"
+  ],
+  "counters": [
+    "unit_line_infantry",
+    "unit_mechanized_guard"
+  ],
+  "weak_against": [
+    "unit_artillery_battery"
+  ],
+  "tags": [
+    "spearhead"
+  ]
+}

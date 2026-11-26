@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "id": "unit_line_infantry",
+  "name": "Infanterie de ligne",
+  "description": "Troupe standard entraînée, disciplinée et solide dans les retranchements.",
+  "category": "infantry",
+  "era": 2,
+  "cost": 120.0,
+  "upkeep": 3.0,
+  "manpower": 1000,
+  "attack": 28.0,
+  "defense": 45.0,
+  "mobility": 35.0,
+  "morale": 60.0,
+  "training_time_days": 30,
+  "prerequisites": [],
+  "counters": [],
+  "weak_against": [
+    "unit_heavy_armor"
+  ],
+  "tags": [
+    "core"
+  ]
+}

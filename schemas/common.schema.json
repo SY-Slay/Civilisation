@@ -1,0 +1,217 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/common.schema.json",
+  "title": "Civilisations — définitions communes",
+  "description": "Types partagés par les schémas de données, de scénarios et de sauvegardes. Aucun code : uniquement des données validables.",
+  "$defs": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version du schéma. Une sauvegarde ou un pack de données ne se charge que si sa version est connue du runtime."
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{2,63}$",
+      "description": "Identifiant stable, en minuscules ASCII, unique dans sa collection. Exemples : ardenne, valdoria, province_nord_01."
+    },
+    "localized_text": {
+      "description": "Soit un texte direct, soit une clé de localisation avec un repli anglais.",
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 240
+        },
+        {
+          "type": "object",
+          "required": ["key"],
+          "additionalProperties": false,
+          "properties": {
+            "key": {
+              "type": "string",
+              "pattern": "^[a-z0-9_.-]+$",
+              "minLength": 1,
+              "maxLength": 160
+            },
+            "default": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 240
+            }
+          }
+        }
+      ]
+    },
+    "game_date": {
+      "type": "object",
+      "required": ["year", "month", "day"],
+      "additionalProperties": false,
+      "properties": {
+        "year": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 99999
+        },
+        "month": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 12
+        },
+        "day": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        }
+      }
+    },
+    "vec2": {
+      "type": "array",
+      "prefixItems": [
+        { "type": "number" },
+        { "type": "number" }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "Coordonnées [x, z] en blocs. Le monde Civilisations est cartographié en 2D."
+    },
+    "vec3": {
+      "type": "array",
+      "prefixItems": [
+        { "type": "number" },
+        { "type": "number" },
+        { "type": "number" }
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "polygon": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "$ref": "#/$defs/vec2" },
+      "description": "Contour fermé implicitement, en sens antihoraire. Le schéma valide uniquement la forme JSON ; civ-core vérifie en plus l'absence d'auto-intersection, la surface minimale et le recouvrement du monde. Les frontières de production doivent rester irrégulières et naturelles."
+    },
+    "polyline": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/vec2" },
+      "description": "Suite ouverte de points [x, z]. Utilisée pour les frontières partagées et les tracés de rivières."
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$",
+      "description": "Couleur RVB hexadécimale, sans alpha."
+    },
+    "range": {
+      "type": "object",
+      "required": ["min", "max"],
+      "additionalProperties": false,
+      "properties": {
+        "min": { "type": "number" },
+        "max": { "type": "number" }
+      }
+    },
+    "modifier": {
+      "type": "object",
+      "required": ["target", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "target": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_.]{2,95}$",
+          "description": "Chemin de donnée visé, par exemple economy.tax_rate ou military.morale."
+        },
+        "value": { "type": "number" },
+        "mode": {
+          "enum": ["add", "multiply", "set"],
+          "default": "add"
+        },
+        "condition": { "$ref": "#/$defs/condition" }
+      }
+    },
+    "condition": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,63}$",
+          "description": "Type de condition interprété par civ-core. Les kinds concrets sont documentés dans docs/02-data-model.md."
+        },
+        "args": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Arguments propres au kind. Le validateur de données vérifie leur forme."
+        }
+      }
+    },
+    "effect": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,63}$",
+          "description": "Type d'effet interprété par civ-core. Aucun effet n'est exécuté directement par le JSON."
+        },
+        "args": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "delay_ticks": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 0
+        }
+      }
+    },
+    "weighted_value": {
+      "type": "object",
+      "required": ["weight", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "weight": {
+          "type": "number",
+          "minimum": 0
+        },
+        "value": { "type": "string" }
+      }
+    },
+    "string_list": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "id_list": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/id" },
+      "uniqueItems": true
+    },
+    "percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "unit_interval": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "non_negative_integer": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "positive_integer": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "tick": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Tick de simulation, indépendant du tick Minecraft. Un tick de simulation peut représenter plusieurs ticks Minecraft."
+    }
+  }
+}

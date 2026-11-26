@@ -1,0 +1,128 @@
+{
+  "id": "prov_varenne_plaine",
+  "name": "Plaines Dorées",
+  "polygon": [
+    [
+      290.0,
+      488.0
+    ],
+    [
+      289.2,
+      577.7
+    ],
+    [
+      251.1,
+      648.3
+    ],
+    [
+      259.3,
+      733.0
+    ],
+    [
+      238.0,
+      800.0
+    ],
+    [
+      320.5,
+      770.0
+    ],
+    [
+      398.3,
+      781.6
+    ],
+    [
+      473.2,
+      744.9
+    ],
+    [
+      542.0,
+      742.0
+    ],
+    [
+      522.1,
+      699.8
+    ],
+    [
+      531.6,
+      642.4
+    ],
+    [
+      495.2,
+      599.7
+    ],
+    [
+      496.0,
+      540.0
+    ],
+    [
+      448.2,
+      538.3
+    ],
+    [
+      400.1,
+      503.4
+    ],
+    [
+      344.3,
+      516.1
+    ]
+  ],
+  "center": [
+    393.69,
+    645.33
+  ],
+  "area_blocks": 62341,
+  "neighbors": [
+    "prov_ardenne_sud",
+    "prov_orlune_temple",
+    "prov_varenne_marais",
+    "prov_varenne_rive"
+  ],
+  "border_ids": [
+    "border_h_1_2_c1",
+    "border_h_2_3_c1",
+    "border_v_r2_c0_1",
+    "border_v_r2_c1_2"
+  ],
+  "terrain": "plains",
+  "climate": {
+    "temperature_c": 17.0,
+    "rainfall_mm": 950.0,
+    "seasonality": 0.38
+  },
+  "population": {
+    "total": 240000,
+    "urban": 90000,
+    "rural": 150000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "varennois",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "pragmatism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "grain",
+      "abundance": 95.0,
+      "reserve": 400000.0
+    }
+  ],
+  "owner": "varenne",
+  "controller": "varenne",
+  "fortification": 1,
+  "unrest": 4.0,
+  "supply": 90.0,
+  "infrastructure": 85.0,
+  "strategic_value": 80.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

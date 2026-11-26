@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "rationalism",
+  "name": "Rationalisme civique",
+  "description": "Religion philosophique fictive centr?e sur la d?lib?ration publique.",
+  "family": "civic",
+  "tenets": [
+    "la raison avant la coutume",
+    "le service avant la gloire"
+  ],
+  "tolerance": 70.0,
+  "holy_sites": [
+    "prov_0_1"
+  ],
+  "clergy_title": "Gardien de la Charte",
+  "modifiers": [],
+  "tags": [
+    "fixture"
+  ]
+}

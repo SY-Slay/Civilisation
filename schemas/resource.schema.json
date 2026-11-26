@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/resource.schema.json",
+  "title": "Civilisations — ressource",
+  "description": "Ressource économique fictive, extraite ou produite dans les provinces. Les valeurs sont abstraites et servent à la simulation, pas à une économie réelle.",
+  "type": "object",
+  "required": ["id", "name", "category", "unit", "base_value"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/schema_version" },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "category": {
+      "enum": [
+        "energy",
+        "metal",
+        "mineral",
+        "food",
+        "industrial",
+        "rare",
+        "luxury",
+        "strategic"
+      ]
+    },
+    "unit": {
+      "enum": ["ton", "barrel", "cubic_meter", "bushel", "unit"]
+    },
+    "base_value": {
+      "type": "number",
+      "minimum": 0
+    },
+    "strategic": {
+      "type": "boolean",
+      "default": false
+    },
+    "modifiers": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/modifier" }
+    },
+    "tags": { "$ref": "common.schema.json#/$defs/string_list" }
+  }
+}

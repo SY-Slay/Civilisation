@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "unit_mechanized_guard",
+  "name": "Garde mécanisée",
+  "description": "Infanterie montée sur véhicules blindés rapides, offrant une excellente mobilité tactique.",
+  "category": "mechanized",
+  "era": 3,
+  "cost": 250.0,
+  "upkeep": 8.0,
+  "manpower": 600,
+  "attack": 55.0,
+  "defense": 50.0,
+  "mobility": 65.0,
+  "morale": 70.0,
+  "training_time_days": 60,
+  "prerequisites": [
+    "tech_combined_arms"
+  ],
+  "counters": [
+    "unit_line_infantry"
+  ],
+  "weak_against": [
+    "unit_heavy_armor"
+  ],
+  "tags": [
+    "mobile"
+  ]
+}

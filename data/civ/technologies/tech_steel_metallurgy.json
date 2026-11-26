@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "tech_steel_metallurgy",
+  "name": "Métallurgie de l'acier",
+  "description": "Fonderies avancées améliorant le rendement industriel et la robustesse des blindages.",
+  "era": 2,
+  "category": "industry",
+  "cost": 500.0,
+  "research_time_days": 120,
+  "prerequisites": [],
+  "effects": [],
+  "unlocks": {
+    "units": [
+      "unit_line_infantry"
+    ],
+    "missiles": [],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 1.1,
+  "tags": [
+    "industry"
+  ]
+}

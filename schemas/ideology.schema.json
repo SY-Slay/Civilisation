@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/ideology.schema.json",
+  "title": "Civilisations — idéologie",
+  "description": "Famille idéologique fictive utilisée par les nations, les factions et les événements. Aucune doctrine réelle n'est importée telle quelle.",
+  "type": "object",
+  "required": ["id", "name", "family", "values", "government_preferences"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "$ref": "common.schema.json#/$defs/schema_version" },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "family": {
+      "enum": [
+        "liberal",
+        "conservative",
+        "socialist",
+        "nationalist",
+        "technocratic",
+        "theocratic",
+        "militarist",
+        "pacifist",
+        "revolutionary",
+        "traditionalist",
+        "mercantile",
+        "isolationist"
+      ]
+    },
+    "values": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1, "maxLength": 120 },
+      "uniqueItems": true
+    },
+    "government_preferences": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "common.schema.json#/$defs/id" },
+      "uniqueItems": true
+    },
+    "modifiers": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/modifier" }
+    },
+    "tags": { "$ref": "common.schema.json#/$defs/string_list" }
+  }
+}

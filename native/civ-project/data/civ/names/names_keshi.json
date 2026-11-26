@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "id": "names_keshi",
+  "culture": "keshi",
+  "language": "fr_FR",
+  "nation_names": [
+    "Kesh",
+    "Karkovie",
+    "Fer-Gris",
+    "Vorn"
+  ],
+  "nation_adjectives": [
+    "keshi",
+    "karkovien",
+    "vornien",
+    "ferriste"
+  ],
+  "city_names": [
+    "Kesh-la-Haute",
+    "Fort-Enclume",
+    "Borne-de-Fer",
+    "Roc-d'Acier",
+    "Vanguard"
+  ],
+  "region_names": [
+    "Steppe Noire",
+    "Crête du Faucon",
+    "Détroit Sanglant"
+  ],
+  "leader_names": {
+    "given": [
+      "Varek",
+      "Goran",
+      "Kael",
+      "Dara",
+      "Zarek",
+      "Boris"
+    ],
+    "family": [
+      "Thorne",
+      "Malek",
+      "Karkov",
+      "Rostov",
+      "Steele",
+      "Volf"
+    ],
+    "titles": [
+      "Généralissime",
+      "Commandeur",
+      "Maréchal",
+      "Grand Chambellan"
+    ],
+    "epithets": [
+      "l'Inflexible",
+      "le Victorieux",
+      "le Terrible",
+      "le Poing"
+    ]
+  },
+  "army_names": [
+    "1er Corps de Rupture",
+    "Garde d'Acier",
+    "Division Cuirassée Karkov"
+  ],
+  "operation_names": [
+    "Tonnerre Noir",
+    "Frappe Déterminée",
+    "Enclume d'Or"
+  ]
+}

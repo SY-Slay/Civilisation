@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/data-pack.schema.json",
+  "title": "Civilisations — manifeste de pack de données",
+  "description": "Décrit le contenu éditable du mod. Le manifeste ne contient aucun code et peut être validé avant le chargement en jeu.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "version",
+    "game",
+    "horizon",
+    "name",
+    "content"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": {
+      "$ref": "common.schema.json#/$defs/id",
+      "description": "Identifiant du pack. Le pack principal utilise civ ; les packs tiers utilisent leur propre identifiant et déclarent civ en dépendance."
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)([-+][0-9A-Za-z.-]+)?$"
+    },
+    "game": {
+      "const": "26.3",
+      "description": "Version de Horizon ciblée par le pack."
+    },
+    "horizon": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$",
+      "description": "Commit Horizon exact contre lequel le pack natif a été compilé."
+    },
+    "name": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    },
+    "description": {
+      "$ref": "common.schema.json#/$defs/localized_text"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1, "maxLength": 120 },
+      "uniqueItems": true
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "description": "Licence du contenu. Le code et les données doivent rester sous licence libre."
+    },
+    "content": {
+      "type": "object",
+      "required": [
+        "config",
+        "scenarios",
+        "nations",
+        "provinces",
+        "cultures",
+        "religions",
+        "ideologies",
+        "governments",
+        "resources",
+        "technologies",
+        "units",
+        "missiles",
+        "events",
+        "names",
+        "localization"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "config": {
+          "$ref": "#/$defs/content_path"
+        },
+        "scenarios": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "nations": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "provinces": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "cultures": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "religions": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "ideologies": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "governments": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "resources": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "technologies": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "units": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "missiles": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "events": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "names": {
+          "$ref": "#/$defs/content_paths"
+        },
+        "localization": {
+          "$ref": "#/$defs/content_paths"
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "version"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/id" },
+          "version": {
+            "type": "string",
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)([-+][0-9A-Za-z.-]+)?$"
+          },
+          "optional": { "type": "boolean", "default": false }
+        }
+      },
+      "uniqueItems": true
+    },
+    "load_after": {
+      "$ref": "common.schema.json#/$defs/id_list",
+      "description": "Ordre de chargement explicite. Les dépendances sont toujours chargées avant ce pack."
+    }
+  },
+  "$defs": {
+    "content_path": {
+      "type": "string",
+      "pattern": "^(config|[a-z][a-z0-9_/.-]*)\\.(json|toml)$",
+      "minLength": 1,
+      "maxLength": 240
+    },
+    "content_paths": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/content_path" },
+      "uniqueItems": true,
+      "minItems": 1
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "id": "tech_radio_communications",
+  "name": "Télécommunications radio",
+  "description": "Transmissions hertziennes fiables reliant l'état-major aux divisions en campagne.",
+  "era": 3,
+  "category": "computing",
+  "cost": 600.0,
+  "research_time_days": 150,
+  "prerequisites": [],
+  "effects": [],
+  "unlocks": {
+    "units": [],
+    "missiles": [],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 1.0,
+  "tags": [
+    "communications"
+  ]
+}

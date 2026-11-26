@@ -1,0 +1,118 @@
+{
+  "id": "prov_kesh_marche",
+  "name": "Garde de l'Ouest",
+  "polygon": [
+    [
+      510.0,
+      0.0
+    ],
+    [
+      502.2,
+      65.7
+    ],
+    [
+      533.4,
+      118.5
+    ],
+    [
+      517.2,
+      180.4
+    ],
+    [
+      532.0,
+      230.0
+    ],
+    [
+      588.4,
+      259.2
+    ],
+    [
+      646.3,
+      247.5
+    ],
+    [
+      696.4,
+      283.4
+    ],
+    [
+      746.0,
+      286.0
+    ],
+    [
+      761.2,
+      223.9
+    ],
+    [
+      745.6,
+      147.7
+    ],
+    [
+      777.2,
+      81.3
+    ],
+    [
+      770.0,
+      0.0
+    ],
+    [
+      640.0,
+      0.0
+    ]
+  ],
+  "center": [
+    640.42,
+    151.69
+  ],
+  "area_blocks": 63420,
+  "neighbors": [
+    "prov_ardenne_est",
+    "prov_kesh_citadelle",
+    "prov_kesh_steppe"
+  ],
+  "border_ids": [
+    "border_h_0_1_c2",
+    "border_v_r0_c1_2",
+    "border_v_r0_c2_3"
+  ],
+  "terrain": "hills",
+  "climate": {
+    "temperature_c": 11.5,
+    "rainfall_mm": 650.0,
+    "seasonality": 0.55
+  },
+  "population": {
+    "total": 150000,
+    "urban": 50000,
+    "rural": 100000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "keshi",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "martial_order",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "iron_ore",
+      "abundance": 70.0,
+      "reserve": 300000.0
+    }
+  ],
+  "owner": "kesh",
+  "controller": "kesh",
+  "fortification": 4,
+  "unrest": 12.0,
+  "supply": 70.0,
+  "infrastructure": 60.0,
+  "strategic_value": 80.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

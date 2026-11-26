@@ -1,0 +1,128 @@
+{
+  "id": "prov_orlune_temple",
+  "name": "Sanctuaire d'Orlune",
+  "polygon": [
+    [
+      496.0,
+      540.0
+    ],
+    [
+      495.2,
+      599.7
+    ],
+    [
+      531.6,
+      642.4
+    ],
+    [
+      522.1,
+      699.8
+    ],
+    [
+      542.0,
+      742.0
+    ],
+    [
+      595.6,
+      768.0
+    ],
+    [
+      649.6,
+      753.2
+    ],
+    [
+      697.4,
+      786.1
+    ],
+    [
+      744.0,
+      786.0
+    ],
+    [
+      764.9,
+      723.4
+    ],
+    [
+      756.2,
+      643.8
+    ],
+    [
+      793.8,
+      578.1
+    ],
+    [
+      794.0,
+      494.0
+    ],
+    [
+      726.9,
+      494.2
+    ],
+    [
+      652.8,
+      527.9
+    ],
+    [
+      577.3,
+      513.3
+    ]
+  ],
+  "center": [
+    646.21,
+    643.24
+  ],
+  "area_blocks": 64840,
+  "neighbors": [
+    "prov_kesh_citadelle",
+    "prov_orlune_pics",
+    "prov_orlune_vallee",
+    "prov_varenne_plaine"
+  ],
+  "border_ids": [
+    "border_h_1_2_c2",
+    "border_h_2_3_c2",
+    "border_v_r2_c1_2",
+    "border_v_r2_c2_3"
+  ],
+  "terrain": "plains",
+  "climate": {
+    "temperature_c": 12.5,
+    "rainfall_mm": 780.0,
+    "seasonality": 0.48
+  },
+  "population": {
+    "total": 290000,
+    "urban": 170000,
+    "rural": 120000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "orlunian",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "mysticism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "rare_earths",
+      "abundance": 85.0,
+      "reserve": 150000.0
+    }
+  ],
+  "owner": "orlune",
+  "controller": "orlune",
+  "fortification": 3,
+  "unrest": 6.0,
+  "supply": 90.0,
+  "infrastructure": 80.0,
+  "strategic_value": 90.0,
+  "victory_points": 10.0,
+  "claims": [],
+  "capital_of": "orlune",
+  "tags": [
+    "scenario_province"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "oligarchy",
+  "name": "Grand Conseil des marchands",
+  "description": "Gouvernement collégial composé des syndics des grandes corporations et maisons de négoce.",
+  "category": "oligarchy",
+  "legitimacy_source": "competence",
+  "succession": "council_vote",
+  "term_length_days": 1825,
+  "modifiers": [],
+  "tags": [
+    "patrician"
+  ]
+}

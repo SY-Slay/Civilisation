@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "commercial_oligarchy",
+  "name": "Oligarchie marchande",
+  "description": "Modèle politique axé sur la prospérité financière, l'influence des guildes et le libre-échange.",
+  "family": "mercantile",
+  "values": [
+    "libre entreprise",
+    "souveraineté financière",
+    "pragmatisme"
+  ],
+  "government_preferences": [
+    "oligarchy",
+    "republic"
+  ],
+  "modifiers": [],
+  "tags": [
+    "plutocratic"
+  ]
+}

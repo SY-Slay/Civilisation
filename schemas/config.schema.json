@@ -1,0 +1,350 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/config.schema.json",
+  "title": "Civilisations — configuration",
+  "description": "Configuration globale, éditée en TOML puis convertie en objet JSON pour validation. Aucun réglage ne doit permettre de casser le déterminisme de la simulation.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "simulation",
+    "world",
+    "ai",
+    "war",
+    "missiles",
+    "ui",
+    "multiplayer"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "simulation": {
+      "type": "object",
+      "required": ["ticks_per_day", "ai_interval_ticks", "max_events_per_tick", "seed"],
+      "additionalProperties": false,
+      "properties": {
+        "ticks_per_day": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 24000,
+          "default": 2400,
+          "description": "Nombre de ticks de simulation par jour fictif. 2400 laisse le temps aux cinématiques sans ralentir une partie solo."
+        },
+        "ai_interval_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1200,
+          "default": 100
+        },
+        "max_events_per_tick": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 256,
+          "default": 32
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775807,
+          "description": "Graine de la simulation. La même graine et le même état initial produisent exactement la même partie."
+        },
+        "start_date": {
+          "$ref": "common.schema.json#/$defs/game_date"
+        },
+        "autosave_days": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3650,
+          "default": 30
+        },
+        "max_command_history": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100000,
+          "default": 4096
+        }
+      }
+    },
+    "world": {
+      "type": "object",
+      "required": ["map_width", "map_height", "province_count", "sea_level"],
+      "additionalProperties": false,
+      "properties": {
+        "map_width": {
+          "type": "integer",
+          "minimum": 512,
+          "maximum": 32768,
+          "default": 4096
+        },
+        "map_height": {
+          "type": "integer",
+          "minimum": 512,
+          "maximum": 32768,
+          "default": 4096
+        },
+        "province_count": {
+          "type": "integer",
+          "minimum": 8,
+          "maximum": 4096,
+          "default": 64
+        },
+        "sea_level": {
+          "type": "integer",
+          "minimum": -64,
+          "maximum": 320,
+          "default": 62
+        },
+        "border_style": {
+          "enum": ["natural", "warped", "fractal"],
+          "default": "warped",
+          "description": "natural suit les reliefs, warped ajoute une déformation cohérente, fractal ajoute du détail multi-échelle."
+        },
+        "border_noise": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.35
+        },
+        "coast_complexity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.55
+        },
+        "min_province_area": {
+          "type": "integer",
+          "minimum": 64,
+          "default": 1024,
+          "description": "Surface minimale d'une province en blocs carrés."
+        },
+        "max_province_neighbors": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 24,
+          "default": 12
+        }
+      }
+    },
+    "ai": {
+      "type": "object",
+      "required": ["difficulty", "max_war_fronts", "max_diplomacy_actions_per_tick"],
+      "additionalProperties": false,
+      "properties": {
+        "difficulty": {
+          "enum": ["peaceful", "normal", "aggressive", "nightmare"],
+          "default": "normal"
+        },
+        "max_war_fronts": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64,
+          "default": 8
+        },
+        "max_diplomacy_actions_per_tick": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64,
+          "default": 8
+        },
+        "max_armies_per_nation": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 256,
+          "default": 24
+        },
+        "allow_ai_nukes": {
+          "type": "boolean",
+          "default": false,
+          "description": "Désactivé par défaut : les missiles nucléaires restent une décision narrative ou multijoueur explicite."
+        },
+        "ai_reaction_delay_ticks": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 24000,
+          "default": 200
+        }
+      }
+    },
+    "war": {
+      "type": "object",
+      "required": ["max_active_wars", "battle_interval_ticks", "occupation_speed"],
+      "additionalProperties": false,
+      "properties": {
+        "max_active_wars": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 512,
+          "default": 64
+        },
+        "battle_interval_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 24000,
+          "default": 200
+        },
+        "occupation_speed": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 10,
+          "default": 1.0
+        },
+        "attrition_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.02
+        },
+        "peace_offer_cooldown_days": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3650,
+          "default": 14
+        },
+        "allow_forced_regime_change": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "missiles": {
+      "type": "object",
+      "required": ["max_in_flight", "flight_ticks_per_chunk", "interception_enabled"],
+      "additionalProperties": false,
+      "properties": {
+        "max_in_flight": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4096,
+          "default": 128
+        },
+        "flight_ticks_per_chunk": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1200,
+          "default": 20
+        },
+        "interception_enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "interception_chance_scale": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "default": 1.0
+        },
+        "show_trajectory": {
+          "type": "boolean",
+          "default": true
+        },
+        "cinematic_impact": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "required": ["language", "map_mode", "cinematic_letterbox", "show_hud"],
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}(_[A-Z]{2})?$",
+          "default": "fr_FR"
+        },
+        "map_mode": {
+          "enum": ["political", "terrain", "population", "resources", "diplomacy", "war"],
+          "default": "political"
+        },
+        "cinematic_letterbox": {
+          "type": "boolean",
+          "default": true
+        },
+        "show_hud": {
+          "type": "boolean",
+          "default": true
+        },
+        "show_borders": {
+          "type": "boolean",
+          "default": true
+        },
+        "border_thickness": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 8,
+          "default": 2
+        },
+        "map_labels": {
+          "enum": ["none", "major", "all"],
+          "default": "major"
+        },
+        "camera_smoothing": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "default": 0.2
+        }
+      }
+    },
+    "multiplayer": {
+      "type": "object",
+      "required": ["mode", "sync_interval_ticks", "allow_client_commands"],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": ["solo", "lan_host", "dedicated", "client_only"],
+          "default": "solo"
+        },
+        "sync_interval_ticks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1200,
+          "default": 20
+        },
+        "allow_client_commands": {
+          "type": "boolean",
+          "default": true,
+          "description": "Les commandes client sont validées côté serveur. Ne jamais faire confiance au client pour l'état de la partie."
+        },
+        "max_players": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64,
+          "default": 8
+        },
+        "require_ready_check": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "logging": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "level": {
+          "enum": ["error", "warn", "info", "debug", "trace"],
+          "default": "info"
+        },
+        "log_ai_decisions": {
+          "type": "boolean",
+          "default": false
+        },
+        "log_diplomacy": {
+          "type": "boolean",
+          "default": true
+        },
+        "log_economy": {
+          "type": "boolean",
+          "default": false
+        },
+        "log_missiles": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  }
+}

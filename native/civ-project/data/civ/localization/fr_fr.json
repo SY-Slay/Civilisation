@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "language": "fr_FR",
+  "fallback_language": "en_US",
+  "entries": {
+    "civ.game.name": "Civilisations",
+    "civ.scenario.arc_des_frontieres": "Arc des Frontières",
+    "civ.scenario.desc": "Quatre puissances rivales se disputent l'hégémonie dans une région fracturée par les fleuves et les reliefs.",
+    "civ.nation.ardenne": "République d'Ardenne",
+    "civ.nation.kesh": "Autocratie de Kesh",
+    "civ.nation.varenne": "Ligue marchande de Varenne",
+    "civ.nation.orlune": "Sanctuaire d'Orlune",
+    "civ.command.status": "Statut de la simulation : tick {tick}, date {date}",
+    "civ.command.ping": "Pong déterministe !"
+  }
+}

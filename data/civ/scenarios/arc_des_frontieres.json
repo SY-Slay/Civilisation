@@ -1,0 +1,3273 @@
+{
+  "schema_version": 1,
+  "id": "arc_des_frontieres",
+  "name": "Arc des Frontières",
+  "description": "Scénario officiel de Civilisations : quatre puissances rivales s'affrontent pour le contrôle d'un carrefour géopolitique majeur.",
+  "start_date": {
+    "year": 2026,
+    "month": 1,
+    "day": 1
+  },
+  "seed": 424242,
+  "world": {
+    "schema_version": 1,
+    "seed": 424242,
+    "size": {
+      "width": 1024,
+      "height": 1024
+    },
+    "sea_level": 62,
+    "generation": {
+      "algorithm": "hand_authored_v1",
+      "version": 1,
+      "border_noise": 0.35,
+      "coast_complexity": 0.55
+    },
+    "provinces": [
+      {
+        "id": "prov_ardenne_est",
+        "name": "Marche d'Ardenne",
+        "polygon": [
+          [
+            260.0,
+            0.0
+          ],
+          [
+            266.1,
+            79.8
+          ],
+          [
+            233.5,
+            144.4
+          ],
+          [
+            248.1,
+            219.4
+          ],
+          [
+            232.0,
+            280.0
+          ],
+          [
+            313.7,
+            252.2
+          ],
+          [
+            390.0,
+            265.8
+          ],
+          [
+            464.4,
+            231.1
+          ],
+          [
+            532.0,
+            230.0
+          ],
+          [
+            517.2,
+            180.4
+          ],
+          [
+            533.4,
+            118.5
+          ],
+          [
+            502.2,
+            65.7
+          ],
+          [
+            510.0,
+            0.0
+          ],
+          [
+            385.0,
+            0.0
+          ]
+        ],
+        "center": [
+          384.83,
+          147.66
+        ],
+        "area_blocks": 67563,
+        "neighbors": [
+          "prov_ardenne_nord",
+          "prov_ardenne_sud",
+          "prov_kesh_marche"
+        ],
+        "border_ids": [
+          "border_h_0_1_c1",
+          "border_v_r0_c0_1",
+          "border_v_r0_c1_2"
+        ],
+        "terrain": "hills",
+        "climate": {
+          "temperature_c": 12.0,
+          "rainfall_mm": 900.0,
+          "seasonality": 0.5
+        },
+        "population": {
+          "total": 140000,
+          "urban": 40000,
+          "rural": 100000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "ardennic",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "rationalism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "coal",
+            "abundance": 60.0,
+            "reserve": 150000.0
+          }
+        ],
+        "owner": "ardenne",
+        "controller": "ardenne",
+        "fortification": 3,
+        "unrest": 8.0,
+        "supply": 75.0,
+        "infrastructure": 65.0,
+        "strategic_value": 75.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_ardenne_nord",
+        "name": "Côte d'Ardenne",
+        "polygon": [
+          [
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            130.0
+          ],
+          [
+            0.0,
+            260.0
+          ],
+          [
+            63.8,
+            279.5
+          ],
+          [
+            121.7,
+            258.4
+          ],
+          [
+            180.1,
+            285.6
+          ],
+          [
+            232.0,
+            280.0
+          ],
+          [
+            248.1,
+            219.4
+          ],
+          [
+            233.5,
+            144.4
+          ],
+          [
+            266.1,
+            79.8
+          ],
+          [
+            260.0,
+            0.0
+          ],
+          [
+            130.0,
+            0.0
+          ]
+        ],
+        "center": [
+          144.61,
+          161.42
+        ],
+        "area_blocks": 68120,
+        "neighbors": [
+          "prov_ardenne_est",
+          "prov_ardenne_val"
+        ],
+        "border_ids": [
+          "border_h_0_1_c0",
+          "border_v_r0_c0_1"
+        ],
+        "terrain": "coast",
+        "climate": {
+          "temperature_c": 14.5,
+          "rainfall_mm": 850.0,
+          "seasonality": 0.45
+        },
+        "population": {
+          "total": 180000,
+          "urban": 70000,
+          "rural": 110000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "ardennic",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "rationalism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "grain",
+            "abundance": 75.0,
+            "reserve": 200000.0
+          }
+        ],
+        "owner": "ardenne",
+        "controller": "ardenne",
+        "fortification": 1,
+        "unrest": 5.0,
+        "supply": 85.0,
+        "infrastructure": 70.0,
+        "strategic_value": 60.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_ardenne_sud",
+        "name": "Bassin de Fer",
+        "polygon": [
+          [
+            232.0,
+            280.0
+          ],
+          [
+            234.8,
+            342.0
+          ],
+          [
+            273.7,
+            384.9
+          ],
+          [
+            267.6,
+            444.9
+          ],
+          [
+            290.0,
+            488.0
+          ],
+          [
+            344.3,
+            516.1
+          ],
+          [
+            400.1,
+            503.4
+          ],
+          [
+            448.2,
+            538.3
+          ],
+          [
+            496.0,
+            540.0
+          ],
+          [
+            513.9,
+            473.0
+          ],
+          [
+            501.4,
+            389.8
+          ],
+          [
+            535.8,
+            318.4
+          ],
+          [
+            532.0,
+            230.0
+          ],
+          [
+            464.4,
+            231.1
+          ],
+          [
+            390.0,
+            265.8
+          ],
+          [
+            313.7,
+            252.2
+          ]
+        ],
+        "center": [
+          389.87,
+          387.37
+        ],
+        "area_blocks": 68697,
+        "neighbors": [
+          "prov_ardenne_est",
+          "prov_ardenne_val",
+          "prov_kesh_citadelle",
+          "prov_varenne_plaine"
+        ],
+        "border_ids": [
+          "border_h_0_1_c1",
+          "border_h_1_2_c1",
+          "border_v_r1_c0_1",
+          "border_v_r1_c1_2"
+        ],
+        "terrain": "urban",
+        "climate": {
+          "temperature_c": 13.5,
+          "rainfall_mm": 820.0,
+          "seasonality": 0.42
+        },
+        "population": {
+          "total": 210000,
+          "urban": 110000,
+          "rural": 100000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "ardennic",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "rationalism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "iron_ore",
+            "abundance": 85.0,
+            "reserve": 500000.0
+          }
+        ],
+        "owner": "ardenne",
+        "controller": "ardenne",
+        "fortification": 2,
+        "unrest": 6.0,
+        "supply": 80.0,
+        "infrastructure": 75.0,
+        "strategic_value": 85.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_ardenne_val",
+        "name": "Val d'Ardenne",
+        "polygon": [
+          [
+            0.0,
+            260.0
+          ],
+          [
+            0.0,
+            385.0
+          ],
+          [
+            0.0,
+            510.0
+          ],
+          [
+            80.1,
+            489.9
+          ],
+          [
+            151.7,
+            510.5
+          ],
+          [
+            225.4,
+            482.9
+          ],
+          [
+            290.0,
+            488.0
+          ],
+          [
+            267.6,
+            444.9
+          ],
+          [
+            273.7,
+            384.9
+          ],
+          [
+            234.8,
+            342.0
+          ],
+          [
+            232.0,
+            280.0
+          ],
+          [
+            180.1,
+            285.6
+          ],
+          [
+            121.7,
+            258.4
+          ],
+          [
+            63.8,
+            279.5
+          ]
+        ],
+        "center": [
+          151.49,
+          385.83
+        ],
+        "area_blocks": 57556,
+        "neighbors": [
+          "prov_ardenne_nord",
+          "prov_ardenne_sud",
+          "prov_varenne_marais"
+        ],
+        "border_ids": [
+          "border_h_0_1_c0",
+          "border_h_1_2_c0",
+          "border_v_r1_c0_1"
+        ],
+        "terrain": "plains",
+        "climate": {
+          "temperature_c": 15.0,
+          "rainfall_mm": 800.0,
+          "seasonality": 0.4
+        },
+        "population": {
+          "total": 320000,
+          "urban": 180000,
+          "rural": 140000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "ardennic",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "rationalism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "grain",
+            "abundance": 90.0,
+            "reserve": 350000.0
+          }
+        ],
+        "owner": "ardenne",
+        "controller": "ardenne",
+        "fortification": 2,
+        "unrest": 4.0,
+        "supply": 95.0,
+        "infrastructure": 85.0,
+        "strategic_value": 90.0,
+        "victory_points": 10.0,
+        "claims": [],
+        "capital_of": "ardenne",
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_kesh_citadelle",
+        "name": "Citadelle de Kesh",
+        "polygon": [
+          [
+            532.0,
+            230.0
+          ],
+          [
+            535.8,
+            318.4
+          ],
+          [
+            501.4,
+            389.8
+          ],
+          [
+            513.9,
+            473.0
+          ],
+          [
+            496.0,
+            540.0
+          ],
+          [
+            577.3,
+            513.3
+          ],
+          [
+            652.8,
+            527.9
+          ],
+          [
+            726.9,
+            494.2
+          ],
+          [
+            794.0,
+            494.0
+          ],
+          [
+            773.7,
+            450.5
+          ],
+          [
+            782.7,
+            391.5
+          ],
+          [
+            745.8,
+            347.4
+          ],
+          [
+            746.0,
+            286.0
+          ],
+          [
+            696.4,
+            283.4
+          ],
+          [
+            646.3,
+            247.5
+          ],
+          [
+            588.4,
+            259.2
+          ]
+        ],
+        "center": [
+          644.34,
+          390.38
+        ],
+        "area_blocks": 63080,
+        "neighbors": [
+          "prov_ardenne_sud",
+          "prov_kesh_collines",
+          "prov_kesh_marche",
+          "prov_orlune_temple"
+        ],
+        "border_ids": [
+          "border_h_0_1_c2",
+          "border_h_1_2_c2",
+          "border_v_r1_c1_2",
+          "border_v_r1_c2_3"
+        ],
+        "terrain": "hills",
+        "climate": {
+          "temperature_c": 12.0,
+          "rainfall_mm": 550.0,
+          "seasonality": 0.6
+        },
+        "population": {
+          "total": 350000,
+          "urban": 210000,
+          "rural": 140000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "keshi",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "martial_order",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "iron_ore",
+            "abundance": 90.0,
+            "reserve": 450000.0
+          }
+        ],
+        "owner": "kesh",
+        "controller": "kesh",
+        "fortification": 5,
+        "unrest": 8.0,
+        "supply": 90.0,
+        "infrastructure": 80.0,
+        "strategic_value": 95.0,
+        "victory_points": 10.0,
+        "claims": [],
+        "capital_of": "kesh",
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_kesh_collines",
+        "name": "Massif de Karkov",
+        "polygon": [
+          [
+            746.0,
+            286.0
+          ],
+          [
+            745.8,
+            347.4
+          ],
+          [
+            782.7,
+            391.5
+          ],
+          [
+            773.7,
+            450.5
+          ],
+          [
+            794.0,
+            494.0
+          ],
+          [
+            856.8,
+            515.2
+          ],
+          [
+            914.9,
+            495.6
+          ],
+          [
+            972.3,
+            524.2
+          ],
+          [
+            1024.0,
+            520.0
+          ],
+          [
+            1024.0,
+            385.0
+          ],
+          [
+            1024.0,
+            250.0
+          ],
+          [
+            961.6,
+            248.0
+          ],
+          [
+            892.1,
+            279.2
+          ],
+          [
+            822.0,
+            262.0
+          ]
+        ],
+        "center": [
+          880.99,
+          389.19
+        ],
+        "area_blocks": 63030,
+        "neighbors": [
+          "prov_kesh_citadelle",
+          "prov_kesh_steppe",
+          "prov_orlune_pics"
+        ],
+        "border_ids": [
+          "border_h_0_1_c3",
+          "border_h_1_2_c3",
+          "border_v_r1_c2_3"
+        ],
+        "terrain": "mountains",
+        "climate": {
+          "temperature_c": 9.5,
+          "rainfall_mm": 600.0,
+          "seasonality": 0.7
+        },
+        "population": {
+          "total": 170000,
+          "urban": 60000,
+          "rural": 110000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "keshi",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "martial_order",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "rare_earths",
+            "abundance": 80.0,
+            "reserve": 120000.0
+          }
+        ],
+        "owner": "kesh",
+        "controller": "kesh",
+        "fortification": 3,
+        "unrest": 9.0,
+        "supply": 75.0,
+        "infrastructure": 65.0,
+        "strategic_value": 85.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_kesh_marche",
+        "name": "Garde de l'Ouest",
+        "polygon": [
+          [
+            510.0,
+            0.0
+          ],
+          [
+            502.2,
+            65.7
+          ],
+          [
+            533.4,
+            118.5
+          ],
+          [
+            517.2,
+            180.4
+          ],
+          [
+            532.0,
+            230.0
+          ],
+          [
+            588.4,
+            259.2
+          ],
+          [
+            646.3,
+            247.5
+          ],
+          [
+            696.4,
+            283.4
+          ],
+          [
+            746.0,
+            286.0
+          ],
+          [
+            761.2,
+            223.9
+          ],
+          [
+            745.6,
+            147.7
+          ],
+          [
+            777.2,
+            81.3
+          ],
+          [
+            770.0,
+            0.0
+          ],
+          [
+            640.0,
+            0.0
+          ]
+        ],
+        "center": [
+          640.42,
+          151.69
+        ],
+        "area_blocks": 63420,
+        "neighbors": [
+          "prov_ardenne_est",
+          "prov_kesh_citadelle",
+          "prov_kesh_steppe"
+        ],
+        "border_ids": [
+          "border_h_0_1_c2",
+          "border_v_r0_c1_2",
+          "border_v_r0_c2_3"
+        ],
+        "terrain": "hills",
+        "climate": {
+          "temperature_c": 11.5,
+          "rainfall_mm": 650.0,
+          "seasonality": 0.55
+        },
+        "population": {
+          "total": 150000,
+          "urban": 50000,
+          "rural": 100000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "keshi",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "martial_order",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "iron_ore",
+            "abundance": 70.0,
+            "reserve": 300000.0
+          }
+        ],
+        "owner": "kesh",
+        "controller": "kesh",
+        "fortification": 4,
+        "unrest": 12.0,
+        "supply": 70.0,
+        "infrastructure": 60.0,
+        "strategic_value": 80.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_kesh_steppe",
+        "name": "Grande Steppe",
+        "polygon": [
+          [
+            770.0,
+            0.0
+          ],
+          [
+            777.2,
+            81.3
+          ],
+          [
+            745.6,
+            147.7
+          ],
+          [
+            761.2,
+            223.9
+          ],
+          [
+            746.0,
+            286.0
+          ],
+          [
+            822.0,
+            262.0
+          ],
+          [
+            892.1,
+            279.2
+          ],
+          [
+            961.6,
+            248.0
+          ],
+          [
+            1024.0,
+            250.0
+          ],
+          [
+            1024.0,
+            125.0
+          ],
+          [
+            1024.0,
+            0.0
+          ],
+          [
+            897.0,
+            0.0
+          ]
+        ],
+        "center": [
+          870.39,
+          158.59
+        ],
+        "area_blocks": 69349,
+        "neighbors": [
+          "prov_kesh_collines",
+          "prov_kesh_marche"
+        ],
+        "border_ids": [
+          "border_h_0_1_c3",
+          "border_v_r0_c2_3"
+        ],
+        "terrain": "steppe",
+        "climate": {
+          "temperature_c": 13.0,
+          "rainfall_mm": 450.0,
+          "seasonality": 0.65
+        },
+        "population": {
+          "total": 130000,
+          "urban": 30000,
+          "rural": 100000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "keshi",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "martial_order",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "coal",
+            "abundance": 75.0,
+            "reserve": 250000.0
+          }
+        ],
+        "owner": "kesh",
+        "controller": "kesh",
+        "fortification": 1,
+        "unrest": 10.0,
+        "supply": 65.0,
+        "infrastructure": 55.0,
+        "strategic_value": 65.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_orlune_pics",
+        "name": "Pics Célestes",
+        "polygon": [
+          [
+            794.0,
+            494.0
+          ],
+          [
+            793.8,
+            578.1
+          ],
+          [
+            756.2,
+            643.8
+          ],
+          [
+            764.9,
+            723.4
+          ],
+          [
+            744.0,
+            786.0
+          ],
+          [
+            821.1,
+            764.8
+          ],
+          [
+            890.7,
+            784.4
+          ],
+          [
+            961.5,
+            755.8
+          ],
+          [
+            1024.0,
+            760.0
+          ],
+          [
+            1024.0,
+            640.0
+          ],
+          [
+            1024.0,
+            520.0
+          ],
+          [
+            972.3,
+            524.2
+          ],
+          [
+            914.9,
+            495.6
+          ],
+          [
+            856.8,
+            515.2
+          ]
+        ],
+        "center": [
+          881.59,
+          641.81
+        ],
+        "area_blocks": 65369,
+        "neighbors": [
+          "prov_kesh_collines",
+          "prov_orlune_sud",
+          "prov_orlune_temple"
+        ],
+        "border_ids": [
+          "border_h_1_2_c3",
+          "border_h_2_3_c3",
+          "border_v_r2_c2_3"
+        ],
+        "terrain": "mountains",
+        "climate": {
+          "temperature_c": 7.0,
+          "rainfall_mm": 850.0,
+          "seasonality": 0.62
+        },
+        "population": {
+          "total": 120000,
+          "urban": 30000,
+          "rural": 90000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "orlunian",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "mysticism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "rare_earths",
+            "abundance": 90.0,
+            "reserve": 220000.0
+          }
+        ],
+        "owner": "orlune",
+        "controller": "orlune",
+        "fortification": 4,
+        "unrest": 5.0,
+        "supply": 65.0,
+        "infrastructure": 60.0,
+        "strategic_value": 85.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_orlune_sud",
+        "name": "Plateau des Flammes",
+        "polygon": [
+          [
+            744.0,
+            786.0
+          ],
+          [
+            734.5,
+            853.6
+          ],
+          [
+            764.3,
+            909.0
+          ],
+          [
+            746.5,
+            972.3
+          ],
+          [
+            760.0,
+            1024.0
+          ],
+          [
+            892.0,
+            1024.0
+          ],
+          [
+            1024.0,
+            1024.0
+          ],
+          [
+            1024.0,
+            892.0
+          ],
+          [
+            1024.0,
+            760.0
+          ],
+          [
+            961.5,
+            755.8
+          ],
+          [
+            890.7,
+            784.4
+          ],
+          [
+            821.1,
+            764.8
+          ]
+        ],
+        "center": [
+          865.55,
+          879.16
+        ],
+        "area_blocks": 69955,
+        "neighbors": [
+          "prov_orlune_pics",
+          "prov_orlune_vallee"
+        ],
+        "border_ids": [
+          "border_h_2_3_c3",
+          "border_v_r3_c2_3"
+        ],
+        "terrain": "desert",
+        "climate": {
+          "temperature_c": 16.0,
+          "rainfall_mm": 500.0,
+          "seasonality": 0.55
+        },
+        "population": {
+          "total": 160000,
+          "urban": 50000,
+          "rural": 110000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "orlunian",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "mysticism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "oil",
+            "abundance": 85.0,
+            "reserve": 450000.0
+          }
+        ],
+        "owner": "orlune",
+        "controller": "orlune",
+        "fortification": 2,
+        "unrest": 7.0,
+        "supply": 75.0,
+        "infrastructure": 70.0,
+        "strategic_value": 85.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_orlune_temple",
+        "name": "Sanctuaire d'Orlune",
+        "polygon": [
+          [
+            496.0,
+            540.0
+          ],
+          [
+            495.2,
+            599.7
+          ],
+          [
+            531.6,
+            642.4
+          ],
+          [
+            522.1,
+            699.8
+          ],
+          [
+            542.0,
+            742.0
+          ],
+          [
+            595.6,
+            768.0
+          ],
+          [
+            649.6,
+            753.2
+          ],
+          [
+            697.4,
+            786.1
+          ],
+          [
+            744.0,
+            786.0
+          ],
+          [
+            764.9,
+            723.4
+          ],
+          [
+            756.2,
+            643.8
+          ],
+          [
+            793.8,
+            578.1
+          ],
+          [
+            794.0,
+            494.0
+          ],
+          [
+            726.9,
+            494.2
+          ],
+          [
+            652.8,
+            527.9
+          ],
+          [
+            577.3,
+            513.3
+          ]
+        ],
+        "center": [
+          646.21,
+          643.24
+        ],
+        "area_blocks": 64840,
+        "neighbors": [
+          "prov_kesh_citadelle",
+          "prov_orlune_pics",
+          "prov_orlune_vallee",
+          "prov_varenne_plaine"
+        ],
+        "border_ids": [
+          "border_h_1_2_c2",
+          "border_h_2_3_c2",
+          "border_v_r2_c1_2",
+          "border_v_r2_c2_3"
+        ],
+        "terrain": "plains",
+        "climate": {
+          "temperature_c": 12.5,
+          "rainfall_mm": 780.0,
+          "seasonality": 0.48
+        },
+        "population": {
+          "total": 290000,
+          "urban": 170000,
+          "rural": 120000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "orlunian",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "mysticism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "rare_earths",
+            "abundance": 85.0,
+            "reserve": 150000.0
+          }
+        ],
+        "owner": "orlune",
+        "controller": "orlune",
+        "fortification": 3,
+        "unrest": 6.0,
+        "supply": 90.0,
+        "infrastructure": 80.0,
+        "strategic_value": 90.0,
+        "victory_points": 10.0,
+        "claims": [],
+        "capital_of": "orlune",
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_orlune_vallee",
+        "name": "Vallée des Moines",
+        "polygon": [
+          [
+            542.0,
+            742.0
+          ],
+          [
+            549.8,
+            822.0
+          ],
+          [
+            518.6,
+            887.7
+          ],
+          [
+            534.8,
+            962.7
+          ],
+          [
+            520.0,
+            1024.0
+          ],
+          [
+            640.0,
+            1024.0
+          ],
+          [
+            760.0,
+            1024.0
+          ],
+          [
+            746.5,
+            972.3
+          ],
+          [
+            764.3,
+            909.0
+          ],
+          [
+            734.5,
+            853.6
+          ],
+          [
+            744.0,
+            786.0
+          ],
+          [
+            697.4,
+            786.1
+          ],
+          [
+            649.6,
+            753.2
+          ],
+          [
+            595.6,
+            768.0
+          ]
+        ],
+        "center": [
+          642.65,
+          879.61
+        ],
+        "area_blocks": 55309,
+        "neighbors": [
+          "prov_orlune_sud",
+          "prov_orlune_temple",
+          "prov_varenne_rive"
+        ],
+        "border_ids": [
+          "border_h_2_3_c2",
+          "border_v_r3_c1_2",
+          "border_v_r3_c2_3"
+        ],
+        "terrain": "hills",
+        "climate": {
+          "temperature_c": 14.0,
+          "rainfall_mm": 720.0,
+          "seasonality": 0.5
+        },
+        "population": {
+          "total": 180000,
+          "urban": 60000,
+          "rural": 120000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "orlunian",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "mysticism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "grain",
+            "abundance": 80.0,
+            "reserve": 220000.0
+          }
+        ],
+        "owner": "orlune",
+        "controller": "orlune",
+        "fortification": 2,
+        "unrest": 5.0,
+        "supply": 80.0,
+        "infrastructure": 70.0,
+        "strategic_value": 70.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_varenne_marais",
+        "name": "Basses Lagunes",
+        "polygon": [
+          [
+            0.0,
+            510.0
+          ],
+          [
+            0.0,
+            640.0
+          ],
+          [
+            0.0,
+            770.0
+          ],
+          [
+            64.9,
+            792.3
+          ],
+          [
+            125.3,
+            773.7
+          ],
+          [
+            184.4,
+            803.3
+          ],
+          [
+            238.0,
+            800.0
+          ],
+          [
+            259.3,
+            733.0
+          ],
+          [
+            251.1,
+            648.3
+          ],
+          [
+            289.2,
+            577.7
+          ],
+          [
+            290.0,
+            488.0
+          ],
+          [
+            225.4,
+            482.9
+          ],
+          [
+            151.7,
+            510.5
+          ],
+          [
+            80.1,
+            489.9
+          ]
+        ],
+        "center": [
+          154.24,
+          644.26
+        ],
+        "area_blocks": 78176,
+        "neighbors": [
+          "prov_ardenne_val",
+          "prov_varenne_plaine",
+          "prov_varenne_port"
+        ],
+        "border_ids": [
+          "border_h_1_2_c0",
+          "border_h_2_3_c0",
+          "border_v_r2_c0_1"
+        ],
+        "terrain": "swamp",
+        "climate": {
+          "temperature_c": 16.5,
+          "rainfall_mm": 1100.0,
+          "seasonality": 0.35
+        },
+        "population": {
+          "total": 190000,
+          "urban": 80000,
+          "rural": 110000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "varennois",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "pragmatism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "grain",
+            "abundance": 65.0,
+            "reserve": 180000.0
+          }
+        ],
+        "owner": "varenne",
+        "controller": "varenne",
+        "fortification": 1,
+        "unrest": 7.0,
+        "supply": 85.0,
+        "infrastructure": 75.0,
+        "strategic_value": 65.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_varenne_plaine",
+        "name": "Plaines Dorées",
+        "polygon": [
+          [
+            290.0,
+            488.0
+          ],
+          [
+            289.2,
+            577.7
+          ],
+          [
+            251.1,
+            648.3
+          ],
+          [
+            259.3,
+            733.0
+          ],
+          [
+            238.0,
+            800.0
+          ],
+          [
+            320.5,
+            770.0
+          ],
+          [
+            398.3,
+            781.6
+          ],
+          [
+            473.2,
+            744.9
+          ],
+          [
+            542.0,
+            742.0
+          ],
+          [
+            522.1,
+            699.8
+          ],
+          [
+            531.6,
+            642.4
+          ],
+          [
+            495.2,
+            599.7
+          ],
+          [
+            496.0,
+            540.0
+          ],
+          [
+            448.2,
+            538.3
+          ],
+          [
+            400.1,
+            503.4
+          ],
+          [
+            344.3,
+            516.1
+          ]
+        ],
+        "center": [
+          393.69,
+          645.33
+        ],
+        "area_blocks": 62341,
+        "neighbors": [
+          "prov_ardenne_sud",
+          "prov_orlune_temple",
+          "prov_varenne_marais",
+          "prov_varenne_rive"
+        ],
+        "border_ids": [
+          "border_h_1_2_c1",
+          "border_h_2_3_c1",
+          "border_v_r2_c0_1",
+          "border_v_r2_c1_2"
+        ],
+        "terrain": "plains",
+        "climate": {
+          "temperature_c": 17.0,
+          "rainfall_mm": 950.0,
+          "seasonality": 0.38
+        },
+        "population": {
+          "total": 240000,
+          "urban": 90000,
+          "rural": 150000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "varennois",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "pragmatism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "grain",
+            "abundance": 95.0,
+            "reserve": 400000.0
+          }
+        ],
+        "owner": "varenne",
+        "controller": "varenne",
+        "fortification": 1,
+        "unrest": 4.0,
+        "supply": 90.0,
+        "infrastructure": 85.0,
+        "strategic_value": 80.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_varenne_port",
+        "name": "Port-Varenne",
+        "polygon": [
+          [
+            0.0,
+            770.0
+          ],
+          [
+            0.0,
+            897.0
+          ],
+          [
+            0.0,
+            1024.0
+          ],
+          [
+            125.0,
+            1024.0
+          ],
+          [
+            250.0,
+            1024.0
+          ],
+          [
+            237.4,
+            975.3
+          ],
+          [
+            256.2,
+            915.8
+          ],
+          [
+            227.4,
+            863.5
+          ],
+          [
+            238.0,
+            800.0
+          ],
+          [
+            184.4,
+            803.3
+          ],
+          [
+            125.3,
+            773.7
+          ],
+          [
+            64.9,
+            792.3
+          ]
+        ],
+        "center": [
+          142.38,
+          888.57
+        ],
+        "area_blocks": 56817,
+        "neighbors": [
+          "prov_varenne_marais",
+          "prov_varenne_rive"
+        ],
+        "border_ids": [
+          "border_h_2_3_c0",
+          "border_v_r3_c0_1"
+        ],
+        "terrain": "coast",
+        "climate": {
+          "temperature_c": 17.5,
+          "rainfall_mm": 1050.0,
+          "seasonality": 0.32
+        },
+        "population": {
+          "total": 420000,
+          "urban": 280000,
+          "rural": 140000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "varennois",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "pragmatism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "oil",
+            "abundance": 75.0,
+            "reserve": 320000.0
+          }
+        ],
+        "owner": "varenne",
+        "controller": "varenne",
+        "fortification": 2,
+        "unrest": 5.0,
+        "supply": 95.0,
+        "infrastructure": 90.0,
+        "strategic_value": 95.0,
+        "victory_points": 10.0,
+        "claims": [],
+        "capital_of": "varenne",
+        "tags": [
+          "scenario_province"
+        ]
+      },
+      {
+        "id": "prov_varenne_rive",
+        "name": "Rive Marchande",
+        "polygon": [
+          [
+            238.0,
+            800.0
+          ],
+          [
+            227.4,
+            863.5
+          ],
+          [
+            256.2,
+            915.8
+          ],
+          [
+            237.4,
+            975.3
+          ],
+          [
+            250.0,
+            1024.0
+          ],
+          [
+            385.0,
+            1024.0
+          ],
+          [
+            520.0,
+            1024.0
+          ],
+          [
+            534.8,
+            962.7
+          ],
+          [
+            518.6,
+            887.7
+          ],
+          [
+            549.8,
+            822.0
+          ],
+          [
+            542.0,
+            742.0
+          ],
+          [
+            473.2,
+            744.9
+          ],
+          [
+            398.3,
+            781.6
+          ],
+          [
+            320.5,
+            770.0
+          ]
+        ],
+        "center": [
+          389.37,
+          881.25
+        ],
+        "area_blocks": 74953,
+        "neighbors": [
+          "prov_orlune_vallee",
+          "prov_varenne_plaine",
+          "prov_varenne_port"
+        ],
+        "border_ids": [
+          "border_h_2_3_c1",
+          "border_v_r3_c0_1",
+          "border_v_r3_c1_2"
+        ],
+        "terrain": "plains",
+        "climate": {
+          "temperature_c": 16.0,
+          "rainfall_mm": 980.0,
+          "seasonality": 0.4
+        },
+        "population": {
+          "total": 200000,
+          "urban": 90000,
+          "rural": 110000,
+          "growth_rate": 0.005,
+          "density_per_km2": 45.0
+        },
+        "culture": {
+          "primary": "varennois",
+          "minorities": []
+        },
+        "religion": {
+          "primary": "pragmatism",
+          "minorities": []
+        },
+        "resources": [
+          {
+            "resource": "coal",
+            "abundance": 70.0,
+            "reserve": 200000.0
+          }
+        ],
+        "owner": "varenne",
+        "controller": "varenne",
+        "fortification": 2,
+        "unrest": 6.0,
+        "supply": 85.0,
+        "infrastructure": 80.0,
+        "strategic_value": 75.0,
+        "victory_points": 5.0,
+        "claims": [],
+        "capital_of": null,
+        "tags": [
+          "scenario_province"
+        ]
+      }
+    ],
+    "borders": [
+      {
+        "id": "border_h_0_1_c0",
+        "a": "prov_ardenne_nord",
+        "b": "prov_ardenne_val",
+        "kind": "land",
+        "points": [
+          [
+            0.0,
+            260.0
+          ],
+          [
+            63.8,
+            279.5
+          ],
+          [
+            121.7,
+            258.4
+          ],
+          [
+            180.1,
+            285.6
+          ],
+          [
+            232.0,
+            280.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_0_1_c1",
+        "a": "prov_ardenne_est",
+        "b": "prov_ardenne_sud",
+        "kind": "land",
+        "points": [
+          [
+            232.0,
+            280.0
+          ],
+          [
+            313.7,
+            252.2
+          ],
+          [
+            390.0,
+            265.8
+          ],
+          [
+            464.4,
+            231.1
+          ],
+          [
+            532.0,
+            230.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_0_1_c2",
+        "a": "prov_kesh_citadelle",
+        "b": "prov_kesh_marche",
+        "kind": "land",
+        "points": [
+          [
+            532.0,
+            230.0
+          ],
+          [
+            588.4,
+            259.2
+          ],
+          [
+            646.3,
+            247.5
+          ],
+          [
+            696.4,
+            283.4
+          ],
+          [
+            746.0,
+            286.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_0_1_c3",
+        "a": "prov_kesh_collines",
+        "b": "prov_kesh_steppe",
+        "kind": "land",
+        "points": [
+          [
+            746.0,
+            286.0
+          ],
+          [
+            822.0,
+            262.0
+          ],
+          [
+            892.1,
+            279.2
+          ],
+          [
+            961.6,
+            248.0
+          ],
+          [
+            1024.0,
+            250.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_1_2_c0",
+        "a": "prov_ardenne_val",
+        "b": "prov_varenne_marais",
+        "kind": "river",
+        "points": [
+          [
+            0.0,
+            510.0
+          ],
+          [
+            80.1,
+            489.9
+          ],
+          [
+            151.7,
+            510.5
+          ],
+          [
+            225.4,
+            482.9
+          ],
+          [
+            290.0,
+            488.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_h_1_2_c1",
+        "a": "prov_ardenne_sud",
+        "b": "prov_varenne_plaine",
+        "kind": "river",
+        "points": [
+          [
+            290.0,
+            488.0
+          ],
+          [
+            344.3,
+            516.1
+          ],
+          [
+            400.1,
+            503.4
+          ],
+          [
+            448.2,
+            538.3
+          ],
+          [
+            496.0,
+            540.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_h_1_2_c2",
+        "a": "prov_kesh_citadelle",
+        "b": "prov_orlune_temple",
+        "kind": "river",
+        "points": [
+          [
+            496.0,
+            540.0
+          ],
+          [
+            577.3,
+            513.3
+          ],
+          [
+            652.8,
+            527.9
+          ],
+          [
+            726.9,
+            494.2
+          ],
+          [
+            794.0,
+            494.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_h_1_2_c3",
+        "a": "prov_kesh_collines",
+        "b": "prov_orlune_pics",
+        "kind": "river",
+        "points": [
+          [
+            794.0,
+            494.0
+          ],
+          [
+            856.8,
+            515.2
+          ],
+          [
+            914.9,
+            495.6
+          ],
+          [
+            972.3,
+            524.2
+          ],
+          [
+            1024.0,
+            520.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_h_2_3_c0",
+        "a": "prov_varenne_marais",
+        "b": "prov_varenne_port",
+        "kind": "land",
+        "points": [
+          [
+            0.0,
+            770.0
+          ],
+          [
+            64.9,
+            792.3
+          ],
+          [
+            125.3,
+            773.7
+          ],
+          [
+            184.4,
+            803.3
+          ],
+          [
+            238.0,
+            800.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_2_3_c1",
+        "a": "prov_varenne_plaine",
+        "b": "prov_varenne_rive",
+        "kind": "land",
+        "points": [
+          [
+            238.0,
+            800.0
+          ],
+          [
+            320.5,
+            770.0
+          ],
+          [
+            398.3,
+            781.6
+          ],
+          [
+            473.2,
+            744.9
+          ],
+          [
+            542.0,
+            742.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_2_3_c2",
+        "a": "prov_orlune_temple",
+        "b": "prov_orlune_vallee",
+        "kind": "land",
+        "points": [
+          [
+            542.0,
+            742.0
+          ],
+          [
+            595.6,
+            768.0
+          ],
+          [
+            649.6,
+            753.2
+          ],
+          [
+            697.4,
+            786.1
+          ],
+          [
+            744.0,
+            786.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_h_2_3_c3",
+        "a": "prov_orlune_pics",
+        "b": "prov_orlune_sud",
+        "kind": "land",
+        "points": [
+          [
+            744.0,
+            786.0
+          ],
+          [
+            821.1,
+            764.8
+          ],
+          [
+            890.7,
+            784.4
+          ],
+          [
+            961.5,
+            755.8
+          ],
+          [
+            1024.0,
+            760.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r0_c0_1",
+        "a": "prov_ardenne_est",
+        "b": "prov_ardenne_nord",
+        "kind": "land",
+        "points": [
+          [
+            260.0,
+            0.0
+          ],
+          [
+            266.1,
+            79.8
+          ],
+          [
+            233.5,
+            144.4
+          ],
+          [
+            248.1,
+            219.4
+          ],
+          [
+            232.0,
+            280.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r0_c1_2",
+        "a": "prov_ardenne_est",
+        "b": "prov_kesh_marche",
+        "kind": "mountain",
+        "points": [
+          [
+            510.0,
+            0.0
+          ],
+          [
+            502.2,
+            65.7
+          ],
+          [
+            533.4,
+            118.5
+          ],
+          [
+            517.2,
+            180.4
+          ],
+          [
+            532.0,
+            230.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_v_r0_c2_3",
+        "a": "prov_kesh_marche",
+        "b": "prov_kesh_steppe",
+        "kind": "land",
+        "points": [
+          [
+            770.0,
+            0.0
+          ],
+          [
+            777.2,
+            81.3
+          ],
+          [
+            745.6,
+            147.7
+          ],
+          [
+            761.2,
+            223.9
+          ],
+          [
+            746.0,
+            286.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r1_c0_1",
+        "a": "prov_ardenne_sud",
+        "b": "prov_ardenne_val",
+        "kind": "land",
+        "points": [
+          [
+            232.0,
+            280.0
+          ],
+          [
+            234.8,
+            342.0
+          ],
+          [
+            273.7,
+            384.9
+          ],
+          [
+            267.6,
+            444.9
+          ],
+          [
+            290.0,
+            488.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r1_c1_2",
+        "a": "prov_ardenne_sud",
+        "b": "prov_kesh_citadelle",
+        "kind": "mountain",
+        "points": [
+          [
+            532.0,
+            230.0
+          ],
+          [
+            535.8,
+            318.4
+          ],
+          [
+            501.4,
+            389.8
+          ],
+          [
+            513.9,
+            473.0
+          ],
+          [
+            496.0,
+            540.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_v_r1_c2_3",
+        "a": "prov_kesh_citadelle",
+        "b": "prov_kesh_collines",
+        "kind": "land",
+        "points": [
+          [
+            746.0,
+            286.0
+          ],
+          [
+            745.8,
+            347.4
+          ],
+          [
+            782.7,
+            391.5
+          ],
+          [
+            773.7,
+            450.5
+          ],
+          [
+            794.0,
+            494.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r2_c0_1",
+        "a": "prov_varenne_marais",
+        "b": "prov_varenne_plaine",
+        "kind": "land",
+        "points": [
+          [
+            290.0,
+            488.0
+          ],
+          [
+            289.2,
+            577.7
+          ],
+          [
+            251.1,
+            648.3
+          ],
+          [
+            259.3,
+            733.0
+          ],
+          [
+            238.0,
+            800.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r2_c1_2",
+        "a": "prov_orlune_temple",
+        "b": "prov_varenne_plaine",
+        "kind": "mountain",
+        "points": [
+          [
+            496.0,
+            540.0
+          ],
+          [
+            495.2,
+            599.7
+          ],
+          [
+            531.6,
+            642.4
+          ],
+          [
+            522.1,
+            699.8
+          ],
+          [
+            542.0,
+            742.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_v_r2_c2_3",
+        "a": "prov_orlune_pics",
+        "b": "prov_orlune_temple",
+        "kind": "land",
+        "points": [
+          [
+            794.0,
+            494.0
+          ],
+          [
+            793.8,
+            578.1
+          ],
+          [
+            756.2,
+            643.8
+          ],
+          [
+            764.9,
+            723.4
+          ],
+          [
+            744.0,
+            786.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r3_c0_1",
+        "a": "prov_varenne_port",
+        "b": "prov_varenne_rive",
+        "kind": "land",
+        "points": [
+          [
+            238.0,
+            800.0
+          ],
+          [
+            227.4,
+            863.5
+          ],
+          [
+            256.2,
+            915.8
+          ],
+          [
+            237.4,
+            975.3
+          ],
+          [
+            250.0,
+            1024.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      },
+      {
+        "id": "border_v_r3_c1_2",
+        "a": "prov_orlune_vallee",
+        "b": "prov_varenne_rive",
+        "kind": "mountain",
+        "points": [
+          [
+            542.0,
+            742.0
+          ],
+          [
+            549.8,
+            822.0
+          ],
+          [
+            518.6,
+            887.7
+          ],
+          [
+            534.8,
+            962.7
+          ],
+          [
+            520.0,
+            1024.0
+          ]
+        ],
+        "natural_barrier": true,
+        "crossing_cost": 2
+      },
+      {
+        "id": "border_v_r3_c2_3",
+        "a": "prov_orlune_sud",
+        "b": "prov_orlune_vallee",
+        "kind": "land",
+        "points": [
+          [
+            744.0,
+            786.0
+          ],
+          [
+            734.5,
+            853.6
+          ],
+          [
+            764.3,
+            909.0
+          ],
+          [
+            746.5,
+            972.3
+          ],
+          [
+            760.0,
+            1024.0
+          ]
+        ],
+        "natural_barrier": false,
+        "crossing_cost": 1
+      }
+    ],
+    "regions": [
+      {
+        "id": "vallees_du_nord",
+        "name": "Vallées du Nord",
+        "kind": "subcontinent",
+        "provinces": [
+          "prov_ardenne_est",
+          "prov_ardenne_nord",
+          "prov_ardenne_sud",
+          "prov_ardenne_val"
+        ],
+        "climate": "temperate"
+      },
+      {
+        "id": "marches_de_lest",
+        "name": "Marches de l'Est",
+        "kind": "subcontinent",
+        "provinces": [
+          "prov_kesh_citadelle",
+          "prov_kesh_collines",
+          "prov_kesh_marche",
+          "prov_kesh_steppe"
+        ],
+        "climate": "semi_arid"
+      },
+      {
+        "id": "bassin_maritime",
+        "name": "Bassin Maritime",
+        "kind": "subcontinent",
+        "provinces": [
+          "prov_varenne_marais",
+          "prov_varenne_plaine",
+          "prov_varenne_port",
+          "prov_varenne_rive"
+        ],
+        "climate": "oceanic"
+      },
+      {
+        "id": "hauts_sanctuaires",
+        "name": "Hauts Sanctuaires",
+        "kind": "subcontinent",
+        "provinces": [
+          "prov_orlune_pics",
+          "prov_orlune_sud",
+          "prov_orlune_temple",
+          "prov_orlune_vallee"
+        ],
+        "climate": "continental"
+      }
+    ],
+    "straits": [],
+    "climate_zones": [
+      {
+        "id": "temperate_north",
+        "name": "Zone tempérée nordique",
+        "temperature_range": {
+          "min": 5.0,
+          "max": 25.0
+        },
+        "rainfall_range": {
+          "min": 400.0,
+          "max": 1200.0
+        },
+        "biomes": [
+          "forest",
+          "plains"
+        ]
+      }
+    ]
+  },
+  "nations": [
+    {
+      "schema_version": 1,
+      "id": "ardenne",
+      "name": "République d'Ardenne",
+      "adjective": "ardennois",
+      "short_name": "Ardenne",
+      "color": "#3A7BD5",
+      "flag": {
+        "palette": [
+          "#3A7BD5",
+          "#F2F4F8"
+        ],
+        "pattern": "horizontal_bands",
+        "motto": "Liberté, Raison, Solidarité"
+      },
+      "capital": "prov_ardenne_val",
+      "provinces": [
+        "prov_ardenne_est",
+        "prov_ardenne_nord",
+        "prov_ardenne_sud",
+        "prov_ardenne_val"
+      ],
+      "government": "republic",
+      "ideology": "civic_republicanism",
+      "culture": "ardennic",
+      "religion": "rationalism",
+      "language": "fr_FR",
+      "leader": {
+        "name": "Mira Valen",
+        "title": "Présidente",
+        "age": 47,
+        "traits": [
+          "prudente",
+          "démocrate",
+          "réformatrice"
+        ]
+      },
+      "population": {
+        "total": 850000,
+        "workforce": 450000,
+        "conscription_pool": 95000,
+        "growth_rate": 0.005,
+        "urbanization": 0.47
+      },
+      "economy": {
+        "gdp": 1350000000.0,
+        "treasury": 280000000.0,
+        "tax_rate": 0.24,
+        "inflation": 0.02,
+        "unemployment": 0.05,
+        "trade_balance": 15000000.0,
+        "debt": 80000000.0,
+        "sectors": {
+          "agriculture": 0.15,
+          "industry": 0.35,
+          "services": 0.4,
+          "technology": 0.1
+        },
+        "resources": {}
+      },
+      "military": {
+        "manpower": 28000,
+        "army_size": 20000,
+        "readiness": 65.0,
+        "morale": 70.0,
+        "doctrine": "defensive",
+        "missile_stockpile": {}
+      },
+      "stability": 75.0,
+      "legitimacy": 78.0,
+      "prestige": 45.0,
+      "war_exhaustion": 0.0,
+      "unrest": 5.0,
+      "technology": {
+        "era": 2,
+        "researched": [
+          "tech_steel_metallurgy",
+          "tech_rail_logistics"
+        ],
+        "research_points": 120.0
+      },
+      "ai_profile": {
+        "archetype": "caretaker",
+        "aggression": 0.2,
+        "caution": 0.8,
+        "honor": 0.8,
+        "greed": 0.3,
+        "revanchism": 0.1,
+        "isolationism": 0.3,
+        "opportunism": 0.2,
+        "loyalty": 0.8,
+        "risk_tolerance": 0.3,
+        "patience": 0.8,
+        "war_threshold": 0.75,
+        "peace_threshold": 0.3,
+        "priorities": {
+          "economy": 0.8,
+          "military": 0.4,
+          "diplomacy": 0.8,
+          "expansion": 0.1,
+          "stability": 0.9,
+          "technology": 0.7
+        },
+        "red_lines": [
+          "capital_occupied",
+          "core_occupied"
+        ]
+      },
+      "claims": [],
+      "subjects": [],
+      "overlord": null,
+      "allies": [],
+      "wars": [],
+      "revolutions": [],
+      "armies": [],
+      "missiles": [],
+      "is_playable": true,
+      "tags": [
+        "democratic"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "kesh",
+      "name": "Autocratie de Kesh",
+      "adjective": "keshi",
+      "short_name": "Kesh",
+      "color": "#E8590C",
+      "flag": {
+        "palette": [
+          "#E8590C",
+          "#212529"
+        ],
+        "pattern": "cross",
+        "motto": "Par le Fer et le Serment"
+      },
+      "capital": "prov_kesh_citadelle",
+      "provinces": [
+        "prov_kesh_citadelle",
+        "prov_kesh_collines",
+        "prov_kesh_marche",
+        "prov_kesh_steppe"
+      ],
+      "government": "autocracy",
+      "ideology": "militarist_autocracy",
+      "culture": "keshi",
+      "religion": "martial_order",
+      "language": "fr_FR",
+      "leader": {
+        "name": "Goran Thorne",
+        "title": "Généralissime",
+        "age": 52,
+        "traits": [
+          "intransigeant",
+          "stratège",
+          "audacieux"
+        ]
+      },
+      "population": {
+        "total": 800000,
+        "workforce": 410000,
+        "conscription_pool": 120000,
+        "growth_rate": 0.004,
+        "urbanization": 0.43
+      },
+      "economy": {
+        "gdp": 1150000000.0,
+        "treasury": 180000000.0,
+        "tax_rate": 0.28,
+        "inflation": 0.04,
+        "unemployment": 0.06,
+        "trade_balance": -10000000.0,
+        "debt": 120000000.0,
+        "sectors": {
+          "agriculture": 0.12,
+          "industry": 0.5,
+          "services": 0.28,
+          "technology": 0.1
+        },
+        "resources": {}
+      },
+      "military": {
+        "manpower": 45000,
+        "army_size": 35000,
+        "readiness": 85.0,
+        "morale": 80.0,
+        "doctrine": "attrition",
+        "missile_stockpile": {
+          "missile_short_range": 6
+        }
+      },
+      "stability": 68.0,
+      "legitimacy": 70.0,
+      "prestige": 55.0,
+      "war_exhaustion": 0.0,
+      "unrest": 9.0,
+      "technology": {
+        "era": 2,
+        "researched": [
+          "tech_steel_metallurgy"
+        ],
+        "research_points": 80.0
+      },
+      "ai_profile": {
+        "archetype": "warlord",
+        "aggression": 0.85,
+        "caution": 0.3,
+        "honor": 0.4,
+        "greed": 0.7,
+        "revanchism": 0.75,
+        "isolationism": 0.1,
+        "opportunism": 0.8,
+        "loyalty": 0.4,
+        "risk_tolerance": 0.8,
+        "patience": 0.4,
+        "war_threshold": 0.45,
+        "peace_threshold": 0.55,
+        "priorities": {
+          "economy": 0.5,
+          "military": 0.9,
+          "diplomacy": 0.3,
+          "expansion": 0.8,
+          "stability": 0.6,
+          "technology": 0.6
+        },
+        "red_lines": [
+          "capital_occupied"
+        ]
+      },
+      "claims": [],
+      "subjects": [],
+      "overlord": null,
+      "allies": [],
+      "wars": [],
+      "revolutions": [],
+      "armies": [],
+      "missiles": [],
+      "is_playable": true,
+      "tags": [
+        "militarist"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "varenne",
+      "name": "Ligue marchande de Varenne",
+      "adjective": "varennois",
+      "short_name": "Varenne",
+      "color": "#12B886",
+      "flag": {
+        "palette": [
+          "#12B886",
+          "#FFD43B"
+        ],
+        "pattern": "vertical_bands",
+        "motto": "Flots Prospères, Pacte Éternel"
+      },
+      "capital": "prov_varenne_port",
+      "provinces": [
+        "prov_varenne_marais",
+        "prov_varenne_plaine",
+        "prov_varenne_port",
+        "prov_varenne_rive"
+      ],
+      "government": "oligarchy",
+      "ideology": "commercial_oligarchy",
+      "culture": "varennois",
+      "religion": "pragmatism",
+      "language": "fr_FR",
+      "leader": {
+        "name": "Alvise Contarini",
+        "title": "Doge",
+        "age": 59,
+        "traits": [
+          "négociateur",
+          "richissime",
+          "diplomate"
+        ]
+      },
+      "population": {
+        "total": 1050000,
+        "workforce": 560000,
+        "conscription_pool": 80000,
+        "growth_rate": 0.007,
+        "urbanization": 0.52
+      },
+      "economy": {
+        "gdp": 1650000000.0,
+        "treasury": 450000000.0,
+        "tax_rate": 0.18,
+        "inflation": 0.02,
+        "unemployment": 0.04,
+        "trade_balance": 45000000.0,
+        "debt": 50000000.0,
+        "sectors": {
+          "agriculture": 0.18,
+          "industry": 0.22,
+          "services": 0.5,
+          "technology": 0.1
+        },
+        "resources": {}
+      },
+      "military": {
+        "manpower": 22000,
+        "army_size": 16000,
+        "readiness": 55.0,
+        "morale": 65.0,
+        "doctrine": "naval",
+        "missile_stockpile": {}
+      },
+      "stability": 80.0,
+      "legitimacy": 74.0,
+      "prestige": 60.0,
+      "war_exhaustion": 0.0,
+      "unrest": 5.0,
+      "technology": {
+        "era": 2,
+        "researched": [
+          "tech_rail_logistics"
+        ],
+        "research_points": 150.0
+      },
+      "ai_profile": {
+        "archetype": "merchant",
+        "aggression": 0.15,
+        "caution": 0.7,
+        "honor": 0.6,
+        "greed": 0.85,
+        "revanchism": 0.1,
+        "isolationism": 0.2,
+        "opportunism": 0.6,
+        "loyalty": 0.6,
+        "risk_tolerance": 0.4,
+        "patience": 0.7,
+        "war_threshold": 0.8,
+        "peace_threshold": 0.25,
+        "priorities": {
+          "economy": 0.9,
+          "military": 0.3,
+          "diplomacy": 0.8,
+          "expansion": 0.2,
+          "stability": 0.8,
+          "technology": 0.7
+        },
+        "red_lines": [
+          "capital_occupied",
+          "trade_embargo"
+        ]
+      },
+      "claims": [],
+      "subjects": [],
+      "overlord": null,
+      "allies": [],
+      "wars": [],
+      "revolutions": [],
+      "armies": [],
+      "missiles": [],
+      "is_playable": true,
+      "tags": [
+        "mercantile"
+      ]
+    },
+    {
+      "schema_version": 1,
+      "id": "orlune",
+      "name": "Sanctuaire d'Orlune",
+      "adjective": "orlunien",
+      "short_name": "Orlune",
+      "color": "#9C36B5",
+      "flag": {
+        "palette": [
+          "#9C36B5",
+          "#F8F9FA"
+        ],
+        "pattern": "starfield",
+        "motto": "Sous le Regard des Astres"
+      },
+      "capital": "prov_orlune_temple",
+      "provinces": [
+        "prov_orlune_pics",
+        "prov_orlune_sud",
+        "prov_orlune_temple",
+        "prov_orlune_vallee"
+      ],
+      "government": "theocracy",
+      "ideology": "devotional_theocracy",
+      "culture": "orlunian",
+      "religion": "mysticism",
+      "language": "fr_FR",
+      "leader": {
+        "name": "Elysia Solas",
+        "title": "Archonte Suprême",
+        "age": 44,
+        "traits": [
+          "mystique",
+          "érudite",
+          "déterminée"
+        ]
+      },
+      "population": {
+        "total": 750000,
+        "workforce": 380000,
+        "conscription_pool": 85000,
+        "growth_rate": 0.003,
+        "urbanization": 0.41
+      },
+      "economy": {
+        "gdp": 1050000000.0,
+        "treasury": 220000000.0,
+        "tax_rate": 0.22,
+        "inflation": 0.015,
+        "unemployment": 0.05,
+        "trade_balance": 5000000.0,
+        "debt": 40000000.0,
+        "sectors": {
+          "agriculture": 0.2,
+          "industry": 0.25,
+          "services": 0.35,
+          "technology": 0.2
+        },
+        "resources": {}
+      },
+      "military": {
+        "manpower": 25000,
+        "army_size": 18000,
+        "readiness": 65.0,
+        "morale": 85.0,
+        "doctrine": "defensive",
+        "missile_stockpile": {}
+      },
+      "stability": 82.0,
+      "legitimacy": 85.0,
+      "prestige": 50.0,
+      "war_exhaustion": 0.0,
+      "unrest": 4.0,
+      "technology": {
+        "era": 2,
+        "researched": [
+          "tech_radio_communications"
+        ],
+        "research_points": 180.0
+      },
+      "ai_profile": {
+        "archetype": "ideologue",
+        "aggression": 0.35,
+        "caution": 0.6,
+        "honor": 0.7,
+        "greed": 0.3,
+        "revanchism": 0.4,
+        "isolationism": 0.5,
+        "opportunism": 0.4,
+        "loyalty": 0.7,
+        "risk_tolerance": 0.5,
+        "patience": 0.7,
+        "war_threshold": 0.65,
+        "peace_threshold": 0.4,
+        "priorities": {
+          "economy": 0.5,
+          "military": 0.5,
+          "diplomacy": 0.6,
+          "expansion": 0.3,
+          "stability": 0.9,
+          "technology": 0.8
+        },
+        "red_lines": [
+          "capital_occupied",
+          "core_occupied"
+        ]
+      },
+      "claims": [],
+      "subjects": [],
+      "overlord": null,
+      "allies": [],
+      "wars": [],
+      "revolutions": [],
+      "armies": [],
+      "missiles": [],
+      "is_playable": true,
+      "tags": [
+        "theocratic"
+      ]
+    }
+  ],
+  "diplomacy": {
+    "schema_version": 1,
+    "relations": [
+      {
+        "a": "ardenne",
+        "b": "kesh",
+        "opinion": -55.0,
+        "trust": 25.0,
+        "fear": 45.0,
+        "trade_dependence": 0.05,
+        "border_tension": 60.0,
+        "status": "hostile"
+      },
+      {
+        "a": "ardenne",
+        "b": "orlune",
+        "opinion": 15.0,
+        "trust": 50.0,
+        "fear": 10.0,
+        "trade_dependence": 0.15,
+        "border_tension": 10.0,
+        "status": "neutral"
+      },
+      {
+        "a": "ardenne",
+        "b": "varenne",
+        "opinion": 40.0,
+        "trust": 65.0,
+        "fear": 10.0,
+        "trade_dependence": 0.3,
+        "border_tension": 15.0,
+        "status": "friendly"
+      },
+      {
+        "a": "kesh",
+        "b": "orlune",
+        "opinion": -20.0,
+        "trust": 35.0,
+        "fear": 30.0,
+        "trade_dependence": 0.1,
+        "border_tension": 40.0,
+        "status": "neutral"
+      },
+      {
+        "a": "kesh",
+        "b": "varenne",
+        "opinion": 5.0,
+        "trust": 40.0,
+        "fear": 20.0,
+        "trade_dependence": 0.25,
+        "border_tension": 25.0,
+        "status": "neutral"
+      },
+      {
+        "a": "orlune",
+        "b": "varenne",
+        "opinion": 25.0,
+        "trust": 55.0,
+        "fear": 15.0,
+        "trade_dependence": 0.2,
+        "border_tension": 15.0,
+        "status": "friendly"
+      }
+    ],
+    "treaties": [],
+    "organizations": [],
+    "sanctions": [],
+    "guarantees": [],
+    "espionage_operations": [],
+    "trade_routes": []
+  },
+  "wars": [],
+  "revolutions": [],
+  "armies": [],
+  "missiles_in_flight": [],
+  "player_nation": "ardenne",
+  "difficulty": "normal",
+  "tags": [
+    "official",
+    "arc_des_frontieres"
+  ]
+}

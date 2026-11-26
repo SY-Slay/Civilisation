@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/names.schema.json",
+  "title": "Civilisations — réservoirs de noms",
+  "description": "Noms fictifs pour les nations, villes, dirigeants, armées et opérations. Le générateur combine des listes de manière déterministe avec la graine du monde.",
+  "type": "object",
+  "required": ["id", "culture", "nation_names", "city_names", "leader_names"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "culture": { "$ref": "common.schema.json#/$defs/id" },
+    "language": {
+      "type": "string",
+      "pattern": "^[a-z]{2}(_[A-Z]{2})?$"
+    },
+    "nation_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "nation_adjectives": {
+      "$ref": "#/$defs/name_list"
+    },
+    "city_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "region_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "leader_names": {
+      "type": "object",
+      "required": ["given", "family"],
+      "additionalProperties": false,
+      "properties": {
+        "given": { "$ref": "#/$defs/name_list" },
+        "family": { "$ref": "#/$defs/name_list" },
+        "titles": { "$ref": "#/$defs/name_list" },
+        "epithets": { "$ref": "#/$defs/name_list" }
+      }
+    },
+    "army_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "operation_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "missile_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "ship_names": {
+      "$ref": "#/$defs/name_list"
+    },
+    "patterns": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "nation": { "$ref": "#/$defs/pattern" },
+        "city": { "$ref": "#/$defs/pattern" },
+        "leader": { "$ref": "#/$defs/pattern" },
+        "army": { "$ref": "#/$defs/pattern" }
+      }
+    }
+  },
+  "$defs": {
+    "name_list": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 80
+      },
+      "uniqueItems": true
+    },
+    "pattern": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160,
+      "description": "Motif symbolique utilisant des jetons comme {given}, {family}, {root}, {suffix}. Les jetons inconnus sont refusés au chargement."
+    }
+  }
+}

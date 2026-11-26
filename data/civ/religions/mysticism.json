@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "mysticism",
+  "name": "Culte des Astres Éternels",
+  "description": "Religion mystique et théocratique guidée par les constellations et l'ascèse.",
+  "family": "astral_creed",
+  "tenets": [
+    "alignement céleste",
+    "pureté spirituelle",
+    "soumission au destin"
+  ],
+  "tolerance": 50.0,
+  "holy_sites": [
+    "prov_orlune_temple"
+  ],
+  "clergy_title": "Archonte du Voile",
+  "modifiers": [],
+  "tags": [
+    "theocratic",
+    "astral"
+  ]
+}

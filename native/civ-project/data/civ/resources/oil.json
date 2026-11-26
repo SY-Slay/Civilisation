@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "id": "oil",
+  "name": "Hydrocarbures bruts",
+  "description": "Ressource stratégique vitale pour les unités mécanisées, l'aviation et l'industrie chimique.",
+  "category": "energy",
+  "unit": "barrel",
+  "base_value": 150.0,
+  "strategic": true,
+  "modifiers": [],
+  "tags": [
+    "hydrocarbon",
+    "strategic"
+  ]
+}

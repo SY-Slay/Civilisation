@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/save.schema.json",
+  "title": "Civilisations — sauvegarde",
+  "description": "Instantané complet et reproductible d'une partie. Le fichier est du JSON (éventuellement compressé au repos) ; cette version décrit le JSON décompressé. Toute migration doit être explicite et testée.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "save_id",
+    "created_at",
+    "updated_at",
+    "compatibility",
+    "scenario_id",
+    "seed",
+    "tick",
+    "date",
+    "world",
+    "nations",
+    "diplomacy",
+    "wars",
+    "revolutions",
+    "armies",
+    "missiles_in_flight",
+    "event_state",
+    "rng",
+    "checksum",
+    "metadata"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "save_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "compatibility": {
+      "$ref": "#/$defs/compatibility"
+    },
+    "scenario_id": {
+      "$ref": "common.schema.json#/$defs/id"
+    },
+    "seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9223372036854775807
+    },
+    "tick": {
+      "$ref": "common.schema.json#/$defs/tick"
+    },
+    "date": {
+      "$ref": "common.schema.json#/$defs/game_date"
+    },
+    "start_date": {
+      "$ref": "common.schema.json#/$defs/game_date",
+      "description": "Date initiale du scénario, conservée pour les délais de grâce et l'IA."
+    },
+    "difficulty": {
+      "enum": ["peaceful", "normal", "aggressive", "nightmare"],
+      "description": "Difficulté initiale, conservée pour un rechargement déterministe."
+    },
+    "ticks_per_day": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 1000000,
+      "description": "Nombre de ticks par jour fictif."
+    },
+    "world": {
+      "$ref": "world.schema.json"
+    },
+    "nations": {
+      "type": "array",
+      "items": { "$ref": "nation.schema.json" }
+    },
+    "diplomacy": {
+      "$ref": "diplomacy.schema.json"
+    },
+    "wars": {
+      "type": "array",
+      "items": { "$ref": "war.schema.json" }
+    },
+    "revolutions": {
+      "type": "array",
+      "items": { "$ref": "revolution.schema.json" }
+    },
+    "armies": {
+      "type": "array",
+      "items": { "$ref": "war.schema.json#/$defs/army" }
+    },
+    "missiles_in_flight": {
+      "type": "array",
+      "items": { "$ref": "missile.schema.json#/$defs/missile_instance" }
+    },
+    "event_state": {
+      "$ref": "#/$defs/event_state"
+    },
+    "rng": {
+      "$ref": "#/$defs/rng_state"
+    },
+    "checksum": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$",
+      "description": "SHA-256 du contenu canonique de la sauvegarde, checksum exclu."
+    },
+    "weekly_ranking_entry": {
+      "type": "object",
+      "required": ["nation", "rank", "score", "treasury", "gdp", "population", "week"],
+      "additionalProperties": false,
+      "properties": {
+        "nation": { "$ref": "common.schema.json#/$defs/id" },
+        "rank": { "type": "integer", "minimum": 1 },
+        "previous_rank": {
+          "oneOf": [
+            { "type": "integer", "minimum": 1 },
+            { "type": "null" }
+          ]
+        },
+        "score": { "type": "number", "minimum": 0 },
+        "treasury": { "type": "number", "minimum": 0 },
+        "gdp": { "type": "number", "minimum": 0 },
+        "population": { "type": "integer", "minimum": 0 },
+        "week": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "metadata": {
+      "$ref": "#/$defs/metadata"
+    },
+    "weekly_ranking": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/weekly_ranking_entry" }
+    },
+    "last_ranking_week": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "$defs": {
+    "compatibility": {
+      "type": "object",
+      "required": ["game_version", "mod_version", "horizon_revision", "data_fingerprint"],
+      "additionalProperties": false,
+      "properties": {
+        "game_version": {
+          "const": "26.3"
+        },
+        "mod_version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)([-+][0-9A-Za-z.-]+)?$"
+        },
+        "horizon_revision": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{40}$"
+        },
+        "data_fingerprint": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$",
+          "description": "Empreinte SHA-256 du scénario canonique chargé. L'empreinte du data-pack complet sera ajoutée à l'étape 5 sans changer le format du champ."
+        },
+        "schema_version": {
+          "$ref": "common.schema.json#/$defs/schema_version"
+        }
+      }
+    },
+    "event_state": {
+      "type": "object",
+      "required": ["active", "cooldowns", "fired_counts"],
+      "additionalProperties": false,
+      "properties": {
+        "active": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["event", "nation", "start_tick", "expires_tick"],
+            "additionalProperties": false,
+            "properties": {
+              "event": { "$ref": "common.schema.json#/$defs/id" },
+              "nation": { "$ref": "common.schema.json#/$defs/id" },
+              "start_tick": { "$ref": "common.schema.json#/$defs/tick" },
+              "expires_tick": { "$ref": "common.schema.json#/$defs/tick" },
+              "chosen": {
+                "oneOf": [
+                  { "$ref": "common.schema.json#/$defs/id" },
+                  { "type": "null" }
+                ]
+              }
+            }
+          }
+        },
+        "cooldowns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["event", "nation", "ready_tick"],
+            "additionalProperties": false,
+            "properties": {
+              "event": { "$ref": "common.schema.json#/$defs/id" },
+              "nation": { "$ref": "common.schema.json#/$defs/id" },
+              "ready_tick": { "$ref": "common.schema.json#/$defs/tick" }
+            }
+          }
+        },
+        "fired_counts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["event", "nation", "count"],
+            "additionalProperties": false,
+            "properties": {
+              "event": { "$ref": "common.schema.json#/$defs/id" },
+              "nation": { "$ref": "common.schema.json#/$defs/id" },
+              "count": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        "pending": {
+          "type": "array",
+          "description": "Effets différés déjà planifiés, appliqués au tick indiqué.",
+          "items": {
+            "type": "object",
+            "required": ["apply_tick", "effect"],
+            "additionalProperties": false,
+            "properties": {
+              "apply_tick": { "$ref": "common.schema.json#/$defs/tick" },
+              "nation": { "$ref": "common.schema.json#/$defs/id" },
+              "effect": { "$ref": "common.schema.json#/$defs/effect" }
+            }
+          }
+        }
+      }
+    },
+    "rng_state": {
+      "type": "object",
+      "required": ["algorithm", "seed", "counter", "stream"],
+      "additionalProperties": false,
+      "properties": {
+        "algorithm": {
+          "const": "splitmix64_counter_v1"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9223372036854775807
+        },
+        "counter": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "stream": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "required": ["save_name", "playtime_seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "save_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "player_nation": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "playtime_seconds": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "notes": {
+          "type": "string",
+          "maxLength": 2000
+        },
+        "multiplayer": {
+          "type": "boolean",
+          "default": false
+        },
+        "host": {
+          "type": "string",
+          "maxLength": 120
+        }
+      }
+    }
+  }
+}

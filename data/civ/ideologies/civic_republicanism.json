@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "civic_republicanism",
+  "name": "Républicanisme civique",
+  "description": "Doctrine fondée sur la démocratie représentative, l'État de droit et l'égalité citoyenne.",
+  "family": "liberal",
+  "values": [
+    "liberté politique",
+    "délibération",
+    "pluralisme"
+  ],
+  "government_preferences": [
+    "republic",
+    "democracy"
+  ],
+  "modifiers": [],
+  "tags": [
+    "democratic"
+  ]
+}

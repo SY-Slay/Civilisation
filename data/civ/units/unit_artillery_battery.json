@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "id": "unit_artillery_battery",
+  "name": "Batterie d'artillerie lourde",
+  "description": "Pièces de gros calibre pilonnant les défenses adverses et désorganisant les concentrations.",
+  "category": "artillery",
+  "era": 2,
+  "cost": 200.0,
+  "upkeep": 6.0,
+  "manpower": 300,
+  "attack": 60.0,
+  "defense": 25.0,
+  "mobility": 25.0,
+  "morale": 55.0,
+  "training_time_days": 45,
+  "prerequisites": [
+    "tech_steel_metallurgy"
+  ],
+  "counters": [
+    "unit_heavy_armor"
+  ],
+  "weak_against": [
+    "unit_mechanized_guard"
+  ],
+  "tags": [
+    "fire_support"
+  ]
+}

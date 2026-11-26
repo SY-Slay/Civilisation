@@ -1,0 +1,411 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/diplomacy.schema.json",
+  "title": "Civilisations — diplomatie",
+  "description": "Relations bilatérales, traités, organisations internationales, sanctions, garanties et opérations d'influence. Les relations sont stockées une seule fois par paire, avec les identifiants triés.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "relations",
+    "treaties",
+    "organizations",
+    "sanctions",
+    "guarantees"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "relations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/relation" }
+    },
+    "treaties": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/treaty" }
+    },
+    "organizations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/organization" }
+    },
+    "sanctions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/sanction" }
+    },
+    "guarantees": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/guarantee" }
+    },
+    "espionage_operations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/espionage_operation" }
+    },
+    "trade_routes": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/trade_route" }
+    },
+    "requests": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/diplomatic_request" }
+    }
+  },
+  "$defs": {
+    "relation": {
+      "type": "object",
+      "required": [
+        "a",
+        "b",
+        "opinion",
+        "trust",
+        "fear",
+        "trade_dependence",
+        "border_tension",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "a": { "$ref": "common.schema.json#/$defs/id" },
+        "b": {
+          "$ref": "common.schema.json#/$defs/id",
+          "description": "Doit être strictement supérieur à a dans l'ordre lexical pour garantir une paire unique."
+        },
+        "opinion": {
+          "type": "number",
+          "minimum": -100,
+          "maximum": 100,
+          "default": 0
+        },
+        "trust": {
+          "$ref": "common.schema.json#/$defs/percentage"
+        },
+        "fear": {
+          "$ref": "common.schema.json#/$defs/percentage"
+        },
+        "trade_dependence": {
+          "$ref": "common.schema.json#/$defs/unit_interval"
+        },
+        "border_tension": {
+          "$ref": "common.schema.json#/$defs/percentage"
+        },
+        "status": {
+          "enum": [
+            "neutral",
+            "friendly",
+            "allied",
+            "hostile",
+            "at_war",
+            "truce",
+            "vassal",
+            "overlord",
+            "sanctioned"
+          ]
+        },
+        "embassy": {
+          "type": "boolean",
+          "default": false
+        },
+        "contact": {
+          "type": "boolean",
+          "default": true
+        },
+        "last_change_tick": {
+          "$ref": "common.schema.json#/$defs/tick"
+        },
+        "modifiers": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/modifier" }
+        }
+      }
+    },
+    "treaty": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "kind",
+        "parties",
+        "terms",
+        "start_date",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "kind": {
+          "enum": [
+            "peace",
+            "alliance",
+            "non_aggression",
+            "trade",
+            "defensive",
+            "ceasefire",
+            "vassalage",
+            "independence",
+            "demilitarization",
+            "reparations",
+            "customs_union",
+            "research",
+            "nuclear_ban"
+          ]
+        },
+        "parties": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "common.schema.json#/$defs/id" },
+          "uniqueItems": true
+        },
+        "signatories": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        },
+        "terms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/term" }
+        },
+        "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "end_date": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/game_date" },
+            { "type": "null" }
+          ]
+        },
+        "duration_days": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "status": {
+          "enum": ["proposed", "signed", "active", "suspended", "violated", "expired", "cancelled"]
+        },
+        "secret": {
+          "type": "boolean",
+          "default": false
+        },
+        "guarantors": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        },
+        "violations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["by", "tick", "description"],
+            "additionalProperties": false,
+            "properties": {
+              "by": { "$ref": "common.schema.json#/$defs/id" },
+              "tick": { "$ref": "common.schema.json#/$defs/tick" },
+              "description": { "$ref": "common.schema.json#/$defs/localized_text" }
+            }
+          }
+        }
+      }
+    },
+    "term": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]{2,63}$",
+          "description": "Exemples : cede_province, pay_reparations, demilitarize, open_market, recognize_government, release_vassal."
+        },
+        "args": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "organization": {
+      "type": "object",
+      "required": ["id", "name", "kind", "members", "founding_date", "cohesion"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "kind": {
+          "enum": [
+            "alliance",
+            "trade_bloc",
+            "customs_union",
+            "defense_pact",
+            "federation",
+            "council",
+            "cartel",
+            "research_network"
+          ]
+        },
+        "members": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "common.schema.json#/$defs/id" },
+          "uniqueItems": true
+        },
+        "founding_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "rules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/term" }
+        },
+        "leader": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "cohesion": { "$ref": "common.schema.json#/$defs/percentage" },
+        "votes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nation", "weight", "vote"],
+            "additionalProperties": false,
+            "properties": {
+              "nation": { "$ref": "common.schema.json#/$defs/id" },
+              "weight": { "type": "number", "minimum": 0 },
+              "vote": { "enum": ["yes", "no", "abstain"] }
+            }
+          }
+        },
+        "active": {
+          "type": "boolean",
+          "default": true
+        },
+        "treasury": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        },
+        "economy_terms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/term" }
+        },
+        "diplomacy_terms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/term" }
+        }
+      }
+    },
+    "sanction": {
+      "type": "object",
+      "required": ["id", "by", "target", "kind", "severity", "start_date", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "by": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "common.schema.json#/$defs/id" },
+          "uniqueItems": true
+        },
+        "target": { "$ref": "common.schema.json#/$defs/id" },
+        "kind": {
+          "enum": ["trade", "financial", "technology", "arms", "travel", "energy", "cultural"]
+        },
+        "severity": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "end_date": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/game_date" },
+            { "type": "null" }
+          ]
+        },
+        "status": {
+          "enum": ["proposed", "active", "suspended", "lifted", "expired"]
+        },
+        "exemptions": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        }
+      }
+    },
+    "guarantee": {
+      "type": "object",
+      "required": ["id", "guarantor", "protected", "start_date", "active"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "guarantor": { "$ref": "common.schema.json#/$defs/id" },
+        "protected": { "$ref": "common.schema.json#/$defs/id" },
+        "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "expires_date": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/game_date" },
+            { "type": "null" }
+          ]
+        },
+        "active": { "type": "boolean" },
+        "conditions": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/condition" }
+        }
+      }
+    },
+    "espionage_operation": {
+      "type": "object",
+      "required": ["id", "actor", "target", "kind", "status", "progress", "exposure"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "actor": { "$ref": "common.schema.json#/$defs/id" },
+        "target": { "$ref": "common.schema.json#/$defs/id" },
+        "kind": {
+          "enum": ["intel", "sabotage", "coup", "propaganda", "assassination", "cyber", "fund_rebels"]
+        },
+        "status": {
+          "enum": ["preparing", "active", "succeeded", "failed", "exposed", "cancelled"]
+        },
+        "progress": { "$ref": "common.schema.json#/$defs/percentage" },
+        "exposure": { "$ref": "common.schema.json#/$defs/percentage" },
+        "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "effects": {
+          "type": "array",
+          "items": { "$ref": "common.schema.json#/$defs/effect" }
+        }
+      }
+    },
+    "trade_route": {
+      "type": "object",
+      "required": ["id", "a", "b", "resource", "volume", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "a": { "$ref": "common.schema.json#/$defs/id" },
+        "b": { "$ref": "common.schema.json#/$defs/id" },
+        "resource": { "$ref": "common.schema.json#/$defs/id" },
+        "volume": { "type": "number", "minimum": 0 },
+        "status": {
+          "enum": ["open", "restricted", "blockaded", "closed"]
+        },
+        "blockaded_by": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        }
+      },
+      "diplomatic_request": {
+        "type": "object",
+        "required": ["id", "kind", "from", "to", "title", "created_date", "created_tick", "status"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "$ref": "common.schema.json#/$defs/id" },
+          "kind": {
+            "enum": ["alliance", "peace", "non_aggression", "trade", "defensive_pact", "ceasefire", "join_alliance"]
+          },
+          "from": { "$ref": "common.schema.json#/$defs/id" },
+          "to": { "$ref": "common.schema.json#/$defs/id" },
+          "title": { "$ref": "common.schema.json#/$defs/localized_text" },
+          "terms": {
+            "type": "array",
+            "items": { "$ref": "#/$defs/term" }
+          },
+          "created_date": { "$ref": "common.schema.json#/$defs/game_date" },
+          "created_tick": { "$ref": "common.schema.json#/$defs/tick" },
+          "expires_tick": { "$ref": "common.schema.json#/$defs/tick" },
+          "status": {
+            "enum": ["proposed", "accepted", "rejected", "cancelled", "expired"]
+          },
+          "resolved_tick": { "$ref": "common.schema.json#/$defs/tick" }
+        }
+      }
+    }
+  }
+}

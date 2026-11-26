@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "grain",
+  "name": "Céréales de plaine",
+  "description": "Production agricole assurant la subsistance des populations urbaines et la stabilité.",
+  "category": "food",
+  "unit": "bushel",
+  "base_value": 30.0,
+  "strategic": false,
+  "modifiers": [],
+  "tags": [
+    "agriculture"
+  ]
+}

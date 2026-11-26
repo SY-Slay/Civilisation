@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "id": "tech_combined_arms",
+  "name": "Doctrine interarmes",
+  "description": "Coordination tactique étroite entre infanterie motorisée, blindés et appui d'artillerie.",
+  "era": 3,
+  "category": "military",
+  "cost": 700.0,
+  "research_time_days": 180,
+  "prerequisites": [
+    "tech_rail_logistics"
+  ],
+  "effects": [],
+  "unlocks": {
+    "units": [
+      "unit_mechanized_guard",
+      "unit_heavy_armor"
+    ],
+    "missiles": [],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 1.3,
+  "tags": [
+    "tactics"
+  ]
+}

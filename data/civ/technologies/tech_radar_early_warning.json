@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "id": "tech_radar_early_warning",
+  "name": "Détection radar avancée",
+  "description": "Stations de surveillance aérienne et côtière fournissant une alerte précoce contre les frappes.",
+  "era": 3,
+  "category": "intelligence",
+  "cost": 850.0,
+  "research_time_days": 200,
+  "prerequisites": [
+    "tech_radio_communications"
+  ],
+  "effects": [],
+  "unlocks": {
+    "units": [],
+    "missiles": [],
+    "buildings": [],
+    "events": [],
+    "modifiers": []
+  },
+  "repeatable": false,
+  "max_level": 1,
+  "ai_weight": 0.9,
+  "tags": [
+    "radar"
+  ]
+}

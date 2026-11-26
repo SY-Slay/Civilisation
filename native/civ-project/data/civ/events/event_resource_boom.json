@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "event_resource_boom",
+  "name": "Découverte d'un gisement riche",
+  "description": "Des géomètres ont cartographié une formation minérale d'une abondance remarquable.",
+  "kind": "economic",
+  "weight": 1.0,
+  "cooldown_days": 120,
+  "max_fires": 3,
+  "trigger": {
+    "conditions": [],
+    "min_date": {
+      "year": 2026,
+      "month": 3,
+      "day": 1
+    },
+    "chance": 0.5
+  },
+  "choices": [
+    {
+      "id": "national_exploitation",
+      "text": "Créer une régie publique pour valoriser la ressource",
+      "effects": [],
+      "ai_weight": 0.6
+    },
+    {
+      "id": "concession_auctions",
+      "text": "Mettre aux enchères des concessions de forage",
+      "effects": [],
+      "ai_weight": 0.4
+    }
+  ],
+  "severity": 10.0,
+  "tags": [
+    "economy",
+    "mining"
+  ]
+}

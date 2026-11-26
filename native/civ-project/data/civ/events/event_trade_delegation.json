@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "event_trade_delegation",
+  "name": "Ambassade des marchands de Varenne",
+  "description": "Une délégation commerciale propose un accord préférentiel sur les droits de douane maritimes.",
+  "kind": "diplomatic",
+  "weight": 1.5,
+  "cooldown_days": 90,
+  "max_fires": 6,
+  "trigger": {
+    "conditions": [],
+    "min_date": {
+      "year": 2026,
+      "month": 2,
+      "day": 1
+    },
+    "chance": 0.7
+  },
+  "choices": [
+    {
+      "id": "sign_accord",
+      "text": "Signer les accords d'ouverture tarifaire",
+      "effects": [],
+      "ai_weight": 0.8
+    },
+    {
+      "id": "refuse_protectionism",
+      "text": "Maintenir les barrières pour protéger la production locale",
+      "effects": [],
+      "ai_weight": 0.2
+    }
+  ],
+  "severity": 15.0,
+  "tags": [
+    "trade",
+    "diplomacy"
+  ]
+}

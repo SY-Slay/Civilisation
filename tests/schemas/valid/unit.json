@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "unit_line_infantry",
+  "name": "Infanterie de ligne",
+  "description": "Unit? de base, solide en d?fense.",
+  "category": "infantry",
+  "era": 3,
+  "cost": 100.0,
+  "upkeep": 2.0,
+  "manpower": 1000,
+  "attack": 30.0,
+  "defense": 50.0,
+  "mobility": 40.0,
+  "range": 0.0,
+  "morale": 60.0,
+  "training_time_days": 30,
+  "prerequisites": [],
+  "counters": [],
+  "weak_against": [],
+  "tags": [
+    "fixture"
+  ]
+}

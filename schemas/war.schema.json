@@ -1,0 +1,354 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://civ.invalid/schemas/war.schema.json",
+  "title": "Civilisations — guerre",
+  "description": "Guerre, belligérants, objectifs, fronts, batailles, offres de paix et armées. La résolution est déterministe : chaque bataille consomme un flux RNG dérivé de la graine de partie et de son identifiant.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "name",
+    "start_date",
+    "status",
+    "casus_belli",
+    "belligerents",
+    "war_goals",
+    "fronts",
+    "battles",
+    "score",
+    "peace_offers"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "common.schema.json#/$defs/schema_version"
+    },
+    "id": { "$ref": "common.schema.json#/$defs/id" },
+    "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+    "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+    "end_date": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/game_date" },
+        { "type": "null" }
+      ]
+    },
+    "status": {
+      "enum": ["planned", "declared", "active", "ceasefire", "peace_negotiation", "ended", "stalemate"]
+    },
+    "casus_belli": {
+      "type": "object",
+      "required": ["kind", "target"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "border_dispute",
+            "claimed_province",
+            "alliance_obligation",
+            "trade_conflict",
+            "ideological",
+            "regime_change",
+            "independence",
+            "resource_access",
+            "revenge",
+            "preemptive"
+          ]
+        },
+        "target": { "$ref": "common.schema.json#/$defs/id" },
+        "description": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "province": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        }
+      }
+    },
+    "belligerents": {
+      "type": "array",
+      "minItems": 2,
+      "items": { "$ref": "#/$defs/belligerent" }
+    },
+    "war_goals": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/war_goal" }
+    },
+    "fronts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/front" }
+    },
+    "battles": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/battle" }
+    },
+    "armies": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/army" }
+    },
+    "score": {
+      "type": "object",
+      "required": ["attacker", "defender"],
+      "additionalProperties": false,
+      "properties": {
+        "attacker": { "type": "number", "default": 0 },
+        "defender": { "type": "number", "default": 0 }
+      }
+    },
+    "peace_offers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/peace_offer" }
+    },
+    "interventions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["nation", "side", "date"],
+        "additionalProperties": false,
+        "properties": {
+          "nation": { "$ref": "common.schema.json#/$defs/id" },
+          "side": { "enum": ["attacker", "defender", "mediator"] },
+          "date": { "$ref": "common.schema.json#/$defs/game_date" },
+          "reason": { "$ref": "common.schema.json#/$defs/localized_text" }
+        }
+      }
+    },
+    "treaty_id": {
+      "oneOf": [
+        { "$ref": "common.schema.json#/$defs/id" },
+        { "type": "null" }
+      ]
+    },
+    "tags": {
+      "$ref": "common.schema.json#/$defs/string_list"
+    },
+    "assault_zones": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/assault_zone" }
+    }
+  },
+  "$defs": {
+    "belligerent": {
+      "type": "object",
+      "required": ["nation", "side", "joined_date", "war_support"],
+      "additionalProperties": false,
+      "properties": {
+        "nation": { "$ref": "common.schema.json#/$defs/id" },
+        "side": {
+          "enum": ["attacker", "defender", "co_belligerent"]
+        },
+        "joined_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "war_support": { "$ref": "common.schema.json#/$defs/percentage" },
+        "casualties": { "type": "integer", "minimum": 0, "default": 0 },
+        "occupied_provinces": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        },
+        "contribution": {
+          "type": "number",
+          "minimum": 0,
+          "default": 0
+        }
+      }
+    },
+    "war_goal": {
+      "type": "object",
+      "required": ["id", "kind", "target", "priority", "satisfied"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "kind": {
+          "enum": [
+            "conquer_province",
+            "annex_nation",
+            "vassalize",
+            "puppet",
+            "regime_change",
+            "reparations",
+            "demilitarize",
+            "independence",
+            "resource_access",
+            "border_rectification",
+            "protect",
+            "humiliate"
+          ]
+        },
+        "target": { "$ref": "common.schema.json#/$defs/id" },
+        "provinces": {
+          "$ref": "common.schema.json#/$defs/id_list"
+        },
+        "priority": { "$ref": "common.schema.json#/$defs/unit_interval" },
+        "satisfied": { "type": "boolean", "default": false },
+        "secret": { "type": "boolean", "default": false }
+      }
+    },
+    "front": {
+      "type": "object",
+      "required": ["id", "provinces", "attacker", "defender", "status", "momentum", "supply"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "provinces": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "common.schema.json#/$defs/id" },
+          "uniqueItems": true
+        },
+        "attacker": { "$ref": "common.schema.json#/$defs/id" },
+        "defender": { "$ref": "common.schema.json#/$defs/id" },
+        "status": {
+          "enum": ["quiet", "active", "breakthrough", "collapsed", "encircled", "ceasefire"]
+        },
+        "momentum": {
+          "type": "number",
+          "minimum": -100,
+          "maximum": 100,
+          "default": 0
+        },
+        "supply": { "$ref": "common.schema.json#/$defs/percentage" },
+        "battles_won": { "type": "integer", "minimum": 0, "default": 0 },
+        "battles_lost": { "type": "integer", "minimum": 0, "default": 0 }
+      }
+    },
+    "battle": {
+      "type": "object",
+      "required": [
+        "id",
+        "province",
+        "start_date",
+        "attacker",
+        "defender",
+        "result",
+        "attacker_losses",
+        "defender_losses"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "front": { "$ref": "common.schema.json#/$defs/id" },
+        "province": { "$ref": "common.schema.json#/$defs/id" },
+        "start_date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "end_date": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/game_date" },
+            { "type": "null" }
+          ]
+        },
+        "attacker": { "$ref": "common.schema.json#/$defs/id" },
+        "defender": { "$ref": "common.schema.json#/$defs/id" },
+        "result": {
+          "enum": ["attacker_victory", "defender_victory", "stalemate", "ongoing", "withdrawal"]
+        },
+        "attacker_losses": { "type": "integer", "minimum": 0 },
+        "defender_losses": { "type": "integer", "minimum": 0 },
+        "terrain_modifier": { "type": "number", "default": 1 },
+        "notes": { "$ref": "common.schema.json#/$defs/localized_text" }
+      }
+    },
+    "peace_offer": {
+      "type": "object",
+      "required": ["id", "by", "to", "date", "terms", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "by": { "$ref": "common.schema.json#/$defs/id" },
+        "to": { "$ref": "common.schema.json#/$defs/id" },
+        "date": { "$ref": "common.schema.json#/$defs/game_date" },
+        "terms": {
+          "type": "array",
+          "items": { "$ref": "diplomacy.schema.json#/$defs/term" }
+        },
+        "status": {
+          "enum": ["offered", "accepted", "rejected", "expired", "countered"]
+        },
+        "ai_acceptance": { "$ref": "common.schema.json#/$defs/unit_interval" }
+      }
+    },
+    "assault_zone": {
+      "type": "object",
+      "required": ["id", "province", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "province": { "$ref": "common.schema.json#/$defs/id" },
+        "status": {
+          "enum": ["neutral", "contested", "controlled"]
+        },
+        "controller": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "attacker_progress": { "type": "number", "minimum": 0, "maximum": 100 },
+        "defender_progress": { "type": "number", "minimum": 0, "maximum": 100 },
+        "score": { "type": "number", "minimum": 0 }
+      }
+    },
+    "army": {
+      "type": "object",
+      "required": ["id", "nation", "name", "location", "units", "supply", "morale", "stance"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/id" },
+        "nation": { "$ref": "common.schema.json#/$defs/id" },
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "location": { "$ref": "common.schema.json#/$defs/id" },
+        "units": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/unit" }
+        },
+        "supply": { "$ref": "common.schema.json#/$defs/percentage" },
+        "morale": { "$ref": "common.schema.json#/$defs/percentage" },
+        "stance": {
+          "enum": ["defensive", "offensive", "mobile", "garrison", "retreating", "encircled"]
+        },
+        "movement": {
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["from", "to", "progress"],
+              "additionalProperties": false,
+              "properties": {
+                "from": { "$ref": "common.schema.json#/$defs/id" },
+                "to": { "$ref": "common.schema.json#/$defs/id" },
+                "progress": { "$ref": "common.schema.json#/$defs/unit_interval" }
+              }
+            },
+            { "type": "null" }
+          ]
+        },
+        "general": { "$ref": "#/$defs/general" },
+        "engaged_in": {
+          "oneOf": [
+            { "$ref": "common.schema.json#/$defs/id" },
+            { "type": "null" }
+          ]
+        },
+        "tags": { "$ref": "common.schema.json#/$defs/string_list" }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "required": ["type", "count", "experience", "morale"],
+      "additionalProperties": false,
+      "properties": {
+        "type": { "$ref": "common.schema.json#/$defs/id" },
+        "count": { "type": "integer", "minimum": 1 },
+        "experience": { "$ref": "common.schema.json#/$defs/percentage" },
+        "morale": { "$ref": "common.schema.json#/$defs/percentage" },
+        "equipment": { "$ref": "common.schema.json#/$defs/percentage" },
+        "wounded": { "type": "integer", "minimum": 0, "default": 0 }
+      }
+    },
+    "general": {
+      "type": "object",
+      "required": ["name", "skill"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "$ref": "common.schema.json#/$defs/localized_text" },
+        "skill": { "$ref": "common.schema.json#/$defs/percentage" },
+        "traits": { "$ref": "common.schema.json#/$defs/string_list" }
+      }
+    }
+  }
+}

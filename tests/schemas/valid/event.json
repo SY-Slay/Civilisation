@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "id": "event_border_incident",
+  "name": "Incident de fronti?re",
+  "description": "Une patrouille a franchi la ligne de d?marcation.",
+  "kind": "diplomatic",
+  "weight": 1.0,
+  "cooldown_days": 30,
+  "max_fires": 1,
+  "trigger": {
+    "conditions": [],
+    "min_date": {
+      "year": 2026,
+      "month": 1,
+      "day": 1
+    },
+    "chance": 1.0
+  },
+  "choices": [
+    {
+      "id": "calm",
+      "text": "Calmer la situation",
+      "effects": [],
+      "ai_weight": 1.0
+    },
+    {
+      "id": "escalate",
+      "text": "Envoyer des renforts",
+      "effects": [],
+      "ai_weight": 0.5
+    }
+  ],
+  "severity": 20.0,
+  "tags": [
+    "fixture"
+  ]
+}

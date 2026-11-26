@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "language": "fr_FR",
+  "fallback_language": "en_US",
+  "entries": {
+    "civ.name": "Civilisations",
+    "civ.pong": "Civ : pong"
+  }
+}

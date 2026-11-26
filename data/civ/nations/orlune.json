@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "id": "orlune",
+  "name": "Sanctuaire d'Orlune",
+  "adjective": "orlunien",
+  "short_name": "Orlune",
+  "color": "#9C36B5",
+  "flag": {
+    "palette": [
+      "#9C36B5",
+      "#F8F9FA"
+    ],
+    "pattern": "starfield",
+    "motto": "Sous le Regard des Astres"
+  },
+  "capital": "prov_orlune_temple",
+  "provinces": [
+    "prov_orlune_pics",
+    "prov_orlune_sud",
+    "prov_orlune_temple",
+    "prov_orlune_vallee"
+  ],
+  "government": "theocracy",
+  "ideology": "devotional_theocracy",
+  "culture": "orlunian",
+  "religion": "mysticism",
+  "language": "fr_FR",
+  "leader": {
+    "name": "Elysia Solas",
+    "title": "Archonte Suprême",
+    "age": 44,
+    "traits": [
+      "mystique",
+      "érudite",
+      "déterminée"
+    ]
+  },
+  "population": {
+    "total": 750000,
+    "workforce": 380000,
+    "conscription_pool": 85000,
+    "growth_rate": 0.003,
+    "urbanization": 0.41
+  },
+  "economy": {
+    "gdp": 1050000000.0,
+    "treasury": 220000000.0,
+    "tax_rate": 0.22,
+    "inflation": 0.015,
+    "unemployment": 0.05,
+    "trade_balance": 5000000.0,
+    "debt": 40000000.0,
+    "sectors": {
+      "agriculture": 0.2,
+      "industry": 0.25,
+      "services": 0.35,
+      "technology": 0.2
+    },
+    "resources": {}
+  },
+  "military": {
+    "manpower": 25000,
+    "army_size": 18000,
+    "readiness": 65.0,
+    "morale": 85.0,
+    "doctrine": "defensive",
+    "missile_stockpile": {}
+  },
+  "stability": 82.0,
+  "legitimacy": 85.0,
+  "prestige": 50.0,
+  "war_exhaustion": 0.0,
+  "unrest": 4.0,
+  "technology": {
+    "era": 2,
+    "researched": [
+      "tech_radio_communications"
+    ],
+    "research_points": 180.0
+  },
+  "ai_profile": {
+    "archetype": "ideologue",
+    "aggression": 0.35,
+    "caution": 0.6,
+    "honor": 0.7,
+    "greed": 0.3,
+    "revanchism": 0.4,
+    "isolationism": 0.5,
+    "opportunism": 0.4,
+    "loyalty": 0.7,
+    "risk_tolerance": 0.5,
+    "patience": 0.7,
+    "war_threshold": 0.65,
+    "peace_threshold": 0.4,
+    "priorities": {
+      "economy": 0.5,
+      "military": 0.5,
+      "diplomacy": 0.6,
+      "expansion": 0.3,
+      "stability": 0.9,
+      "technology": 0.8
+    },
+    "red_lines": [
+      "capital_occupied",
+      "core_occupied"
+    ]
+  },
+  "claims": [],
+  "subjects": [],
+  "overlord": null,
+  "allies": [],
+  "wars": [],
+  "revolutions": [],
+  "armies": [],
+  "missiles": [],
+  "is_playable": true,
+  "tags": [
+    "theocratic"
+  ]
+}

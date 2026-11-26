@@ -1,0 +1,128 @@
+{
+  "id": "prov_ardenne_sud",
+  "name": "Bassin de Fer",
+  "polygon": [
+    [
+      232.0,
+      280.0
+    ],
+    [
+      234.8,
+      342.0
+    ],
+    [
+      273.7,
+      384.9
+    ],
+    [
+      267.6,
+      444.9
+    ],
+    [
+      290.0,
+      488.0
+    ],
+    [
+      344.3,
+      516.1
+    ],
+    [
+      400.1,
+      503.4
+    ],
+    [
+      448.2,
+      538.3
+    ],
+    [
+      496.0,
+      540.0
+    ],
+    [
+      513.9,
+      473.0
+    ],
+    [
+      501.4,
+      389.8
+    ],
+    [
+      535.8,
+      318.4
+    ],
+    [
+      532.0,
+      230.0
+    ],
+    [
+      464.4,
+      231.1
+    ],
+    [
+      390.0,
+      265.8
+    ],
+    [
+      313.7,
+      252.2
+    ]
+  ],
+  "center": [
+    389.87,
+    387.37
+  ],
+  "area_blocks": 68697,
+  "neighbors": [
+    "prov_ardenne_est",
+    "prov_ardenne_val",
+    "prov_kesh_citadelle",
+    "prov_varenne_plaine"
+  ],
+  "border_ids": [
+    "border_h_0_1_c1",
+    "border_h_1_2_c1",
+    "border_v_r1_c0_1",
+    "border_v_r1_c1_2"
+  ],
+  "terrain": "urban",
+  "climate": {
+    "temperature_c": 13.5,
+    "rainfall_mm": 820.0,
+    "seasonality": 0.42
+  },
+  "population": {
+    "total": 210000,
+    "urban": 110000,
+    "rural": 100000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "ardennic",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "rationalism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "iron_ore",
+      "abundance": 85.0,
+      "reserve": 500000.0
+    }
+  ],
+  "owner": "ardenne",
+  "controller": "ardenne",
+  "fortification": 2,
+  "unrest": 6.0,
+  "supply": 80.0,
+  "infrastructure": 75.0,
+  "strategic_value": 85.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

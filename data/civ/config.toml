@@ -1,0 +1,59 @@
+schema_version = 1
+
+[simulation]
+ticks_per_day = 2400
+ai_interval_ticks = 100
+max_events_per_tick = 32
+seed = 424242
+start_date = { year = 2026, month = 1, day = 1 }
+autosave_days = 30
+max_command_history = 4096
+
+[world]
+map_width = 1024
+map_height = 1024
+province_count = 16
+sea_level = 62
+border_style = "warped"
+border_noise = 0.35
+coast_complexity = 0.55
+min_province_area = 1024
+max_province_neighbors = 8
+
+[ai]
+difficulty = "normal"
+max_war_fronts = 8
+max_diplomacy_actions_per_tick = 8
+max_armies_per_nation = 24
+allow_ai_nukes = false
+ai_reaction_delay_ticks = 200
+
+[war]
+max_active_wars = 16
+battle_interval_ticks = 200
+occupation_speed = 1.0
+attrition_rate = 0.02
+peace_offer_cooldown_days = 14
+allow_forced_regime_change = true
+
+[missiles]
+max_in_flight = 64
+flight_ticks_per_chunk = 20
+interception_enabled = true
+interception_chance_scale = 1.0
+show_trajectory = true
+cinematic_impact = true
+
+[ui]
+theme = "dark"
+map_zoom_min = 0.5
+map_zoom_max = 4.0
+show_province_names = true
+show_borders = true
+show_armies = true
+show_missiles = true
+
+[multiplayer]
+enabled = false
+max_players = 4
+sync_rate_ticks = 20

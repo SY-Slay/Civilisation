@@ -1,0 +1,108 @@
+{
+  "id": "prov_orlune_sud",
+  "name": "Plateau des Flammes",
+  "polygon": [
+    [
+      744.0,
+      786.0
+    ],
+    [
+      734.5,
+      853.6
+    ],
+    [
+      764.3,
+      909.0
+    ],
+    [
+      746.5,
+      972.3
+    ],
+    [
+      760.0,
+      1024.0
+    ],
+    [
+      892.0,
+      1024.0
+    ],
+    [
+      1024.0,
+      1024.0
+    ],
+    [
+      1024.0,
+      892.0
+    ],
+    [
+      1024.0,
+      760.0
+    ],
+    [
+      961.5,
+      755.8
+    ],
+    [
+      890.7,
+      784.4
+    ],
+    [
+      821.1,
+      764.8
+    ]
+  ],
+  "center": [
+    865.55,
+    879.16
+  ],
+  "area_blocks": 69955,
+  "neighbors": [
+    "prov_orlune_pics",
+    "prov_orlune_vallee"
+  ],
+  "border_ids": [
+    "border_h_2_3_c3",
+    "border_v_r3_c2_3"
+  ],
+  "terrain": "desert",
+  "climate": {
+    "temperature_c": 16.0,
+    "rainfall_mm": 500.0,
+    "seasonality": 0.55
+  },
+  "population": {
+    "total": 160000,
+    "urban": 50000,
+    "rural": 110000,
+    "growth_rate": 0.005,
+    "density_per_km2": 45.0
+  },
+  "culture": {
+    "primary": "orlunian",
+    "minorities": []
+  },
+  "religion": {
+    "primary": "mysticism",
+    "minorities": []
+  },
+  "resources": [
+    {
+      "resource": "oil",
+      "abundance": 85.0,
+      "reserve": 450000.0
+    }
+  ],
+  "owner": "orlune",
+  "controller": "orlune",
+  "fortification": 2,
+  "unrest": 7.0,
+  "supply": 75.0,
+  "infrastructure": 70.0,
+  "strategic_value": 85.0,
+  "victory_points": 5.0,
+  "claims": [],
+  "capital_of": null,
+  "tags": [
+    "scenario_province"
+  ]
+}

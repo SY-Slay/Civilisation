@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "autocracy",
+  "name": "Commandement suprême autocratique",
+  "description": "Régime autoritaire centralisé dirigé par un chef suprême incontesté.",
+  "category": "autocracy",
+  "legitimacy_source": "military",
+  "succession": "appointment",
+  "term_length_days": 0,
+  "modifiers": [],
+  "tags": [
+    "militarist"
+  ]
+}

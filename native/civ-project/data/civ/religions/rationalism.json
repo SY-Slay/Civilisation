@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "id": "rationalism",
+  "name": "Rationalisme civique",
+  "description": "Philosophie morale centrée sur la justice constitutionnelle et le bien public.",
+  "family": "civic_creed",
+  "tenets": [
+    "primauté de la loi",
+    "bien commun",
+    "recherche de vérité"
+  ],
+  "tolerance": 75.0,
+  "holy_sites": [
+    "prov_ardenne_val"
+  ],
+  "clergy_title": "Gardien de la Charte",
+  "modifiers": [],
+  "tags": [
+    "rationalist",
+    "civic"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "id": "republic",
+  "name": "République constitutionnelle",
+  "description": "Régime représentatif doté d'une assemblée élue et de contre-pouvoirs garantis.",
+  "category": "republic",
+  "legitimacy_source": "elections",
+  "succession": "election",
+  "term_length_days": 1460,
+  "modifiers": [],
+  "tags": [
+    "constitutional"
+  ]
+}

@@ -1,0 +1,4 @@
+/target/
+**/civ/saves/
+*.civ.tmp
+*.json.bak

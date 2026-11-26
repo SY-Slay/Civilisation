@@ -109,14 +109,15 @@ fn find_project_root() -> PathBuf {
     env::current_dir().unwrap_or_else(|_| PathBuf::from("."))
 }
 
-/// Déploie le mod natif (.hnmod) et les données dans l'instance Horizon.
+/// Déploie le mod natif (.hmod / .hnmod) et les données dans l'instance Horizon.
 fn deploy_mod() -> io::Result<()> {
     let root = find_project_root();
+    let hmod_path = root.join("native").join("civ.hmod");
     let hnmod_path = root.join("native").join("civ.hnmod");
 
-    // S'assurer que le bundle civ.hnmod existe
-    if !hnmod_path.exists() {
-        println!("      Génération du bundle native/civ.hnmod...");
+    // S'assurer qu'au moins un bundle (civ.hmod ou civ.hnmod) existe
+    if !hmod_path.exists() && !hnmod_path.exists() {
+        println!("      Génération du bundle natif via tools/package_native.py...");
         let script = root.join("tools").join("package_native.py");
         if script.exists() {
             let status = Command::new("python").arg(&script).status()?;
@@ -146,9 +147,14 @@ fn deploy_mod() -> io::Result<()> {
         horizon_dir.join("horizon-native-mods"),
     ];
 
-    if hnmod_path.exists() {
-        for target_dir in &target_dirs {
-            fs::create_dir_all(target_dir)?;
+    for target_dir in &target_dirs {
+        fs::create_dir_all(target_dir)?;
+        if hmod_path.exists() {
+            let dest = target_dir.join("civ.hmod");
+            fs::copy(&hmod_path, &dest)?;
+            println!("      -> Installé dans : {}", dest.display());
+        }
+        if hnmod_path.exists() {
             let dest = target_dir.join("civ.hnmod");
             fs::copy(&hnmod_path, &dest)?;
             println!("      -> Installé dans : {}", dest.display());
